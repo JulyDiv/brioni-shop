@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 // import { useState } from "react";
 
 export const Header = () => {
@@ -17,23 +16,17 @@ export const Header = () => {
               <span className="navbar-button__line"></span>
               <span className="navbar-button__line"></span>
             </button>
-            <button className="menu-close"></button>
+            {/* <button className="menu-close"></button> */}
 
             <div className="navbar-block">
               <li className="navbar-block__item">
-                <Link href="/catalog">
                   <a className="navbar-block__link">Assortment</a>
-                </Link>
               </li>
               <li className="navbar-block__item">
-                <Link href="#">
                   <a className="navbar-block__link">Bespoke</a>
-                </Link>
               </li>
               <li className="navbar-block__item">
-                <Link href="#">
                   <a className="navbar-block__link">Explore</a>
-                </Link>
               </li>
             </div>
 
