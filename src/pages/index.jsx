@@ -12,7 +12,6 @@ export default function HomePage() {
       </Head>
       {/* <Preloader /> */}
       <Header />
-      hello
     </div>
-  )
+  );
 }
