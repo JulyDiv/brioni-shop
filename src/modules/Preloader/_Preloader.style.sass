@@ -1,0 +1,79 @@
+.preloader
+    position: fixed
+    left: 0px
+    top: 0px
+    bottom: 0
+    right: 0
+    z-index: 9999
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    background: #fff
+    animation-name: moveCenter
+    animation-duration: 6s
+    animation-iteration-count: 1
+    animation-fill-mode: both
+    animation-timing-function: ease-in
+    &--hidden
+        display: none
+    &-wrapper
+        display: flex
+        flex-direction: column
+    &__img
+        animation-name: moveRight
+        animation-duration: 5s
+        animation-iteration-count: 1
+        animation-fill-mode: both
+    &__span
+        display: flex
+        align-self: end
+        padding-top: 37px
+        padding-right: 95px
+        color: $text-color3
+        font-style: normal
+        font-weight: 250
+        font-size: 28px
+        line-height: 32px
+        letter-spacing: 0.03em
+        animation-name: moveLeft
+        animation-duration: 5s
+        animation-direction: reverse
+        animation-iteration-count: 1
+        animation-fill-mode: both
+        animation-timing-function: ease-out
+
+@keyframes moveCenter
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    50%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 0
+        transform: translateX(0px)
+
+@keyframes moveRight
+    0%
+        opacity: 0
+        transform: translateX(0)
+    50%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes moveLeft
+    0%
+        opacity: 1
+        transform: translateX(0)
+    50%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 1
+        transform: translateX(1600px)
