@@ -1,7 +1,8 @@
+import React from "react";
 import Link from "next/link";
 // import { useState } from "react";
 
-const Header = () => {
+export const Header = () => {
   //   const [bag, setBag] = useState(false);
   //   const [contact, setContact] = useState(false);
   //   const [thank, setThank] = useState(false);
@@ -54,5 +55,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
