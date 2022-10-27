@@ -1,3 +1,28 @@
+### Brioni (интернет-магазин)
+
+#### Ссылка на макет Figma:
+https://www.figma.com/file/UNz53b7G5OEYUjAdUJvMw3/Untitled?node-id=0%3A1
+
+#### Ссылка на деплой:
+https://helpful-begonia-10bb6c.netlify.app
+
+<img width="1600" alt="MainBrioni" src="https://user-images.githubusercontent.com/99066910/190965836-ec85980e-6718-4ec2-9670-60d79dc521a9.png">
+
+<img width="1600" alt="CatalogBrioni" src="https://user-images.githubusercontent.com/99066910/190965675-fa357cd7-592b-4fd4-a4bb-e78233d09a2d.png">
+
+<img width="1600" alt="Card" src="https://user-images.githubusercontent.com/99066910/190966026-96a085bd-8171-412b-82fb-2c32c7a8d519.png">
+
+#### Стек технологий:
+
+:star2: HTML5 - верстка (адаптивная и кроссбраузерная) - PixelPerfect <br>
+:star2: CSS3 с использованием SASS - стилизация элементов - работаю по методологии БЭМ, использую Flexbox <br>
+:star2: CSS3 - Анимация модальных окон <br>
+:star2: React/Next.js <br>
+
+##### Связаться со мной: 
+##### [https://t.me/julia_gerber] - Telegram
+##### [https://vk.com/id526712821] - VK
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
