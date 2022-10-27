@@ -361,13 +361,16 @@ input:focus {
   height: 20px;
 }
 
-.icon__search {
+.icon-link {
   width: 20px;
-  height: 19px;
-  background-image: url(../../public/img/search.svg);
+  height: 20px;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.icon__search {
+  background-image: url(../../public/img/search.svg);
 }
 
 .icon__search:hover {
@@ -375,12 +378,7 @@ input:focus {
 }
 
 .icon__select {
-  width: 20px;
-  height: 19px;
   background-image: url(../../public/img/select.svg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .icon__select:hover {
@@ -388,12 +386,7 @@ input:focus {
 }
 
 .icon__user {
-  width: 20px;
-  height: 19px;
   background-image: url(../../public/img/user.svg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .icon__user:hover {
@@ -401,12 +394,7 @@ input:focus {
 }
 
 .icon__bag {
-  width: 20px;
-  height: 19px;
   background-image: url(../../public/img/backet.svg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .icon__bag:hover {
