@@ -45,11 +45,18 @@ ul, li {
   list-style: none;
 }
 
-input, button {
+button {
   padding: 0;
   cursor: pointer;
   border: none;
   background-color: transparent;
+}
+
+input {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-family: "GTEestiProDisplay-Thin";
 }
 
 input:focus {
@@ -59,6 +66,12 @@ input:focus {
 .container {
   width: 1200px;
   margin: auto;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #E5E5E5;
 }
 
 .preloader {
@@ -453,36 +466,17 @@ input:focus {
   }
 }
 
-.footer__line {
-  max-width: 1200px;
-  height: 1px;
-  background-color: #E5E5E5;
-  margin-bottom: 45px;
-}
-
 .footer__span {
   display: block;
-  margin-top: 21px;
-  margin-bottom: 21px;
+  margin: 21px 0;
 }
 
-.footer-form {
-  width: 309px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.footer-wrapper {
+  padding: 45px 0 28px 0;
 }
 
-.footer-form__title {
-  margin-top: 0;
-  margin-bottom: 43px;
+.footer__title {
+  margin: 0 0 43px 0;
   color: #333333;
   font-style: normal;
   font-weight: 300;
@@ -491,7 +485,7 @@ input:focus {
   letter-spacing: 0.03em;
 }
 
-.footer-form__form {
+.footer-form {
   position: relative;
 }
 
@@ -499,7 +493,44 @@ input:focus {
   padding: 18px 68px 18px 24px;
   width: 285px;
   height: 55px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
   color: #333333;
+  border: 1px solid #666666;
+}
+
+.footer-form__input::-webkit-input-placeholder {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(102, 102, 102, 0.55);
+}
+
+.footer-form__input:-ms-input-placeholder {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(102, 102, 102, 0.55);
+}
+
+.footer-form__input::-ms-input-placeholder {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(102, 102, 102, 0.55);
+}
+
+.footer-form__input::placeholder {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(102, 102, 102, 0.55);
 }
 
 .footer-form__image {
@@ -512,8 +543,8 @@ input:focus {
   height: 13px;
   background-image: url("../../../public/img/footer-form__email.svg");
   background-size: 100%;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .footer-form__image--grey {
@@ -539,7 +570,6 @@ input:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 46px;
   width: 100%;
 }
 
@@ -565,10 +595,6 @@ input:focus {
 }
 
 .footer-info__follows {
-  margin-right: 47px;
-}
-
-.footer-info__follows-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -576,5 +602,6 @@ input:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 234px;
+  height: 23px;
 }
 /*# sourceMappingURL=style.css.map */

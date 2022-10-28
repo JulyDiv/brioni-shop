@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-
+import React from "react";
+import Link from "next/link";
 import { FooterInfoLink } from "../../components/FooterInfoLink";
 import { FooterInfoTitle } from "../../components/FooterInfoTitle";
 
@@ -7,34 +8,33 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer__line"></div>
-
+        <div className="line footer__line"></div>
         <div className="footer-wrapper">
-          <div className="footer-form">
-            <h3 className="footer-form__title">Subscribe to Brioni news</h3>
-            <form action="#" className="footer-form__form">
-              <input
-                type="email"
-                className="input footer-form__input"
-                placeholder="Enter e-mail"
-              />
-              <img
-                src="img/footer-form__email.svg"
-                alt="e-mail"
-                className="footer-form__image"
-              />
-              <img
-                src="img/grey-envelope.svg"
-                alt="e-mail"
-                className="footer-form__image footer-form__image--grey"
-              />
-              <img
-                src="img/red-envelope.svg"
-                alt="e-mail"
-                className="footer-form__image footer-form__image--red"
-              />
-            </form>
-          </div>
+          <h4 className="footer__title">
+            Subscribe to <b>Brioni</b> news
+          </h4>
+          <form action="#" className="footer-form">
+            <input
+              type="email"
+              className="footer-form__input"
+              placeholder="Enter e-mail"
+            />
+            <img
+              src="img/footer-form__email.svg"
+              alt="e-mail"
+              className="footer-form__image"
+            />
+            <img
+              src="img/grey-envelope.svg"
+              alt="e-mail"
+              className="footer-form__image footer-form__image--grey"
+            />
+            <img
+              src="img/red-envelope.svg"
+              alt="e-mail"
+              className="footer-form__image footer-form__image--red"
+            />
+          </form>
 
           <div className="footer-info">
             <div className="footer-info__block">
@@ -70,61 +70,30 @@ export const Footer = () => {
               </ul>
             </div>
 
-            {/* <div className="footer-info__follows">
-              <h3 className="footer-info__title">Follow us</h3>
-              <div className="footer-info__follows-links">
-                <Link href="#">
-                  <a className="footer-info__link">
-                    <img
-                      className="footer-info__image"
-                      src="img/Facebook.svg"
-                      alt="Icon:Facebook"
-                    />
-                  </a>
+            <div className="footer-info__block">
+              <FooterInfoTitle title="Follow us" />
+              <ul className="footer-info__follows">
+                <Link href="#" className="footer-info__link-follows">
+                  <img src="img/Facebook.svg" alt="Icon: Facebook" />
                 </Link>
-                <Link href="#">
-                  <a className="footer-info__link">
-                    <img
-                      className="footer-info__image"
-                      src="img/Twitter.svg"
-                      alt="Icon:Twitter"
-                    />
-                  </a>
+                <Link href="#" className="footer-info__link-follows">
+                  <img src="img/Twitter.svg" alt="Icon: Twitter" />
                 </Link>
-                <Link href="#">
-                  <a className="footer-info__link">
-                    <img
-                      className="footer-info__image"
-                      src="img/Instagram.svg"
-                      alt="Icon:Instagram"
-                    />
-                  </a>
+                <Link href="#" className="footer-info__link-follows">
+                  <img src="img/Instagram.svg" alt="Icon: Instagram" />
                 </Link>
-                <Link href="#">
-                  <a className="footer-info__link">
-                    <img
-                      className="footer-info__image"
-                      src="img/Google.svg"
-                      alt="Icon:Google"
-                    />
-                  </a>
+                <Link href="#" className="footer-info__link-follows">
+                  <img src="img/Google.svg" alt="Icon: Google" />
                 </Link>
-                <Link href="#">
-                  <a className="footer-info__link">
-                    <img
-                      className="footer-info__image"
-                      src="img/YouTube.svg"
-                      alt="Icon:YouTube"
-                    />
-                  </a>
+                <Link href="#" className="footer-info__link-follows">
+                  <img src="img/YouTube.svg" alt="Icon: YouTube" />
                 </Link>
-              </div>
-            </div> */}
+              </ul>
+            </div>
           </div>
-
-          <div className="footer__line"></div>
-          <span className="footer__span">2022 © Brioni</span>
         </div>
+        <div className="line footer__line"></div>
+        <span className="footer__span">2022 © Brioni</span>
       </div>
     </footer>
   );
