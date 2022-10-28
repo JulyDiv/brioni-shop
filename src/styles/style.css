@@ -378,14 +378,6 @@ input:focus {
   background-image: url("../../../public/img/search-hover.svg");
 }
 
-.icon__select {
-  background-image: url("../../../public/img/select.svg");
-}
-
-.icon__select:hover {
-  background-image: url("../../../public/img/select-hover.svg");
-}
-
 .icon__user {
   background-image: url("../../../public/img/user.svg");
 }
