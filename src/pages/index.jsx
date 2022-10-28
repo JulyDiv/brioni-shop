@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Preloader } from "../modules/Preloader/Preloader";
 import { Header } from "../modules/Header/Header";
+import { Footer } from "../modules/Footer/Footer";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       </Head>
       {/* <Preloader /> */}
       <Header />
+      <Footer />
     </div>
   );
 }
