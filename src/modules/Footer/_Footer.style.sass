@@ -14,46 +14,40 @@
             letter-spacing: 0.03em
     &-form
         position: relative
+        display: flex
+        align-items: center
+        width: 285px
+        height: 55px
+        border: 1px solid $text-color2
+        &:hover &__button
+            background-image: url("../../../public/img/grey-envelope.svg")
         &__input
-            padding: 18px 68px 18px 24px
-            width: 285px
-            height: 55px
+            padding: 18px 24px
+            width: 85%
+            height: 100%
             font-style: normal
             font-weight: 300
             font-size: 16px
             line-height: 19px
             color: $text-color3
-            border: 1px solid $text-color2
             &::placeholder
                 font-style: normal
                 font-weight: 300
                 font-size: 16px
                 line-height: 19px
                 color: rgba(102, 102, 102, 0.55)
-        &__image
-            position: absolute
-            top: 21px
-            right: 25px
-            bottom: 21px
-            left: 240px
+        &__button
             width: 20px
             height: 13px
             background-image: url("../../../public/img/footer-form__email.svg")
             +background-image
-            &--grey
-                display: none
-                &_active
-                    display: block
-            &--red
-                display: none
-                &_active
-                    display: block
     &-info
         display: flex
         justify-content: space-between
+        padding: 45px 0 0 0
         width: 100%
         &__title
-            margin: 45px 0 41px 0
+            margin: 0px 0 41px 0
             font-family: "GTEestiProDisplay-Light"
             color: $text-color3
             font-style: normal
@@ -74,3 +68,70 @@
             justify-content: space-between
             width: 234px
             height: 23px
+
+@media (max-width: 1200px)
+    .footer
+        &-info
+            &__title
+                font-size: 22px
+            &__link
+                font-size: 14px
+            &__follows
+                width: 200px
+@media (min-width: 768px) and (max-width: 900px)
+    .footer
+        &__title
+            margin-bottom: 20px
+            font-size: 22px
+        &-info
+            display: flex
+            flex-direction: column
+            padding-top: 25px
+            &__list
+                &--mobile
+                    &_hidden
+                        display: none
+            &__title
+                margin-bottom: 19px
+                font-size: 14px
+                cursor: pointer
+@media (min-width: 481px) and (max-width: 767px)
+    .footer
+        &__title
+            margin-bottom: 20px
+            font-size: 22px
+        &-info
+            display: flex
+            flex-direction: column
+            padding-top: 25px
+            &__list
+                &--mobile
+                    &_hidden
+                        display: none
+            &__title
+                margin-bottom: 19px
+                font-size: 14px
+                cursor: pointer
+            &__span
+                font-size: 14px
+@media (min-width: 320px) and (max-width: 480px)
+    .footer
+        &__title
+            margin-bottom: 20px
+            font-size: 22px
+        &-form
+            width: 100%
+        &-info
+            display: flex
+            flex-direction: column
+            padding-top: 25px
+            &__list
+                &--mobile
+                    &_hidden
+                        display: none
+            &__title
+                margin-bottom: 19px
+                font-size: 14px
+                cursor: pointer
+            &__span
+                font-size: 14px

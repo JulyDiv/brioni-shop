@@ -1,8 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
 }
 
 @font-face {
@@ -466,6 +464,104 @@ input:focus {
   }
 }
 
+@media (min-width: 481px) and (max-width: 767px) {
+  .navbar {
+    max-width: 100%;
+    height: 80px;
+  }
+  .navbar-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 16px;
+  }
+  .navbar-button--visibile {
+    display: block;
+  }
+  .navbar-button--hidden {
+    display: none;
+  }
+  .navbar-block {
+    display: none;
+  }
+  .navbar-logo {
+    margin-right: -20px;
+    height: 80px;
+  }
+  .icon {
+    width: 69px;
+  }
+  .icon__select--mobile_hidden, .icon__user--mobile_hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    max-width: 100%;
+    height: 50px;
+  }
+  .navbar-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 16px;
+  }
+  .navbar-button--visibile {
+    display: block;
+  }
+  .navbar-button--hidden {
+    display: none;
+  }
+  .navbar-block {
+    display: none;
+  }
+  .navbar-logo {
+    margin-right: -20px;
+    width: 110px;
+    height: 50px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .icon {
+    width: 69px;
+  }
+  .icon__select--mobile_hidden, .icon__user--mobile_hidden {
+    display: none;
+  }
+}
+
 .footer__span {
   display: block;
   margin: 21px 0;
@@ -487,18 +583,30 @@ input:focus {
 
 .footer-form {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 285px;
+  height: 55px;
+  border: 1px solid #666666;
+}
+
+.footer-form:hover .footer-form__button {
+  background-image: url("../../../public/img/grey-envelope.svg");
 }
 
 .footer-form__input {
-  padding: 18px 68px 18px 24px;
-  width: 285px;
-  height: 55px;
+  padding: 18px 24px;
+  width: 85%;
+  height: 100%;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 19px;
   color: #333333;
-  border: 1px solid #666666;
 }
 
 .footer-form__input::-webkit-input-placeholder {
@@ -533,34 +641,13 @@ input:focus {
   color: rgba(102, 102, 102, 0.55);
 }
 
-.footer-form__image {
-  position: absolute;
-  top: 21px;
-  right: 25px;
-  bottom: 21px;
-  left: 240px;
+.footer-form__button {
   width: 20px;
   height: 13px;
   background-image: url("../../../public/img/footer-form__email.svg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.footer-form__image--grey {
-  display: none;
-}
-
-.footer-form__image--grey_active {
-  display: block;
-}
-
-.footer-form__image--red {
-  display: none;
-}
-
-.footer-form__image--red_active {
-  display: block;
 }
 
 .footer-info {
@@ -570,11 +657,12 @@ input:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 45px 0 0 0;
   width: 100%;
 }
 
 .footer-info__title {
-  margin: 45px 0 41px 0;
+  margin: 0px 0 41px 0;
   font-family: "GTEestiProDisplay-Light";
   color: #333333;
   font-style: normal;
@@ -603,5 +691,101 @@ input:focus {
           justify-content: space-between;
   width: 234px;
   height: 23px;
+}
+
+@media (max-width: 1200px) {
+  .footer-info__title {
+    font-size: 22px;
+  }
+  .footer-info__link {
+    font-size: 14px;
+  }
+  .footer-info__follows {
+    width: 200px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .footer__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .footer-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 25px;
+  }
+  .footer-info__list--mobile_hidden {
+    display: none;
+  }
+  .footer-info__title {
+    margin-bottom: 19px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .footer__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .footer-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 25px;
+  }
+  .footer-info__list--mobile_hidden {
+    display: none;
+  }
+  .footer-info__title {
+    margin-bottom: 19px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .footer-info__span {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .footer__title {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .footer-form {
+    width: 100%;
+  }
+  .footer-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 25px;
+  }
+  .footer-info__list--mobile_hidden {
+    display: none;
+  }
+  .footer-info__title {
+    margin-bottom: 19px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .footer-info__span {
+    font-size: 14px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

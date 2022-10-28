@@ -30,7 +30,7 @@ export const Header = () => {
               </li>
             </div>
 
-            <a className="navbar-logo"></a>
+            <div className="navbar-logo"></div>
 
             <div className="icon">
               <button className="icon-link icon__search icon__search--mobile_visible"></button>

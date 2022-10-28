@@ -19,21 +19,7 @@ export const Footer = () => {
               className="footer-form__input"
               placeholder="Enter e-mail"
             />
-            <img
-              src="img/footer-form__email.svg"
-              alt="e-mail"
-              className="footer-form__image"
-            />
-            <img
-              src="img/grey-envelope.svg"
-              alt="e-mail"
-              className="footer-form__image footer-form__image--grey"
-            />
-            <img
-              src="img/red-envelope.svg"
-              alt="e-mail"
-              className="footer-form__image footer-form__image--red"
-            />
+            <button className="footer-form__button"></button>
           </form>
 
           <div className="footer-info">

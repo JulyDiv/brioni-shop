@@ -114,6 +114,68 @@
             &--mobile
                 &_hidden
                     display: none
+@media (min-width: 481px) and (max-width: 767px)
+    .navbar
+        max-width: 100%
+        height: 80px
+        &-button
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-between
+            padding: 0
+            background-color: inherit
+            border: none
+            cursor: pointer
+            width: 30px
+            height: 16px
+            &--visibile
+                display: block
+            &--hidden
+                display: none
+        &-block
+            display: none
+        &-logo
+            margin-right: -20px
+            height: 80px
+    .icon
+        width: 69px
+        &__select, &__user
+            &--mobile
+                &_hidden
+                    display: none
+@media (min-width: 320px) and (max-width: 480px)
+    .navbar
+        max-width: 100%
+        height: 50px
+        &-button
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-between
+            padding: 0
+            background-color: inherit
+            border: none
+            cursor: pointer
+            width: 30px
+            height: 16px
+            &--visibile
+                display: block
+            &--hidden
+                display: none
+        &-block
+            display: none
+        &-logo
+            margin-right: -20px
+            width: 110px
+            height: 50px
+            +background-image
+    .icon
+        width: 69px
+        &__select, &__user
+            &--mobile
+                &_hidden
+                    display: none
     //     &--active
     //         display: block
     //     &--hidden
