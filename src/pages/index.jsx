@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { Preloader } from "../modules/Preloader/Preloader";
 import { Header } from "../modules/Header/Header";
 import { Home } from "../modules/Home/Home";
+import { Spring } from "../modules/Spring/Spring";
+import { Order } from "../modules/Order/Order";
 import { Footer } from "../modules/Footer/Footer";
 
 export default function HomePage() {
@@ -15,6 +17,8 @@ export default function HomePage() {
       {/* <Preloader /> */}
       <Header />
       <Home />
+      <Spring />
+      <Order />
       <Footer />
     </div>
   );
