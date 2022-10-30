@@ -1,0 +1,27 @@
+.breadcrumb
+    margin-bottom: 43px
+    &__list
+        display: flex
+        align-items: center
+    &__item
+        font-family: "GTEestiProDisplay-Light"
+        color: $text-color2
+        font-style: normal
+        font-weight: 300
+        font-size: 16px
+        line-height: 19px
+        &:last-child
+            color: #000
+        &:not(:last-child)
+            &::after
+                content: '/'
+                margin-right: 4px
+
+// @media (max-width: 1200px)
+// @media (min-width: 768px) and (max-width: 900px)
+// @media (min-width: 481px) and (max-width: 767px)
+@media (min-width: 320px) and (max-width: 480px)
+    .breadcrumb
+        margin-bottom: 20px
+        &__link, &__item
+            font-size: 12px

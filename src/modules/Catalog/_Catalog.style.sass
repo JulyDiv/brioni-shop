@@ -1,0 +1,71 @@
+.catalog
+    padding: 147px 0 100px 0
+    &__button
+        display: block
+        margin: auto
+        width: 280px
+        height: 40px
+    &__button-light
+        display: none
+    &-text
+        margin: 0 0 93px 0
+        max-width: 352px
+    &-assortment
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 50px 0 0 0
+        &__jacket
+            margin-bottom: 46px
+        &__image
+            margin-bottom: 17px
+            width: 370px
+            max-height: 450px
+            cursor: pointer
+        &__button
+            width: 18px
+            height: 15px
+            background-image: url("../../../public/img/select-catalog.svg")
+            +background-image
+        &__info
+            display: flex
+            justify-content: space-between
+            margin-bottom: 12px
+        &__text
+            font-family: "GTEestiProDisplay-Light"
+            font-style: normal
+            color: $text-color3
+            font-weight: 350
+            font-size: 16px
+            line-height: 19px
+        &__price
+            color: $text-color2
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+
+// @media (max-width: 1200px)
+// @media (min-width: 768px) and (max-width: 900px)
+// @media (min-width: 481px) and (max-width: 767px)
+@media (min-width: 320px) and (max-width: 480px)
+    .catalog
+        padding-top: 73px
+        &-text
+            margin-bottom: 46px
+            font-size: 14px
+        // &__button-light
+        //     display: flex
+        //     width: 100%
+        // &__character-button
+        //     &:hover
+        //         background-color: rgba(38, 38, 38, 0.1)
+        &__button
+            width: 300px
+        &-assortment
+            max-width: 100%
+            &__jacket
+                max-width: 100%
+                &--mobile
+                    &_visible
+                        display: none

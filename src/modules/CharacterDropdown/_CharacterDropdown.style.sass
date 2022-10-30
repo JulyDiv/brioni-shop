@@ -1,0 +1,43 @@
+.character
+    position: relative
+    &-dropdown
+        position: absolute
+        top: 45px
+        z-index: 0
+        padding: 25px 0px 0px 25px
+        width: 260px
+        background-color: #fff
+        border: 1px solid #E5E5E5
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09)
+        animation: dropdownList 0.3s ease-in 1 both
+        &__color
+            left: 0px
+        &__size
+            left: 88px
+        &__sort
+            right: 0
+        &__option-list
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+        &__option-item
+            display: flex
+        &__input
+            position: relative
+            margin: 0 20px 25px 0
+            width: 17px
+            height: 17px
+            background-color: #fff
+            border: 1px solid #E5E5E5
+            cursor: pointer
+            appearance: none
+            &--active
+                background-color: #000
+
+@keyframes dropdownList
+    0%
+        opacity: 0
+        transform: translateY(-30px)
+    100%
+        opacity: 1
+        transform: translateY(0px)

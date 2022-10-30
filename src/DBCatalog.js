@@ -4,7 +4,6 @@ const dbCatalog = [
     name: "Travel jacket in cashmere and cotton",
     price: "€ 1.379,51",
     img: "img/jacket-1.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -12,7 +11,6 @@ const dbCatalog = [
     name: "Escorial Wool Blazer",
     price: "€ 1.244,27",
     img: "img/jacket-2.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -20,7 +18,6 @@ const dbCatalog = [
     name: "Sea Island Cotton Jacket",
     price: "€ 973,78",
     img: "img/jacket-3.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -28,7 +25,6 @@ const dbCatalog = [
     name: "Super Plume jacket made of flannel wool",
     price: "€ 865,58",
     img: "img/jacket-4.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -36,7 +32,6 @@ const dbCatalog = [
     name: "Super Plume jacket in cotton corduroy",
     price: "€ 1.803,27",
     img: "img/jacket-5.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -44,7 +39,6 @@ const dbCatalog = [
     name: "Virgilio jacket in silk and wool",
     price: "€ 4.147,54",
     img: "img/jacket-6.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -52,7 +46,6 @@ const dbCatalog = [
     name: "Natural wool travel jacket",
     price: "€ 3.786,88",
     img: "img/jacket-7.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -60,7 +53,6 @@ const dbCatalog = [
     name: "Ravello jacket in cashmere and silk",
     price: "€ 4.012,29",
     img: "img/jacket-8.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
   {
@@ -68,7 +60,6 @@ const dbCatalog = [
     name: "Ravello jacket in sustainable cashmere",
     price: "€ 4.553,27",
     img: "img/jacket-9.png",
-    imgIcon: "img/select-catalog.svg",
     like: false,
   },
 ];

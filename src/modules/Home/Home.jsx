@@ -8,7 +8,7 @@ export const Home = () => {
           <div className="home-info__block">
             <h1 className="home-info__title">
               Discover your personal
-              <Link href="#" className="home-info__link">
+              <Link href="/catalog" className="home-info__link">
                 {" "}Brioni
               </Link>
             </h1>
