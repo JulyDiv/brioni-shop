@@ -666,9 +666,6 @@ input:focus {
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .home {
-    padding-top: 50px;
-  }
   .home-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -868,11 +865,11 @@ input:focus {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding-top: 50px;
     width: 100%;
     height: 600px;
   }
   .info-block {
-    padding: 50px 0;
     width: 80% !important;
     height: 40% !important;
     -webkit-box-ordinal-group: 0;
@@ -1039,6 +1036,9 @@ input:focus {
 }
 
 @media (min-width: 768px) and (max-width: 900px) {
+  .footer {
+    padding-top: 50px;
+  }
   .footer__title {
     margin-bottom: 20px;
     font-size: 22px;
@@ -1064,6 +1064,9 @@ input:focus {
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
+  .footer {
+    padding-top: 50px;
+  }
   .footer__title {
     margin-bottom: 20px;
     font-size: 22px;
@@ -1092,6 +1095,9 @@ input:focus {
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
+  .footer {
+    padding-top: 50px;
+  }
   .footer__title {
     margin-bottom: 20px;
     font-size: 22px;
