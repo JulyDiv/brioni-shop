@@ -4,7 +4,7 @@ export const CharacterMedia = () => {
     return (
         <>
         <div class="character-media">
-    <span class="character-media__span">Color</span>
+    {/* <span class="character-media__span">Color</span>
     <div class="character-media__block-color">
     <div class="character-media__block-item">
         <input class="character-media__input" type="checkbox">
@@ -42,7 +42,6 @@ export const CharacterMedia = () => {
         <label class="character-media__label">Grey</label>
     </div>
     </div>
-    <!-- /.character-media__block -->
     <div class="character-media__line"></div>
 
     <span class="character-media__span">Size</span>
@@ -118,7 +117,7 @@ export const CharacterMedia = () => {
             <div class="character-sort__checkbox"></div>
             <label class="character-sort__label">Featured</label>
         </div>
-    </div>
+    </div> */}
 
 </div>
 
