@@ -63,12 +63,12 @@ export const CardModal = ({ isOpenCard }) => {
 
               <span className="card-info__choose">Choose your color</span>
               <div className="card-info__color">
-                <div className="card-info__item card-info__item--grey"></div>
-                <div className="card-info__item card-info__item--black"></div>
+                <div className="card-info__item"></div>
+                <div className="card-info__item"></div>
               </div>
               <div className="card-info__color-name">
                 {isOpenCard.color.map((item, id) => (
-                  <span className="card-info__name" key={id}>
+                  <span className="card-info__name-item" key={id}>
                     {item}
                   </span>
                 ))}
@@ -78,7 +78,7 @@ export const CardModal = ({ isOpenCard }) => {
             </div>
             <SizeItem {...size} />
             <button className="button-dark card-info__button" type="submit">
-              ADD TO CART
+              Add to card
             </button>
             <p className="card-info__text">
               The Brioni iconic {isOpenCard.name} a staple from our Archive, has

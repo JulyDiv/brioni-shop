@@ -47,10 +47,10 @@
 
     &-logo
         margin-right: 106px
-        width: 200px
-        height: 100px
-        background-image: url("../../../public/img/navbar-logo.svg")
-        +background-image
+        // width: 100%
+        height: 100%
+        // background-image: url("../../../public/img/navbar-logo.svg")
+        // +background-image-cover
 .icon
     position: relative
     display: flex
@@ -86,7 +86,7 @@
 
 @media (max-width: 1200px)
     .container
-        max-width: 90%
+        width: 90%
 
 @media (min-width: 768px) and (max-width: 900px)
     .navbar
@@ -110,7 +110,6 @@
             display: none
         &-logo
             margin-right: -20px
-            height: 80px
     .icon
         width: 69px
         &__select, &__user
@@ -119,7 +118,7 @@
                     display: none
 @media (min-width: 481px) and (max-width: 767px)
     .navbar
-        height: 80px
+        height: 60px
         &-button
             display: flex
             flex-direction: column
@@ -139,7 +138,7 @@
             display: none
         &-logo
             margin-right: -20px
-            height: 80px
+            height: 75px
     .icon
         width: 69px
         &__select, &__user
@@ -168,9 +167,9 @@
             display: none
         &-logo
             margin-right: -20px
-            width: 110px
-            height: 50px
-            +background-image
+            height: 62px
+            // width: 110px
+            // +background-image
     .icon
         width: 69px
         &__select, &__user

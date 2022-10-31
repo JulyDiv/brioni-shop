@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
 // import { useState } from "react";
@@ -31,7 +32,8 @@ export const Header = () => {
               </Link>
             </div>
 
-            <div className="navbar-logo"></div>
+            {/* <div className="navbar-logo"></div> */}
+            <img src="img/navbar-logo.svg" alt="Logo: Brioni" className="navbar-logo" />
 
             <div className="icon">
               <button className="icon-link icon__search icon__search--mobile_visible"></button>

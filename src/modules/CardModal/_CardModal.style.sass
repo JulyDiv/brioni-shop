@@ -3,10 +3,10 @@
     top: 208px
     right: 0
     left: 0
-    // padding-bottom: 94px
     background-color: white
     width: 100%
     height: auto
+    animation: cardModal 0.5s ease
     &-wrapper
         padding-top: 50px
         display: flex
@@ -83,31 +83,36 @@
         &__color
             display: flex
             align-items: center
-            justify-content: space-between
-            width: 28%
+            width: 100%
         &__item
+            margin-right: 16%
             width: 27px
             height: 27px
             border-radius: 50%
             border: 1px solid $text-color4
             outline: 1px solid #000
             cursor: pointer
+            &:last-child
+                margin-right: 0px
             &:hover
                 outline: 1px solid white
-            &--grey
-                background-color: $text-color2
-            &--black
-                background-color: #000
+            // &--grey
+            //     background-color: $text-color2
+            // &--black
+            //     background-color: #000
         &__color-name
             display: flex
-            justify-content: space-between
-            width: 28%
-        &__name
+            align-items: center
+            width: 100%
+        &__name-item
+            margin-right: 7%
             color: $text-color3
             font-style: normal
             font-weight: 300
             font-size: 16px
             line-height: 19px
+            &:last-child
+                margin-right: 0px
         &__size
             display: flex
             flex-direction: column
@@ -155,3 +160,34 @@
             text-decoration: underline
             &:hover
                 text-decoration: none
+
+@keyframes cardModal
+    0%
+        transform: scale(0)
+    100%
+        transform: scale(1)
+// @media (max-width: 1200px)
+// @media (min-width: 768px) and (max-width: 900px)
+// @media (min-width: 481px) and (max-width: 767px)
+@media (min-width: 320px) and (max-width: 480px)
+    .card
+        top: 110px
+        &-wrapper
+            flex-direction: column
+            width: 100%
+        &-jackets
+            display: none
+        &__select
+            flex-direction: column
+        &-info
+            width: 100%
+            // height: 900px
+            &__line, &__color-block, &__size
+                display: none
+            &__button-light
+                display: flex
+                width: 100%
+            &__button
+                width: 100%
+            &__text
+                text-align: center

@@ -57,7 +57,6 @@ export const Character = () => {
           ></button>
         </div>
       </div>
-
       {characterDropdownSort && (
         <div className="character-dropdown character-dropdown__sort">
           <CharacterDropdown itemList={dbCharacter.sort} />

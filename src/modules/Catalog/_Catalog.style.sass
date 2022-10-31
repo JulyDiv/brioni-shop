@@ -20,10 +20,10 @@
             margin-bottom: 46px
         &__image
             margin-bottom: 17px
-            width: 370px
-            max-height: 450px
             cursor: pointer
         &__button
+            display: flex
+            flex-shrink: 0
             width: 18px
             height: 15px
             background-image: url("../../../public/img/select-catalog.svg")
@@ -33,7 +33,7 @@
             justify-content: space-between
             margin-bottom: 12px
         &__text
-            font-family: "GTEestiProDisplay-Light"
+            font-family: $font-light
             font-style: normal
             color: $text-color3
             font-weight: 350
@@ -47,8 +47,22 @@
             line-height: 19px
 
 // @media (max-width: 1200px)
-// @media (min-width: 768px) and (max-width: 900px)
-// @media (min-width: 481px) and (max-width: 767px)
+@media (min-width: 768px) and (max-width: 900px)
+    .catalog
+        &-assortment
+            &__jacket
+                width: 45%
+@media (min-width: 481px) and (max-width: 767px)
+    .catalog
+        padding: 83px 0 50px 0
+        &-text
+            font-size: 14px
+        &-assortment
+            &__jacket
+                margin-bottom: 36px
+                width: 45%
+            &__text, &__price
+                font-size: 14px
 @media (min-width: 320px) and (max-width: 480px)
     .catalog
         padding-top: 73px
@@ -62,11 +76,11 @@
         //     &:hover
         //         background-color: rgba(38, 38, 38, 0.1)
         &__button
-            width: 300px
+            width: 100%
         &-assortment
-            max-width: 100%
             &__jacket
-                max-width: 100%
-                &--mobile
-                    &_visible
-                        display: none
+                width: 100%
+            &__image
+                width: 100%
+                // &_visible
+                //     display: none
