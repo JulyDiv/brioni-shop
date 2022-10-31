@@ -32,7 +32,6 @@ export const Header = () => {
               </Link>
             </div>
 
-            {/* <div className="navbar-logo"></div> */}
             <img src="img/navbar-logo.svg" alt="Logo: Brioni" className="navbar-logo" />
 
             <div className="icon">

@@ -5,24 +5,26 @@
     left: 0
     background-color: white
     width: 100%
-    height: auto
+    height: 98%
     animation: cardModal 0.5s ease
     &-wrapper
         padding-top: 50px
         display: flex
         justify-content: space-between
+        align-items: flex-start
     &-jackets
         display: flex
         justify-content: space-between
         align-items: center
         width: 700px
-        height: 630px
+        // height: 630px
     &-choice
         display: flex
         flex-direction: column
         justify-content: space-between
+        row-gap: 30px
         width: 75px
-        height: 570px
+        // height: 570px
         &__image
             width: 75px
             height: 90px
@@ -166,9 +168,111 @@
         transform: scale(0)
     100%
         transform: scale(1)
-// @media (max-width: 1200px)
-// @media (min-width: 768px) and (max-width: 900px)
-// @media (min-width: 481px) and (max-width: 767px)
+@media (max-width: 1200px)
+    .card
+        &-jackets
+            // align-items: flex-start
+            width: 55%
+        &-choice
+            row-gap: 10px
+            // width: 90%
+            height: 100%
+            &__image
+                width: 90%
+                height: 100%
+        &-main
+            width: 95%
+            height: auto
+        &-info
+            width: 40%
+@media (min-width: 768px) and (max-width: 900px)
+    .card
+        top: 210px
+        &-jackets
+            flex-direction: column-reverse
+            justify-content: flex-end
+            width: 50%
+        &-choice
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: flex-start
+            column-gap: 6.5%
+            width: 100%
+            height: auto
+            &__image
+                margin-bottom: 20px
+                width: 29%
+        &-main
+            margin-bottom: 20px
+            width: 100%
+            height: auto
+        &-info
+            width: 40%
+            &__line
+                width: 100%
+            &__title
+                font-size: 1em
+            &__price
+                font-size: 1em
+            &__color
+                width: 78%
+                height: 20%
+                &-block, &-name
+                    width: 100%
+            &__size
+                width: 90%
+                &-item
+                    font-size: 13px
+            &__text, &__choose, &__item, &__articl, &__link
+                font-size: 13px
+                line-height: 24px
+            &__button
+                width: 100%
+@media (min-width: 481px) and (max-width: 767px)
+    .card
+        top: 124px
+        &-jackets
+            flex-direction: column-reverse
+            justify-content: flex-end
+            width: 50%
+        &-choice
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: flex-start
+            column-gap: 6.5%
+            width: 100%
+            height: auto
+            &__image
+                margin-bottom: 20px
+                width: 29%
+        &-main
+            margin-bottom: 20px
+            width: 100%
+            height: auto
+        &-info
+            width: 40%
+            &__line
+                width: 100%
+            &__title
+                font-size: 1em
+            &__price
+                font-size: 1em
+            &__color
+                width: 78%
+                height: 20%
+                &-block, &-name
+                    width: 100%
+            &__size
+                width: 90%
+                &-item
+                    font-size: 13px
+            &__text, &__choose, &__item, &__articl, &__link
+                font-size: 13px
+                line-height: 24px
+            &__button
+                width: 100%
 @media (min-width: 320px) and (max-width: 480px)
     .card
         top: 110px
@@ -181,12 +285,11 @@
             flex-direction: column
         &-info
             width: 100%
-            // height: 900px
             &__line, &__color-block, &__size
                 display: none
-            &__button-light
-                display: flex
-                width: 100%
+            // &__button-light
+            //     display: flex
+            //     width: 100%
             &__button
                 width: 100%
             &__text

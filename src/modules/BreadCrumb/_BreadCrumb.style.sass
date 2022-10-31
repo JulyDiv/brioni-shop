@@ -3,6 +3,7 @@
     &__list
         display: flex
         align-items: center
+        flex-wrap: wrap
     &__item
         font-family: $font-light
         color: $text-color2
@@ -22,11 +23,10 @@
 // @media (min-width: 768px) and (max-width: 900px)
 @media (min-width: 481px) and (max-width: 767px)
     .breadcrumb
-        margin-bottom: 20px
+        // margin-bottom: 20px
         &__link, &__item
             font-size: 12px
 @media (min-width: 320px) and (max-width: 480px)
-    // .breadcrumb
-    //     margin-bottom: 20px
-    //     &__link, &__item
-    //         font-size: 12px
+    .breadcrumb
+        &__link, &__item
+            font-size: 12px
