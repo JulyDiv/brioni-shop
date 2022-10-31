@@ -4,13 +4,15 @@ import dbCatalog from "../../DBCatalog";
 import { CatalogItem } from "../../components/CatalogItem";
 import { BreadCrumb } from "../BreadCrumb/BreadCrumb";
 import { Character } from "../Character/Character";
+import { CardModal } from "../CardModal/CardModal";
 
 export const Catalog = () => {
   const [itemList, setItemList] = useState(dbCatalog);
+  const [isOpenCard, setIsOpenCard] = useState(false);
   return (
     <section className="catalog">
       <div className="container">
-        <BreadCrumb />
+        <BreadCrumb isOpenCard={isOpenCard} setIsOpenCard={setIsOpenCard} />
         <p className="catalog-text">
           Models for all occasions: from impeccably tailored classic blazers to
           more relaxed blazers for relax.
@@ -19,10 +21,13 @@ export const Catalog = () => {
         <div className="line catalog__line"></div>
         <div className="catalog-assortment">
           {itemList.map((item, id) => (
-            <CatalogItem key={id} item={item} />
+            <CatalogItem key={id} item={item} setIsOpenCard={setIsOpenCard} />
           ))}
         </div>
-        <button class="button-dark catalog__button">Show more</button>
+        <button className="button-dark catalog__button">Show more</button>
+        {isOpenCard && (
+          <CardModal isOpenCard={isOpenCard} />
+        )}
       </div>
     </section>
   );

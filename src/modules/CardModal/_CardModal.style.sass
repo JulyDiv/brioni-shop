@@ -1,0 +1,157 @@
+.card
+    position: absolute
+    top: 208px
+    right: 0
+    left: 0
+    // padding-bottom: 94px
+    background-color: white
+    width: 100%
+    height: auto
+    &-wrapper
+        padding-top: 50px
+        display: flex
+        justify-content: space-between
+    &-jackets
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 700px
+        height: 630px
+    &-choice
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 75px
+        height: 570px
+        &__image
+            width: 75px
+            height: 90px
+            border: 1px solid $bg-color3
+            cursor: pointer
+            opacity: 0.5
+            &:hover
+                border: 1px solid $text-color2
+                opacity: 1
+    &-main
+        width: 575px
+        height: 630px
+    &-info
+        width: 447px
+        height: 713px
+        &__select
+            display: flex
+            justify-content: space-between
+            margin-bottom: 16px
+            cursor: pointer
+        &__articl
+            color: $text-color2
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+        &__title
+            margin-bottom: 14px
+            font-family: $font-light
+            color: $text-color3
+            font-style: normal
+            font-weight: 350
+            font-size: 28px
+            line-height: 32px
+            letter-spacing: 0.02em
+        &__price
+            display: inline-block
+            margin-bottom: 20px
+            font-family: $font-light
+            color: $text-color3
+            font-style: normal
+            font-weight: 350
+            font-size: 20px
+            line-height: 23px
+            letter-spacing: 0.03em
+        &__color-block
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            margin-bottom: 20px
+            height: 153px
+        &__choose
+            color: $text-color3
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+        &__color
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 28%
+        &__item
+            width: 27px
+            height: 27px
+            border-radius: 50%
+            border: 1px solid $text-color4
+            outline: 1px solid #000
+            cursor: pointer
+            &:hover
+                outline: 1px solid white
+            &--grey
+                background-color: $text-color2
+            &--black
+                background-color: #000
+        &__color-name
+            display: flex
+            justify-content: space-between
+            width: 28%
+        &__name
+            color: $text-color3
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+        &__size
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            margin-bottom: 50px
+            width: 314px
+            height: 78px
+        &__size-block
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-wrap: wrap
+        &__size-input
+            display: none
+            cursor: pointer
+        &__size-label
+            position: relative
+            color: $text-color2
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+            cursor: pointer
+            &:after
+                content: ""
+                display: block
+                height: 1px
+                width: 0%
+                background-color: $text-color2
+                transition: width 0.2s ease-in-out
+            &:hover:after
+                width: 100%
+        &__button
+            margin-bottom: 47px
+            width: 200px
+            height: 50px
+        &__text, &__link-button
+            color: $text-color3
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 23px
+        &__link-button
+            font-family: $font-thin
+            text-decoration: underline
+            &:hover
+                text-decoration: none

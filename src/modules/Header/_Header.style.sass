@@ -23,6 +23,7 @@
         justify-content: space-between
         align-items: center
         width: 276px
+        animation: 2s neon-2 alternate-reverse infinite
         &__link
             color: $text-color1
             font-style: normal
@@ -30,6 +31,8 @@
             font-size: 16px
             line-height: 19px
             letter-spacing: 0.03em
+            &:first-child
+                animation: 2s neon alternate-reverse infinite
             &:hover
                 color: #fff
             &:after
@@ -41,6 +44,7 @@
                 transition: width 0.3s ease-in-out
             &:hover:after
                 width: 100%
+
     &-logo
         margin-right: 106px
         width: 200px
@@ -73,6 +77,12 @@
         background-image: url("../../../public/img/bag-icon.svg")
         &:hover
             background-image: url("../../../public/img/bag-icon-hover.svg")
+
+@keyframes neon
+    from
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #BFE2FF
+    to
+        text-shadow: 0 0 20px #BFE2FF, 0 0 -25px #BFE2FF, 0 0 40px #BFE2FF, 0 0 50px #BFE2FF, 0 0 800px #BFE2FF
 
 @media (max-width: 1200px)
     .container

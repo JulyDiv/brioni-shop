@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 // import { useState } from "react";
 
 export const Header = () => {
@@ -19,15 +20,15 @@ export const Header = () => {
             {/* <button className="menu-close"></button> */}
 
             <div className="navbar-block">
-              <li className="navbar-block__item">
-                  <a className="navbar-block__link">Assortment</a>
-              </li>
-              <li className="navbar-block__item">
-                  <a className="navbar-block__link">Bespoke</a>
-              </li>
-              <li className="navbar-block__item">
-                  <a className="navbar-block__link">Explore</a>
-              </li>
+              <Link href="/catalog" className="neon navbar-block__link">
+                Assortment
+              </Link>
+              <Link href="#" className="navbar-block__link">
+                Bespoke
+              </Link>
+              <Link href="#" className="navbar-block__link">
+                Explore
+              </Link>
             </div>
 
             <div className="navbar-logo"></div>

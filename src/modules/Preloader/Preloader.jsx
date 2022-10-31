@@ -13,10 +13,10 @@ export const Preloader = () => {
   return (
     <>
       {isLoading ? (
-        <div class="preloader">
-          <div class="preloader-wrapper">
-            <img class="preloader__img" src="img/preloader-brioni.png" alt="" />
-            <span class="preloader__span">Continental Style</span>
+        <div className="preloader">
+          <div className="preloader-wrapper">
+            <img className="preloader__img" src="img/preloader-brioni.png" alt="Image: Brioni" />
+            <span className="preloader__span">Continental Style</span>
           </div>
         </div>
       ) : (

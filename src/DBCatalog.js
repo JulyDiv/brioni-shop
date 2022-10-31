@@ -1,16 +1,27 @@
 const dbCatalog = [
   {
     id: 1,
+    articl: "Product Code UJIG0LO16031100",
     name: "Travel jacket in cashmere and cotton",
     price: "€ 1.379,51",
     img: "img/jacket-1.png",
+    size: [44, 46, 48, 50, 52, 54, 56, 58, 60],
+    color: ["Dark grey", "Black"],
     like: false,
+    choice1: "img/card-choice-1.png",
+    choice2: "img/card-choice-2.png",
+    choice3: "img/card-choice-3.png",
+    choice4: "img/card-choice-4.png",
+    choice5: "img/card-choice-5.png",
   },
   {
     id: 2,
+    articl: "Product Code GJIG0LO96031200",
     name: "Escorial Wool Blazer",
     price: "€ 1.244,27",
     img: "img/jacket-2.png",
+    size: [44, 46, 48, 50, 52, 54, 56, 58, 60],
+    color: ["Dark blue", "Black"],
     like: false,
   },
   {
