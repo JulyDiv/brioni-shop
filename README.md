@@ -1,7 +1,10 @@
 ### Brioni (интернет-магазин)
 
 #### Ссылка на макет Figma:
-https://www.figma.com/file/UNz53b7G5OEYUjAdUJvMw3/Untitled?node-id=0%3A1
+https://www.figma.com/file/FnREKYFK6299uo1skZRUXz/Untitled
+
+#### Ссылка на деплой:
+https://helpful-begonia-10bb6c.netlify.app
 
 <img width="1600" alt="MainBrioni" src="https://user-images.githubusercontent.com/99066910/190965836-ec85980e-6718-4ec2-9670-60d79dc521a9.png">
 
