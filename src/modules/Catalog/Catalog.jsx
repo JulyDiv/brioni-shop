@@ -5,6 +5,8 @@ import { CatalogItem } from "../../components/CatalogItem";
 import { BreadCrumb } from "../BreadCrumb/BreadCrumb";
 import { Character } from "../Character/Character";
 import { CardModal } from "../CardModal/CardModal";
+import { SwiperCardMobile } from "../SwiperCardMobile/SwiperCardMobile";
+import { CharacterButtonMobile } from "../../components/CharacterButtonMobile";
 
 export const Catalog = () => {
   const [itemList, setItemList] = useState(dbCatalog);
@@ -19,15 +21,18 @@ export const Catalog = () => {
         </p>
         <Character />
         <div className="line catalog__line"></div>
+        <div className="catalog-mobile">
+          <CharacterButtonMobile name="Filter" />
+          <CharacterButtonMobile name="Sort" />
+        </div>
         <div className="catalog-assortment">
           {itemList.map((item, id) => (
             <CatalogItem key={id} item={item} setIsOpenCard={setIsOpenCard} />
           ))}
         </div>
         <button className="button-dark catalog__button">Show more</button>
-        {isOpenCard && (
-          <CardModal isOpenCard={isOpenCard} />
-        )}
+        {/* <SwiperCardMobile /> */}
+        {isOpenCard && <CardModal isOpenCard={isOpenCard} />}
       </div>
     </section>
   );

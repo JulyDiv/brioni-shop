@@ -1,6 +1,6 @@
 .complete
     &-wrapper
-        padding-top: 93px
+        padding: 93px 0 100px 0
     &__title
         margin-bottom: 40px
         font-family: $font-light
@@ -10,3 +10,16 @@
         font-size: 40px
         line-height: 46px
         letter-spacing: 0.02em
+
+@media (min-width: 481px) and (max-width: 767px)
+    .complete
+        &__title
+            font-size: 22px
+            line-height: 26px
+            letter-spacing: 0.03em
+@media (min-width: 320px) and (max-width: 480px)
+    .complete
+        &__title
+            font-size: 22px
+            line-height: 26px
+            letter-spacing: 0.03em

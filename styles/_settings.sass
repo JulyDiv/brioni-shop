@@ -18,6 +18,7 @@ body
 
 img
     max-width: 100%
+    // width: 100%
     height: auto
 
 h1, h2, h3, h4, h5, p
@@ -73,6 +74,19 @@ input:focus
         color: $text-color2
         border: 1px solid $text-color2
         background-color: $bg-color4
+
+.button-light
+    padding: 12px 0
+    background-color: inherit
+    border: 1px solid $bg-color3
+    color: $text-color3
+    // font-family: $font-light
+    font-style: normal
+    // font-weight: 350
+    font-size: 14px
+    line-height: 16px
+    &:hover
+        background-color: rgba(38, 38, 38, 0.1)
 
 .checkbox
     &--active

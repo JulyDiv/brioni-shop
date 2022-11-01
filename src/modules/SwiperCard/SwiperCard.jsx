@@ -14,8 +14,8 @@ export const SwiperCard = ({ swiperCard }) => {
       scrollbar={{ hide: false, dragSize: 365 }}
       className="swiper-card"
       breakpoints={{
-        640: {
-          slidesPerView: 2,
+        767: {
+          slidesPerView: 3,
           spaceBetween: 40,
           scrollbar: {
             el: ".swiper-scrollbar",
@@ -23,13 +23,23 @@ export const SwiperCard = ({ swiperCard }) => {
             dragSize: 300,
           },
         },
-        840: {
-          //   width: 640,
-          slidesPerView: 1,
-        },
-        768: {
-          //   width: 768,
+        480: {
           slidesPerView: 2,
+          spaceBetween: 30,
+          scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+            dragSize: 300,
+          },
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+            dragSize: 100,
+          },
         },
       }}
     >
@@ -38,7 +48,11 @@ export const SwiperCard = ({ swiperCard }) => {
           <img src={img} className="swiper-card__image" alt="Image: Jacket" />
           <div className="swiper-card__select">
             <span className="swiper-card__text">{name}</span>
-            <img src="img/select-catalog.svg" alt="Icon: select" />
+            <img
+              src="img/select-catalog.svg"
+              className="swiper-card__icon"
+              alt="Icon: select"
+            />
           </div>
           <span className="swiper-card__price">{price}</span>
         </SwiperSlide>

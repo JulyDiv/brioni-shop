@@ -2,7 +2,9 @@
 import React from "react";
 import { SizeItem } from "../../components/SizeItem";
 import { useSize } from "../../hooks/useSize";
+import { CardModalMobile } from "../CardModalMobile/CardModalMobile";
 import { Complete } from "../Complete/Complete";
+import { SwiperCardMobile } from "../SwiperCardMobile/SwiperCardMobile";
 
 export const CardModal = ({ isOpenCard }) => {
   const size = useSize(isOpenCard);
@@ -74,10 +76,13 @@ export const CardModal = ({ isOpenCard }) => {
                   </span>
                 ))}
               </div>
-
+              {/* <SwiperCardMobile /> */}
               <div className="line card-info__line"></div>
             </div>
             <SizeItem {...size} />
+            <div className="card-info__mobile">
+              <CardModalMobile />
+            </div>
             <button className="button-dark card-info__button" type="submit">
               Add to card
             </button>
