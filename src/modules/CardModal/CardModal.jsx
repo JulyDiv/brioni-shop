@@ -2,9 +2,10 @@
 import React from "react";
 import { SizeItem } from "../../components/SizeItem";
 import { useSize } from "../../hooks/useSize";
+import { Complete } from "../Complete/Complete";
 
 export const CardModal = ({ isOpenCard }) => {
-    const size = useSize(isOpenCard);
+  const size = useSize(isOpenCard);
   return (
     <section key={isOpenCard.id} className="card">
       <div className="container">
@@ -91,6 +92,7 @@ export const CardModal = ({ isOpenCard }) => {
             </p>
           </div>
         </div>
+        <Complete />
       </div>
     </section>
   );
