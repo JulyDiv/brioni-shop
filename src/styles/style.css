@@ -1675,7 +1675,6 @@ input:focus {
 
 .card-info {
   width: 447px;
-  height: 713px;
 }
 
 .card-info__mobile {
@@ -2111,10 +2110,6 @@ input:focus {
   }
   .card-info__button {
     width: 100%;
-  }
-  .card-info__text {
-    display: none;
-    text-align: center;
   }
 }
 
