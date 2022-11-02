@@ -1,11 +1,13 @@
 import React from "react";
 import { CharacterMobile } from "../CharacterMobile/CharacterMobile";
 import { SwiperCardMobile } from "../SwiperCardMobile/SwiperCardMobile";
+import { useChoice } from "../../hooks/useChoice";
 
-export const CardModalMobile = () => {
+export const CardModalMobile = ({ isOpenCard }) => {
+  const choice = useChoice(isOpenCard);
   return (
     <>
-      <SwiperCardMobile />
+      <SwiperCardMobile isOpenCard={isOpenCard} {...choice} />
       <CharacterMobile />
     </>
   );

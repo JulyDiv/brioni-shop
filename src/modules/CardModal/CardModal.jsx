@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { ChoiceItem } from "../../components/ChoiceItem";
 import { SizeItem } from "../../components/SizeItem";
 import { useSize } from "../../hooks/useSize";
+import { useChoice } from "../../hooks/useChoice";
 import { CardModalMobile } from "../CardModalMobile/CardModalMobile";
 import { Complete } from "../Complete/Complete";
-import { SwiperCardMobile } from "../SwiperCardMobile/SwiperCardMobile";
 
 export const CardModal = ({ isOpenCard }) => {
   const size = useSize(isOpenCard);
+  const choice = useChoice(isOpenCard);
   return (
     <section key={isOpenCard.id} className="card">
       <div className="container">
@@ -15,33 +17,7 @@ export const CardModal = ({ isOpenCard }) => {
 
         <div className="card-wrapper">
           <div className="card-jackets">
-            <div className="card-choice">
-              <img
-                className="card-choice__image"
-                src={isOpenCard.choice1}
-                alt="Photo: jacket"
-              />
-              <img
-                className="card-choice__image"
-                src={isOpenCard.choice2}
-                alt="Photo: jacket"
-              />
-              <img
-                className="card-choice__image"
-                src={isOpenCard.choice3}
-                alt="Photo: jacket"
-              />
-              <img
-                className="card-choice__image"
-                src={isOpenCard.choice4}
-                alt="Photo: jacket"
-              />
-              <img
-                className="card-choice__image"
-                src={isOpenCard.choice5}
-                alt="Photo: jacket"
-              />
-            </div>
+            <ChoiceItem {...choice} />
 
             <img
               className="card-main"
@@ -53,7 +29,11 @@ export const CardModal = ({ isOpenCard }) => {
           <div className="card-info">
             <div className="card-info__select">
               <span className="card-info__articl">{isOpenCard.articl}</span>
-              <img src="img/select-catalog.svg" alt="Icon: select" />
+              <img
+                src="img/select-catalog.svg"
+                className="card-info__icon"
+                alt="Icon: select"
+              />
             </div>
 
             <div className="card-info__name">
@@ -66,8 +46,8 @@ export const CardModal = ({ isOpenCard }) => {
 
               <span className="card-info__choose">Choose your color</span>
               <div className="card-info__color">
-                <div className="card-info__item"></div>
-                <div className="card-info__item"></div>
+                <button className="card-info__item"></button>
+                <button className="card-info__item"></button>
               </div>
               <div className="card-info__color-name">
                 {isOpenCard.color.map((item, id) => (
@@ -81,7 +61,7 @@ export const CardModal = ({ isOpenCard }) => {
             </div>
             <SizeItem {...size} />
             <div className="card-info__mobile">
-              <CardModalMobile />
+              <CardModalMobile isOpenCard={isOpenCard} />
             </div>
             <button className="button-dark card-info__button" type="submit">
               Add to card

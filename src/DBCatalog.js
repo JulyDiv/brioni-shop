@@ -8,11 +8,13 @@ const dbCatalog = [
     size: [44, 46, 48, 50, 52, 54, 56, 58, 60],
     color: ["Dark grey", "Black"],
     like: false,
-    choice1: "img/card-choice-1.png",
-    choice2: "img/card-choice-2.png",
-    choice3: "img/card-choice-3.png",
-    choice4: "img/card-choice-4.png",
-    choice5: "img/card-choice-5.png",
+    choice: [
+      "img/card-choice-1.png",
+      "img/card-choice-2.png",
+      "img/card-choice-3.png",
+      "img/card-choice-4.png",
+      "img/card-choice-5.png",
+    ],
   },
   {
     id: 2,

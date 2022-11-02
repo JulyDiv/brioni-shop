@@ -91,6 +91,12 @@ input:focus {
   background-color: #F5F5F5;
 }
 
+.button-dark:active {
+  color: #666666;
+  border: 1px solid #666666;
+  background-color: #F5F5F5;
+}
+
 .button-light {
   padding: 12px 0;
   background-color: inherit;
@@ -102,6 +108,10 @@ input:focus {
 }
 
 .button-light:hover {
+  background-color: rgba(38, 38, 38, 0.1);
+}
+
+.button-light:active {
   background-color: rgba(38, 38, 38, 0.1);
 }
 
@@ -1228,7 +1238,7 @@ input:focus {
   padding: 147px 0 100px 0;
 }
 
-.catalog__mobile {
+.catalog-mobile {
   display: none;
 }
 
@@ -1679,6 +1689,9 @@ input:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-bottom: 16px;
   cursor: pointer;
 }
@@ -1689,6 +1702,10 @@ input:focus {
   font-weight: 300;
   font-size: 16px;
   line-height: 19px;
+}
+
+.card-info__icon {
+  margin-left: 10px;
 }
 
 .card-info__title {
