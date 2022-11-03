@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 // import { Catalog } from "../../modules/Catalog/Catalog";
 import React from "react";
-// import { useState } from "react";
-// import dbCatalog from "../../DBCatalog";
 import { CatalogItem } from "../../components/CatalogItem";
 import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 import { Character } from "../../modules/Character/Character";
