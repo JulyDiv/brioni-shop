@@ -11,7 +11,11 @@ import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 export const getStaticPaths = async () => {
   const res = await fetch("http://localhost:5000/dbCatalog");
   const data = await res.json();
-
+// if (!data) {
+//   return {
+//     notFound: true,
+//   };
+// }
   const paths = data.map(jacket => {
     return {
       params: { id: jacket.id.toString() },
@@ -28,7 +32,11 @@ export const getStaticProps = async (context) => {
   const { id } = context.params;
   const res = await fetch(`http://localhost:5000/dbCatalog/${id}`);
   const data = await res.json();
-
+// if (!data) {
+//   return {
+//     notFound: true,
+//   };
+// }
   return {
     props: { jacket: data }
   }
@@ -37,12 +45,12 @@ export const getStaticProps = async (context) => {
 const CardModal = ({ jacket }) => {
   const size = useSize(jacket);
   const choice = useChoice(jacket);
-  if (!jacket) {
-    return <h1>Empty</h1>;
-  }
+  // if (!jacket) {
+  //   return <h1>Empty</h1>;
+  // }
   return (
     <>
-      <section key={jacket.id} className="card">
+      {jacket ? <section key={jacket.id} className="card">
         <div className="container">
           <BreadCrumb jacket={jacket} />
           <div className="line card__line"></div>
@@ -107,7 +115,7 @@ const CardModal = ({ jacket }) => {
           </div>
           <Complete />
         </div>
-      </section>
+      </section> : <h1>Empty</h1>}
     </>
   );
 };
