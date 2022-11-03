@@ -60,19 +60,19 @@ export const Footer = () => {
               <FooterInfoTitle title="Follow us" />
               <ul className="footer-info__follows">
                 <Link href="#" className="footer-info__link-follows">
-                  <img src="img/Facebook.svg" alt="Icon: Facebook" />
+                  <img src="/img/Facebook.svg" alt="Icon: Facebook" />
                 </Link>
                 <Link href="#" className="footer-info__link-follows">
-                  <img src="img/Twitter.svg" alt="Icon: Twitter" />
+                  <img src="/img/Twitter.svg" alt="Icon: Twitter" />
                 </Link>
                 <Link href="#" className="footer-info__link-follows">
-                  <img src="img/Instagram.svg" alt="Icon: Instagram" />
+                  <img src="/img/Instagram.svg" alt="Icon: Instagram" />
                 </Link>
                 <Link href="#" className="footer-info__link-follows">
-                  <img src="img/Google.svg" alt="Icon: Google" />
+                  <img src="/img/Google.svg" alt="Icon: Google" />
                 </Link>
                 <Link href="#" className="footer-info__link-follows">
-                  <img src="img/YouTube.svg" alt="Icon: YouTube" />
+                  <img src="/img/YouTube.svg" alt="Icon: YouTube" />
                 </Link>
               </ul>
             </div>

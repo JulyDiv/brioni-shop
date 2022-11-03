@@ -3,7 +3,7 @@ import React from "react";
 import { Scrollbar, A11y, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export const SwiperCardMobile = ({ isOpenCard, choice }) => {
+export const SwiperCardMobile = ({ choice }) => {
   return (
     <Swiper
       modules={[Scrollbar, A11y, Keyboard]}

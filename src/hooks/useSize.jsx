@@ -6,8 +6,8 @@ const getSize = (size) =>
     status: false,
   }));
 
-export function useSize(isOpenCard) {
-  const windowSize = isOpenCard.size ? getSize(isOpenCard.size) : [];
+export function useSize(jacket) {
+  const windowSize = jacket.size ? getSize(jacket.size) : [];
   const [size, setSize] = useState(windowSize);
   const checkedSize = (index) => {
     setSize(

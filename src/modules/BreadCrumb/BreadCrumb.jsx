@@ -1,7 +1,10 @@
 import React from "react";
 import Link from "next/link";
+// import { useRouter } from "next/router";
 
-export const BreadCrumb = ({ isOpenCard, setIsOpenCard }) => {
+export const BreadCrumb = ({ jacket }) => {
+  // const router = useRouter();
+
   return (
     <nav className="breadcrumb">
       <ul className="breadcrumb__list">
@@ -10,13 +13,18 @@ export const BreadCrumb = ({ isOpenCard, setIsOpenCard }) => {
             Home
           </Link>
         </li>
-        <li className="breadcrumb__item" onClick={() => setIsOpenCard(false)}>
-            Costume collection
+        <li className="breadcrumb__item">
+          <Link href="/catalog">Costume collection</Link>
         </li>
-        <li className="breadcrumb__item" onClick={() => setIsOpenCard(false)}>
-          Jackets
+
+        <li className="breadcrumb__item">
+          <Link href="/catalog">Jackets</Link>
         </li>
-        {isOpenCard ? <li className="breadcrumb__item">{isOpenCard.name}</li> : ""}
+
+        {jacket && <li className="breadcrumb__item">
+          <Link href="#">{jacket.name}</Link>
+        </li>}
+        {/* {isOpenCard ? <li className="breadcrumb__item">{isOpenCard.name}</li> : ""} */}
       </ul>
     </nav>
   );

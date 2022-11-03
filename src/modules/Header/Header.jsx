@@ -32,7 +32,7 @@ export const Header = () => {
               </Link>
             </div>
 
-            <img src="img/navbar-logo.svg" alt="Logo: Brioni" className="navbar-logo" />
+            <img src="/img/navbar-logo.svg" alt="Logo: Brioni" className="navbar-logo" />
 
             <div className="icon">
               <button className="icon-link icon__search icon__search--mobile_visible"></button>

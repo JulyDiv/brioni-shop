@@ -49,7 +49,7 @@ export const SwiperCard = ({ swiperCard }) => {
           <div className="swiper-card__select">
             <span className="swiper-card__text">{name}</span>
             <img
-              src="img/select-catalog.svg"
+              src="/img/select-catalog.svg"
               className="swiper-card__icon"
               alt="Icon: select"
             />
