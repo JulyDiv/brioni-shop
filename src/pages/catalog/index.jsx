@@ -19,8 +19,6 @@ export const getStaticProps = async () => {
 };
 
 const Catalog = ({ jacket }) => {
-  // const isOpenCard = useIsOpenCard();
-  // const [itemList, setItemList] = useState(dbCatalog);
   return (
     <>
       <section className="catalog">
