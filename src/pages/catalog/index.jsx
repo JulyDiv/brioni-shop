@@ -51,9 +51,6 @@ const Catalog = ({ jacket }) => {
                 </div>
               </Link>
             ))}
-            {/* {itemList.map((item, id) => (
-            <CatalogItem key={id} item={item} {...isOpenCard} />
-          ))} */}
           </div>
           <button className="button-dark catalog__button">Show more</button>
         </div>
