@@ -37,6 +37,9 @@ export const getStaticProps = async (context) => {
 const CardModal = ({ jacket }) => {
   const size = useSize(jacket);
   const choice = useChoice(jacket);
+  if (!jacket) {
+    return <h1>Empty</h1>;
+  }
   return (
     <>
       <section key={jacket.id} className="card">
