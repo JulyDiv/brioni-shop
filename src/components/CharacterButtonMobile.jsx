@@ -7,7 +7,7 @@ export const CharacterButtonMobile = ({ name }) => {
       {name}
       <img
         className="button-light__image"
-        src="img/arrow-down.svg"
+        src="/img/arrow-down.svg"
         alt="Image: arrow"
       />
     </button>
