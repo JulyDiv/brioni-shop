@@ -1,9 +1,7 @@
 import React from "react";
 import Link from "next/link";
-// import { useRouter } from "next/router";
 
-export const BreadCrumb = ({ jacket }) => {
-  // const router = useRouter();
+export const BreadCrumb = ({ isOpenCard }) => {
 
   return (
     <nav className="breadcrumb">
@@ -21,10 +19,9 @@ export const BreadCrumb = ({ jacket }) => {
           <Link href="/catalog">Jackets</Link>
         </li>
 
-        {jacket && <li className="breadcrumb__item">
-          <Link href="#">{jacket.name}</Link>
+        {isOpenCard && <li className="breadcrumb__item">
+          <Link href="#">{isOpenCard.name}</Link>
         </li>}
-        {/* {isOpenCard ? <li className="breadcrumb__item">{isOpenCard.name}</li> : ""} */}
       </ul>
     </nav>
   );

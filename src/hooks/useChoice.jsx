@@ -5,8 +5,8 @@ const getChoice = (choice) =>
     name: item,
   }));
 
-export function useChoice(jacket) {
-  const windowChoice = jacket.choice ? getChoice(jacket.choice) : [];
+export function useChoice(isOpenCard) {
+  const windowChoice = isOpenCard.choice ? getChoice(isOpenCard.choice) : [];
   const [choice, setChoice] = useState(windowChoice);
   //   const checkedChoice = (index) => {
   //     setChoice(
