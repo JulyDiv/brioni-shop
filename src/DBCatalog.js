@@ -9,11 +9,11 @@ const dbCatalog = [
     color: ["Dark grey", "Black"],
     like: false,
     choice: [
-      "img/card-choice-1.png",
-      "img/card-choice-2.png",
-      "img/card-choice-3.png",
-      "img/card-choice-4.png",
-      "img/card-choice-5.png",
+      "/img/card-choice-1.png",
+      "/img/card-choice-2.png",
+      "/img/card-choice-3.png",
+      "/img/card-choice-4.png",
+      "/img/card-choice-5.png",
     ],
   },
   {
