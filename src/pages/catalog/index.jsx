@@ -9,8 +9,8 @@ import { CharacterButtonMobile } from "../../components/CharacterButtonMobile";
 import Link from "next/link";
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://localhost:5000/dbCatalog");
-  // const response = await fetch("http://localhost:3000/api/dbCatalog");
+  // const response = await fetch("http://localhost:5000/dbCatalog");
+  const response = await fetch("http://localhost:3000/api/dbCatalog");
   const data = await response.json();
   if (!data) {
     return {

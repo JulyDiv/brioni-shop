@@ -30,8 +30,8 @@ import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 export const getServerSideProps = async (context) => {
   // const id = context.params.id;
   const { id } = context.params;
-  const response = await fetch(`http://localhost:5000/dbCatalog/${id}`);
-  // const res = await fetch(`http://localhost:3000/api/dbCatalog/${id}`);
+  // const response = await fetch(`http://localhost:5000/dbCatalog/${id}`);
+  const resresponse = await fetch(`http://localhost:3000/api/dbCatalog/${id}`);
   const data = await response.json();
   if (!data) {
     return {
