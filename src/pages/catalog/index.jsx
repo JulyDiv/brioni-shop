@@ -9,8 +9,14 @@ import { CharacterButtonMobile } from "../../components/CharacterButtonMobile";
 import Link from "next/link";
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/dbCatalog");
-  const data = await res.json();
+  const response = await fetch("http://localhost:5000/dbCatalog");
+  // const response = await fetch("http://localhost:3000/api/dbCatalog");
+  const data = await response.json();
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { jacket: data },
   };
@@ -33,19 +39,19 @@ const Catalog = ({ jacket }) => {
             <CharacterButtonMobile name="Sort" />
           </div>
           <div className="catalog-assortment">
-            {jacket.map((jacket) => (
-              <Link key={jacket.id} href={`/catalog/${jacket.id}`}>
+            {jacket.map(({ id, img, name, price }) => (
+              <Link key={id} href={`/catalog/${id}`}>
                 <div className="catalog-assortment__jacket">
                   <img
-                    src={jacket.img}
+                    src={img}
                     alt="Photo: Jacket"
                     className="catalog-assortment__image"
                   />
                   <div className="catalog-assortment__info">
-                    <span className="catalog-assortment__text">{jacket.name}</span>
+                    <span className="catalog-assortment__text">{name}</span>
                     <button className="catalog-assortment__button"></button>
                   </div>
-                  <span className="catalog-assortment__price">{jacket.price}</span>
+                  <span className="catalog-assortment__price">{price}</span>
                 </div>
               </Link>
             ))}
