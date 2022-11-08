@@ -16,7 +16,7 @@ export const CardModal = ({ isOpenCard, setIsOpenCard }) => {
 
   return (
     <>
-    <ModalOverlay setIsOpenCard={setIsOpenCard} />
+    {/* <ModalOverlay setIsOpenCard={setIsOpenCard} /> */}
       <section key={isOpenCard.id} className="card">
         <div className="container">
           <BreadCrumb isOpenCard={isOpenCard} />

@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Home = () => {
+  const router = useRouter();
   return (
     <section className="home">
       <div className="home-wrapper">
@@ -12,7 +14,7 @@ export const Home = () => {
                 {" "}Brioni
               </Link>
             </h1>
-            <button className="button-dark home-info__button">
+            <button onClick={() => router.push("/catalog")} className="button-dark home-info__button">
               Start Shopping
             </button>
           </div>

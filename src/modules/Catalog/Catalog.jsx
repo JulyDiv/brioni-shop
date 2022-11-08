@@ -9,9 +9,19 @@ import { CardModal } from "../CardModal/CardModal";
 import { CharacterButtonMobile } from "../../components/CharacterButtonMobile";
 import useIsOpenCard from "../../hooks/useIsOpenCard";
 
-export const Catalog = () => {
-  const isOpenCard = useIsOpenCard();
-  const [itemList, setItemList] = useState(dbCatalog);
+// export const getServerSideProps = async () => {
+//   const res = await fetch(
+//     `https://encouraging-exuberant-park.glitch.me/catalog`
+//   );
+//   const data = await res.data;
+//   return {
+//     props: { jacket: data },
+//   };
+// };
+
+export const Catalogs = ({ jacket }) => {
+  // const isOpenCard = useIsOpenCard();
+  // const [itemList, setItemList] = useState(dbCatalog);
   return (
     <section className="catalog">
       <div className="container">
@@ -27,16 +37,14 @@ export const Catalog = () => {
           <CharacterButtonMobile name="Sort" />
         </div>
         <div className="catalog-assortment">
-          {itemList.map((card, id) => (
-            <CatalogItem key={id} card={card} {...isOpenCard} />
-          ))}
+          <CatalogItem jacket={jacket} />
         </div>
         <button className="button-dark catalog__button">Show more</button>
-        {isOpenCard.isOpenCard && (
+        {/* {isOpenCard.isOpenCard && (
           <>
             <CardModal {...isOpenCard} />
           </>
-        )}
+        )} */}
       </div>
     </section>
   );
