@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-export const BreadCrumb = ({ isOpenCard }) => {
+export const BreadCrumb = ({ jacket }) => {
 
   return (
     <nav className="breadcrumb">
@@ -19,9 +19,9 @@ export const BreadCrumb = ({ isOpenCard }) => {
           <Link href="/catalog">Jackets</Link>
         </li>
 
-        {isOpenCard && <li className="breadcrumb__item">
-          <Link href="#">{isOpenCard.name}</Link>
-        </li>}
+        <li className="breadcrumb__item">
+          <Link href="#">{jacket.name}</Link>
+        </li>
       </ul>
     </nav>
   );
