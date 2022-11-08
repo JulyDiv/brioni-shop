@@ -19,9 +19,9 @@ export const BreadCrumb = ({ jacket }) => {
           <Link href="/catalog">Jackets</Link>
         </li>
 
-        <li className="breadcrumb__item">
+        {jacket ? <li className="breadcrumb__item">
           <Link href="#">{jacket.name}</Link>
-        </li>
+        </li> : ""}
       </ul>
     </nav>
   );
