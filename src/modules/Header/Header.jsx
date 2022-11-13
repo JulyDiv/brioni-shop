@@ -5,9 +5,9 @@ import { useState } from "react";
 import { ModalOrder } from "../ModalOrder/ModalOrder";
 
 export const Header = () => {
-  const [isOrder, setIsOrder] = useState(false);
+  const [isOrder, setIsOrder] = useState(true);
   const [isContact, setIsContact] = useState(false);
-  //   const [isThank, setIsThank] = useState(false);
+    const [isThank, setIsThank] = useState(false);
 
   return (
     <>

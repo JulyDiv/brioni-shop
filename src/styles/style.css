@@ -174,7 +174,7 @@ input:focus {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 450px;
+  width: 100%;
 }
 
 .bag-title__title {
@@ -193,7 +193,6 @@ input:focus {
   display: -ms-flexbox;
   display: flex;
   padding: 25px 0;
-  width: 450px;
 }
 
 .bag-info__image {
@@ -255,7 +254,7 @@ input:focus {
 }
 
 .bag-price__span {
-  color: #666666;
+  color: #333333;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -327,6 +326,45 @@ input:focus {
     opacity: 1;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .bag {
+    width: 490px;
+    padding: 45px 20px 50px 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .bag {
+    width: 100%;
+    padding: 20px 20px 40px 20px;
+  }
+  .bag-title__title {
+    font-size: 20px;
+  }
+  .bag-info__span {
+    font-size: 14px;
+  }
+  .bag-price__span {
+    font-size: 14px;
+  }
+  .bag-total {
+    height: 102px;
+  }
+  .bag-total__span {
+    font-size: 14px;
+  }
+  .bag-total__button {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .bag {
+    width: 100%;
+    padding: 20px 10px 40px 10px;
   }
 }
 
@@ -1937,18 +1975,6 @@ input:focus {
   line-height: 19px;
 }
 
-@media (max-width: 1200px) {
-  .catalog-assortment__jacket {
-    width: 30%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 900px) {
-  .catalog-assortment__jacket {
-    width: 45%;
-  }
-}
-
 @media (min-width: 481px) and (max-width: 767px) {
   .catalog {
     padding: 83px 0 50px 0;
@@ -1958,7 +1984,6 @@ input:focus {
   }
   .catalog-assortment__jacket {
     margin-bottom: 36px;
-    width: 45%;
   }
   .catalog-assortment__text, .catalog-assortment__price {
     font-size: 14px;
