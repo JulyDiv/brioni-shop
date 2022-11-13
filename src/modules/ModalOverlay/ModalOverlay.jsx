@@ -1,8 +1,8 @@
 import React from "react";
 
-export const ModalOverlay = ({ setIsOpenCard }) => {
+export const ModalOverlay = ({ setIsOrder }) => {
     const closeModal = () => {
-        setIsOpenCard(false);
+        setIsOrder(false);
     }
     return (
         <div className="modal-overlay" onClick={() => closeModal()}></div>

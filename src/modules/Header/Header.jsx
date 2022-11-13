@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-// import { useState } from "react";
+import { useState } from "react";
+import { ModalOrder } from "../ModalOrder/ModalOrder";
 
 export const Header = () => {
-  //   const [bag, setBag] = useState(false);
-  //   const [contact, setContact] = useState(false);
-  //   const [thank, setThank] = useState(false);
+  const [isOrder, setIsOrder] = useState(false);
+  const [isContact, setIsContact] = useState(false);
+  //   const [isThank, setIsThank] = useState(false);
 
   return (
     <>
@@ -32,20 +33,24 @@ export const Header = () => {
               </Link>
             </div>
 
-            <img src="/img/navbar-logo.svg" alt="Logo: Brioni" className="navbar-logo" />
+            <img
+              src="/img/navbar-logo.svg"
+              alt="Logo: Brioni"
+              className="navbar-logo"
+            />
 
             <div className="icon">
               <button className="icon-link icon__search icon__search--mobile_visible"></button>
               <button className="icon-link icon__select icon__select--mobile_hidden"></button>
               <button className="icon-link icon__user icon__user--mobile_hidden"></button>
-              <button className="icon-link icon__bag icon__bag--mobile_visible"></button>
+              <button className="icon-link icon__bag icon__bag--mobile_visible" onClick={() => setIsOrder(true)}></button>
               {/* <div className="icon-lable icon-bag icon-bag--active"></div> */}
             </div>
           </div>
         </div>
       </header>
-      {/* {bag && <Bag setBag={setBag} setContact={setContact} />}
-      {contact && <Contact setContact={setContact} setThank={setThank} />}
+      {isOrder && <ModalOrder setIsOrder={setIsOrder} setIsContact={setIsContact} />}
+      {/* {contact && <Contact setContact={setContact} setThank={setThank} />}
       {thank && <Thank setThank={setThank} />} */}
     </>
   );

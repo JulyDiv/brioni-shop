@@ -1,0 +1,73 @@
+.thank
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 1001
+    padding: 47px 200px 50px 200px
+    width: 1050px
+    background-color: $bg-color1
+    display: none
+    animation: thank 0.5s ease-in 1 both reverse
+    &--visibile
+        display: block
+    &--hidden
+        display: none
+    &-wrapper
+        width: 651px
+    &-block
+        display: flex
+        justify-content: space-between
+        margin-bottom: 38px
+        &__span
+            color: $text-color2
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+    &-info
+        width: 453px
+        &__title
+            margin: 0 0 37px 0
+            color: #BCBCBC
+            font-style: normal
+            font-weight: 300
+            font-size: 40px
+            line-height: 46px
+            letter-spacing: 0.02em
+        &__text
+            margin: 0 0 47px 0
+            color: #BCBCBC
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+        &__link
+            color: #BCBCBC
+    &-form
+        &__title
+            margin: 91px 0 43px 0
+            color: #BCBCBC
+            font-style: normal
+            font-weight: 300
+            font-size: 28px
+            line-height: 32px
+            letter-spacing: 0.03em
+        &__form
+            position: relative
+            margin-bottom: 100px
+        &__input
+            width: 285px
+            background-color: inherit
+            border: 1px solid $text-color2
+        &__image
+            position: absolute
+            top: 21px
+            left: 240px
+
+@keyframes thank
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 1
+        transform: translateX(100%)

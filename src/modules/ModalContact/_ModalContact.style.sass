@@ -1,0 +1,127 @@
+.contacts
+    position: absolute
+    right: 0
+    top: 0
+    z-index: 1001
+    padding: 40px 200px 70px 200px
+    width: 1050px
+    background-color: $bg-color1
+    // display: none
+    animation: contacts 0.5s ease-in 1 both reverse
+    // &--visibile
+    //     display: block
+    &--hidden
+        display: none
+    &__line
+        margin-bottom: 20px
+        width: 650px
+        height: 1px
+        background-color: $text-color2
+    &-wrapper
+        max-width: 651px
+    &-title
+        display: flex
+        justify-content: space-between
+        width: 100%
+        &__title
+            margin-top: 0
+            margin-bottom: 36px
+            font-style: normal
+            font-weight: 300
+            font-size: 40px
+            line-height: 46px
+            letter-spacing: 0.02em
+            color: #BCBCBC
+        &__button
+            width: 19px
+            height: 19px
+    &-sign
+        &__span
+            color: #BCBCBC
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+        &__link
+            display: inline-block
+            margin-bottom: 20px
+            color: $text-color2
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+    &-address
+        &__title
+            margin: 0 0 18px 0
+            font-style: normal
+            font-weight: 300
+            font-size: 28px
+            line-height: 32px
+            letter-spacing: 0.03em
+            color: #BCBCBC
+        &__comment
+            margin-bottom: 47px
+            width: 100%
+            height: 167px
+    &-info
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin-bottom: 93px
+        width: 368px
+        height: 250px
+        &__title
+            margin: 0 0 18px 0
+            font-style: normal
+            font-weight: 300
+            font-size: 18px
+            line-height: 21px
+            letter-spacing: 0.03em
+            color: #BCBCBC
+        &__text
+            margin: 0
+            color: $text-color2
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+        &__link
+            color: #BCBCBC
+    &-checkbox
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 49px
+        width: 329px
+        &__input
+            appearance: none
+            position: relative
+            background-color: inherit
+            border: 1px solid $text-color2
+            width: 17px
+            height: 17px
+            &--active
+                background-color: inherit
+                &:after
+                    content: ''
+                    position: absolute
+                    top: 7px
+                    left: 8px
+                    width: 7px
+                    height: 4px
+                    border-bottom: 3px solid lighten(#fff, 0)
+                    border-left: 3px solid lighten(#fff, 0)
+                    transform: translate(-50%, -65%) rotate(-45deg)
+        &__span
+            color: $text-color2
+        &__link
+            text-decoration: none
+            color: #BCBCBC
+
+@keyframes contacts
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 1
+        transform: translateX(100%)

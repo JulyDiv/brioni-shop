@@ -1,0 +1,44 @@
+.search
+    position: absolute
+    left: 1033px
+    top: 40px
+    z-index: 1001
+    background-color: $bg-color1
+    display: none
+    animation: search 0.5s ease-in 1 both reverse
+    &--visibile
+        display: block
+    &-wrapper
+        display: flex
+        justify-content: space-between
+        width: 369px
+    &-form
+        display: flex
+        justify-content: space-between
+        width: 320px
+        height: 20px
+    &-input
+        width: 271px
+        background-color: inherit
+        border-bottom: 1px solid $text-color2
+        border-top: none
+        border-left: none
+        border-right: none
+        color: #fff
+        &:focus
+            border-bottom: 1px solid #ffffff
+            &::placeholder
+                color: #ffffff
+    &-button
+        padding: 0
+        border: none
+        background-color: inherit
+        cursor: pointer
+
+@keyframes search
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 0
+        transform: translateX(100%)
