@@ -3,10 +3,10 @@ import React from "react";
 
 export const CharacterButtonMobile = ({ name }) => {
   return (
-    <button className="button-light button-light__button">
+    <button className="button-mobile character-mobile__button">
       {name}
       <img
-        className="button-light__image"
+        className="character-mobile__image"
         src="/img/arrow-down.svg"
         alt="Image: arrow"
       />

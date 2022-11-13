@@ -3,11 +3,12 @@ import React from "react";
 import Link from "next/link";
 import { useState } from "react";
 import { ModalOrder } from "../ModalOrder/ModalOrder";
+import { ModalContact } from "../ModalContact/ModalContact";
 
 export const Header = () => {
-  const [isOrder, setIsOrder] = useState(true);
-  const [isContact, setIsContact] = useState(false);
-    const [isThank, setIsThank] = useState(false);
+  const [isOrder, setIsOrder] = useState(false);
+  const [isContact, setIsContact] = useState(true);
+  const [isThank, setIsThank] = useState(false);
 
   return (
     <>
@@ -50,8 +51,8 @@ export const Header = () => {
         </div>
       </header>
       {isOrder && <ModalOrder setIsOrder={setIsOrder} setIsContact={setIsContact} />}
-      {/* {contact && <Contact setContact={setContact} setThank={setThank} />}
-      {thank && <Thank setThank={setThank} />} */}
+      {isContact && <ModalContact setIsContact={setIsContact} setIsThank={setIsThank} />}
+      {/* {thank && <Thank setThank={setThank} />} */}
     </>
   );
 };

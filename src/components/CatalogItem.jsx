@@ -7,7 +7,11 @@ export const CatalogItem = ({ jacket }) => {
   return (
     <>
       {jacket.map((jacket) => (
-        <Link key={jacket.id} href={`/catalog/${jacket.id}`}>
+        <Link
+          key={jacket.id}
+          href={`/catalog/${jacket.id}`}
+          className="catalog-assortment__link"
+        >
           <div className="catalog-assortment__jacket">
             <img
               src={jacket.img}

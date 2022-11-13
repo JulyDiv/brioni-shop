@@ -50,15 +50,21 @@ button {
   background-color: transparent;
 }
 
-input {
+input, textarea {
   padding: 0;
   border: none;
   background-color: transparent;
   font-family: "GTEestiProDisplay-Thin";
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none;
+}
+
+fieldset {
+  padding: 0 !important;
+  margin: 0;
+  border: none;
 }
 
 .container {
@@ -70,6 +76,23 @@ input:focus {
   width: 100%;
   height: 1px;
   background-color: #E5E5E5;
+}
+
+.button-light {
+  color: #666666;
+  text-transform: uppercase;
+  background-color: #E5E5E5;
+  font-family: "GTEestiProDisplay-Light";
+  font-style: normal;
+  font-weight: 350;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+.button-light:hover {
+  background-color: #F5F5F5;
+  color: #333333;
 }
 
 .button-dark {
@@ -98,7 +121,7 @@ input:focus {
   background-color: #F5F5F5;
 }
 
-.button-light {
+.button-mobile {
   padding: 12px 0;
   background-color: inherit;
   border: 1px solid #E5E5E5;
@@ -108,11 +131,11 @@ input:focus {
   line-height: 16px;
 }
 
-.button-light:hover {
+.button-mobile:hover {
   background-color: rgba(38, 38, 38, 0.1);
 }
 
-.button-light:active {
+.button-mobile:active {
   background-color: rgba(38, 38, 38, 0.1);
 }
 
@@ -493,6 +516,7 @@ template {
   z-index: 1001;
   background-color: #F5F5F5;
   animation: bag 0.5s ease-in 1 both reverse;
+  overflow: hidden;
 }
 
 .bag-wrapper {
@@ -711,33 +735,62 @@ template {
   }
 }
 
-.contacts {
+.contact {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1001;
-  padding: 40px 200px 70px 200px;
+  padding: 42px 200px 70px 200px;
   width: 1050px;
   background-color: #262626;
-  animation: contacts 0.5s ease-in 1 both reverse;
+  animation: contact 0.5s ease-in 1 both reverse;
 }
 
-.contacts--hidden {
-  display: none;
-}
-
-.contacts__line {
-  margin-bottom: 20px;
-  width: 650px;
+.contact__line {
+  width: 100%;
   height: 1px;
   background-color: #666666;
 }
 
-.contacts-wrapper {
-  max-width: 651px;
+.contact-form__button {
+  width: 100%;
+  height: 50px;
 }
 
-.contacts-title {
+.contact-input {
+  padding: 20px 24px;
+  background-color: rgba(102, 102, 102, 0.15);
+  color: #F5F5F5;
+}
+
+.contact-input__input {
+  margin-bottom: 25px;
+  width: 46%;
+  height: 60px;
+}
+
+.contact__comment {
+  margin-bottom: 47px;
+  width: 100%;
+  height: 167px;
+}
+
+.contact-fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact-wrapper {
+  width: 100%;
+}
+
+.contact-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -747,8 +800,7 @@ template {
   width: 100%;
 }
 
-.contacts-title__title {
-  margin-top: 0;
+.contact-title__title {
   margin-bottom: 36px;
   font-style: normal;
   font-weight: 300;
@@ -758,31 +810,14 @@ template {
   color: #BCBCBC;
 }
 
-.contacts-title__button {
+.contact-title__button {
+  margin-top: 5px;
   width: 19px;
   height: 19px;
 }
 
-.contacts-sign__span {
-  color: #BCBCBC;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.contacts-sign__link {
-  display: inline-block;
-  margin-bottom: 20px;
-  color: #666666;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.contacts-address__title {
-  margin: 0 0 18px 0;
+.contact-sign__title {
+  margin: 20px 0 18px 0;
   font-style: normal;
   font-weight: 300;
   font-size: 28px;
@@ -791,13 +826,36 @@ template {
   color: #BCBCBC;
 }
 
-.contacts-address__comment {
-  margin-bottom: 47px;
-  width: 100%;
-  height: 167px;
+.contact-sign__span {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #BCBCBC;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
 }
 
-.contacts-info {
+.contact-sign__link {
+  color: #666666;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.contact-address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -809,11 +867,11 @@ template {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 93px;
-  width: 368px;
+  width: 422px;
   height: 250px;
 }
 
-.contacts-info__title {
+.contact-info__title {
   margin: 0 0 18px 0;
   font-style: normal;
   font-weight: 300;
@@ -823,8 +881,7 @@ template {
   color: #BCBCBC;
 }
 
-.contacts-info__text {
-  margin: 0;
+.contact-info__text {
   color: #666666;
   font-style: normal;
   font-weight: 300;
@@ -832,40 +889,42 @@ template {
   line-height: 19px;
 }
 
-.contacts-info__link {
+.contact-info__link {
   color: #BCBCBC;
+  text-decoration: underline;
 }
 
-.contacts-checkbox {
+.contact-info__link:hover {
+  text-decoration: none;
+}
+
+.contact-checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 49px;
   width: 329px;
 }
 
-.contacts-checkbox__input {
+.contact-checkbox__input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   position: relative;
+  margin-bottom: 49px;
   background-color: inherit;
   border: 1px solid #666666;
   width: 17px;
   height: 17px;
 }
 
-.contacts-checkbox__input--active {
+.contact-checkbox__input--active {
   background-color: inherit;
 }
 
-.contacts-checkbox__input--active:after {
+.contact-checkbox__input--active:after {
   content: '';
   position: absolute;
   top: 7px;
@@ -878,16 +937,22 @@ template {
           transform: translate(-50%, -65%) rotate(-45deg);
 }
 
-.contacts-checkbox__span {
+.contact-checkbox__span {
+  padding-top: 1px;
+  text-align: center;
   color: #666666;
 }
 
-.contacts-checkbox__link {
-  text-decoration: none;
+.contact-checkbox__link {
+  text-decoration: underline;
   color: #BCBCBC;
 }
 
-@-webkit-keyframes contacts {
+.contact-checkbox__link:hover {
+  text-decoration: none;
+}
+
+@-webkit-keyframes contact {
   0% {
     opacity: 1;
     -webkit-transform: translateX(0px);
@@ -900,7 +965,7 @@ template {
   }
 }
 
-@keyframes contacts {
+@keyframes contact {
   0% {
     opacity: 1;
     -webkit-transform: translateX(0px);
@@ -910,6 +975,80 @@ template {
     opacity: 1;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .contact {
+    padding: 43px 20px 50px 20px;
+    width: 690px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .contact {
+    padding: 20px 20px 50px 20px;
+    width: 100%;
+  }
+  .contact-title__title {
+    font-size: 28px;
+  }
+  .contact-sign__span, .contact-sign__link {
+    font-size: 14px;
+  }
+  .contact-sign__title {
+    font-size: 18px;
+  }
+  .contact-input__input {
+    width: 48.5%;
+    font-size: 14px;
+  }
+  .contact__comment {
+    margin-bottom: 52px;
+    height: 150px;
+    font-size: 14px;
+  }
+  .contact-fieldset {
+    padding-bottom: 20px !important;
+  }
+  .contact-info__title {
+    font-size: 18px;
+  }
+  .contact-info__text {
+    font-size: 16px;
+  }
+  .contact-checkbox {
+    display: none;
+  }
+  .contact-form__button {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .contact {
+    padding: 20px 10px 50px 10px;
+    width: 100%;
+  }
+  .contact-title__title {
+    font-size: 28px;
+  }
+  .contact-form__button {
+    font-size: 14px;
+  }
+  .contact-input__input {
+    width: 100%;
+    height: 45px;
+  }
+  .contact__comment {
+    margin-bottom: 50px;
+    height: 100px;
+  }
+  .contact-info {
+    display: none;
+  }
+  .contact-checkbox {
+    display: none;
   }
 }
 
@@ -2266,15 +2405,18 @@ template {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 50px 0 0 0;
+  width: 100%;
 }
 
 .catalog-assortment__jacket {
   margin-bottom: 46px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .catalog-assortment__image {
   margin-bottom: 17px;
-  cursor: pointer;
+  width: 370px;
 }
 
 .catalog-assortment__button {
@@ -2318,12 +2460,23 @@ template {
   line-height: 19px;
 }
 
+@media (min-width: 768px) and (max-width: 900px) {
+  .catalog-assortment__image {
+    width: 335px;
+  }
+}
+
 @media (min-width: 481px) and (max-width: 767px) {
   .catalog {
     padding: 83px 0 50px 0;
   }
   .catalog-text {
     font-size: 14px;
+  }
+  .catalog-assortment {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .catalog-assortment__jacket {
     margin-bottom: 36px;
@@ -2349,6 +2502,11 @@ template {
   }
   .catalog__button {
     width: 100%;
+  }
+  .catalog-assortment {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .catalog-assortment__jacket {
     width: 100%;
@@ -2420,18 +2578,18 @@ template {
   }
 }
 
-.button-light__button {
+.character-mobile__button {
   margin-bottom: 40px;
   width: 50%;
   font-family: "GTEestiProDisplay-Thin";
   font-weight: 300;
 }
 
-.button-light__button:hover {
+.character-mobile__button:hover {
   background-color: rgba(38, 38, 38, 0.1);
 }
 
-.button-light__image {
+.character-mobile__image {
   margin-left: 14px;
 }
 
@@ -2595,8 +2753,8 @@ template {
   margin: auto;
   padding-top: 143px;
   width: 90%;
-  -webkit-animation: cardModal 0.5s ease;
-          animation: cardModal 0.5s ease;
+  -webkit-animation: card 0.5s ease;
+          animation: card 0.5s ease;
   background-color: white;
 }
 
@@ -2754,6 +2912,8 @@ template {
   width: 27px;
   height: 27px;
   border-radius: 50%;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
   border: 1px solid #FFFFFF;
   outline: 1px solid #000;
   cursor: pointer;
@@ -2872,7 +3032,7 @@ template {
   text-decoration: none;
 }
 
-@-webkit-keyframes cardModal {
+@-webkit-keyframes card {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -2883,7 +3043,7 @@ template {
   }
 }
 
-@keyframes cardModal {
+@keyframes card {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0);

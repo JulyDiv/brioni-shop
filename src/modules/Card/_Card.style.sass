@@ -8,7 +8,7 @@
     padding-top: 143px
     width: 90%
     // height: 90%
-    animation: cardModal 0.5s ease
+    animation: card 0.5s ease
     background-color: white
     &-wrapper
         display: flex
@@ -99,6 +99,8 @@
             width: 27px
             height: 27px
             border-radius: 50%
+            -webkit-border-radius: 100px
+            -moz-border-radius: 100px
             border: 1px solid $text-color4
             outline: 1px solid #000
             cursor: pointer
@@ -167,7 +169,7 @@
             &:hover
                 text-decoration: none
 
-@keyframes cardModal
+@keyframes card
     0%
         transform: scale(0)
     100%

@@ -17,11 +17,14 @@
         justify-content: space-between
         flex-wrap: wrap
         padding: 50px 0 0 0
+        width: 100%
         &__jacket
             margin-bottom: 46px
+            width: 100%
+            cursor: pointer
         &__image
             margin-bottom: 17px
-            cursor: pointer
+            width: 370px
         &__button
             display: flex
             flex-shrink: 0
@@ -47,25 +50,22 @@
             font-size: 16px
             line-height: 19px
 
-@media (max-width: 1200px)
-    .catalog
-        &-assortment
-            &__jacket
-                // width: 30%
 @media (min-width: 768px) and (max-width: 900px)
     .catalog
         &-assortment
-            &__jacket
-                // width: 45%
+            &__image
+                width: 335px
+            &__link
 @media (min-width: 481px) and (max-width: 767px)
     .catalog
         padding: 83px 0 50px 0
         &-text
             font-size: 14px
         &-assortment
+            justify-content: center
             &__jacket
                 margin-bottom: 36px
-                // width: 45%
+            &__image
             &__text, &__price
                 font-size: 14px
 @media (min-width: 320px) and (max-width: 480px)
@@ -87,9 +87,8 @@
         &__button
             width: 100%
         &-assortment
+            justify-content: center
             &__jacket
                 width: 100%
             &__image
                 width: 100%
-                // &_visible
-                //     display: none
