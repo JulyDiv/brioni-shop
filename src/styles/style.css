@@ -503,7 +503,7 @@ template {
   background-color: rgba(38, 38, 38, 0.75);
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .bag {
@@ -1060,20 +1060,11 @@ template {
   padding: 47px 200px 50px 200px;
   width: 1050px;
   background-color: #262626;
-  display: none;
   animation: thank 0.5s ease-in 1 both reverse;
 }
 
-.thank--visibile {
-  display: block;
-}
-
-.thank--hidden {
-  display: none;
-}
-
 .thank-wrapper {
-  width: 651px;
+  width: 100%;
 }
 
 .thank-block {
@@ -1083,7 +1074,6 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 38px;
 }
 
 .thank-block__span {
@@ -1094,12 +1084,8 @@ template {
   line-height: 19px;
 }
 
-.thank-info {
-  width: 453px;
-}
-
-.thank-info__title {
-  margin: 0 0 37px 0;
+.thank__title {
+  margin: 38px 0 37px 0;
   color: #BCBCBC;
   font-style: normal;
   font-weight: 300;
@@ -1108,8 +1094,22 @@ template {
   letter-spacing: 0.02em;
 }
 
+.thank-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 453px;
+  height: 129px;
+}
+
 .thank-info__text {
-  margin: 0 0 47px 0;
   color: #BCBCBC;
   font-style: normal;
   font-weight: 300;
@@ -1119,6 +1119,20 @@ template {
 
 .thank-info__link {
   color: #BCBCBC;
+}
+
+.thank-form__block {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 100px;
+  width: 285px;
+  height: 55px;
+  border: 1px solid #666666;
 }
 
 .thank-form__title {
@@ -1131,21 +1145,38 @@ template {
   letter-spacing: 0.03em;
 }
 
-.thank-form__form {
-  position: relative;
-  margin-bottom: 100px;
+.thank-form__link {
+  color: #666666;
 }
 
 .thank-form__input {
-  width: 285px;
+  padding: 18px 24px;
+  width: 85%;
+  height: 100%;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #F5F5F5;
   background-color: inherit;
-  border: 1px solid #666666;
+}
+
+.thank-form__input:placeholder {
+  color: rgba(102, 102, 102, 0.55);
 }
 
 .thank-form__image {
-  position: absolute;
-  top: 21px;
-  left: 240px;
+  width: 20px;
+  height: 13px;
+  background-image: url("../../../public/img/footer-form__email.svg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thank-form__button {
+  width: 100%;
+  height: 50px;
 }
 
 @-webkit-keyframes thank {
@@ -1171,6 +1202,87 @@ template {
     opacity: 1;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .thank {
+    padding: 47px 20px 50px 20px;
+    width: 690px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .thank {
+    padding: 23px 20px 50px 20px;
+    width: 100%;
+  }
+  .thank__title {
+    margin: 32px 0 33px 0;
+    line-height: 23px;
+    font-size: 20px;
+  }
+  .thank-block__span {
+    font-size: 14px;
+  }
+  .thank-info {
+    height: 108px;
+  }
+  .thank-info__text, .thank-info__link {
+    font-size: 14px;
+  }
+  .thank-form__block {
+    width: 220px;
+    height: 50px;
+  }
+  .thank-form__title {
+    margin: 73px 0 20px 0;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .thank-form__image {
+    margin-right: 25px;
+  }
+  .thank-form__button {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .thank {
+    padding: 23px 10px 50px 10px;
+    width: 100%;
+  }
+  .thank__title {
+    margin: 32px 0 33px 0;
+    line-height: 23px;
+    font-size: 20px;
+  }
+  .thank-block__span {
+    font-size: 14px;
+  }
+  .thank-info {
+    width: 100%;
+    height: 114px;
+  }
+  .thank-info__text, .thank-info__link {
+    font-size: 14px;
+  }
+  .thank-form__block {
+    margin-bottom: 80px;
+    width: 100%;
+    height: 50px;
+  }
+  .thank-form__title {
+    margin: 73px 0 20px 0;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .thank-form__image {
+    margin: 0 25px;
+  }
+  .thank-form__button {
+    font-size: 14px;
   }
 }
 

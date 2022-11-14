@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { ModalOrder } from "../ModalOrder/ModalOrder";
 import { ModalContact } from "../ModalContact/ModalContact";
+import { ModalThank } from "../ModalThank/ModalThank";
 
 export const Header = () => {
   const [isOrder, setIsOrder] = useState(false);
-  const [isContact, setIsContact] = useState(true);
-  const [isThank, setIsThank] = useState(false);
-
+  const [isContact, setIsContact] = useState(false);
+  const [isThank, setIsThank] = useState(true);
   return (
     <>
       <header className="header">
@@ -44,15 +44,30 @@ export const Header = () => {
               <button className="icon-link icon__search icon__search--mobile_visible"></button>
               <button className="icon-link icon__select icon__select--mobile_hidden"></button>
               <button className="icon-link icon__user icon__user--mobile_hidden"></button>
-              <button className="icon-link icon__bag icon__bag--mobile_visible" onClick={() => setIsOrder(true)}></button>
+              <button
+                className="icon-link icon__bag icon__bag--mobile_visible"
+                onClick={() => setIsOrder(true)}
+              ></button>
               {/* <div className="icon-lable icon-bag icon-bag--active"></div> */}
             </div>
           </div>
         </div>
       </header>
-      {isOrder && <ModalOrder setIsOrder={setIsOrder} setIsContact={setIsContact} />}
-      {isContact && <ModalContact setIsContact={setIsContact} setIsThank={setIsThank} />}
-      {/* {thank && <Thank setThank={setThank} />} */}
+      {isOrder && (
+        <ModalOrder
+          isOrder={isOrder}
+          setIsOrder={setIsOrder}
+          setIsContact={setIsContact}
+        />
+      )}
+      {isContact && (
+        <ModalContact
+          isContact={isContact}
+          setIsContact={setIsContact}
+          setIsThank={setIsThank}
+        />
+      )}
+      {isThank && <ModalThank isThank={isThank} setIsThank={setIsThank} />}
     </>
   );
 };

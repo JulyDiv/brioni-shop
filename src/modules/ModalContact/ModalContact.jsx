@@ -3,12 +3,15 @@ import React from "react";
 import Link from "next/link";
 import { InputContact } from "../../components/InputContact";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
-import { ContactInfoBlock } from "../../components/ContactInfoBlock";
 
-export const ModalContact = ({ setIsContact, setIsThank }) => {
+export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
+  const closeModal = () => {
+    setIsContact(false);
+    setIsThank(true);
+  };
   return (
     <>
-      <ModalOverlay />
+      <ModalOverlay setIsContact={setIsContact} isContact={isContact} />
       <div className="contact">
         <div className="contact-wrapper">
           <div className="contact-title">
@@ -100,7 +103,8 @@ export const ModalContact = ({ setIsContact, setIsThank }) => {
             </div>
 
             <button
-              onClick={() => setIsThank(true)}
+              type="submit"
+              onClick={() => closeModal()}
               className="button-light contact-form__button"
             >
               Proceed to payment

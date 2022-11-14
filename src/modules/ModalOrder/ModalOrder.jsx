@@ -2,10 +2,14 @@
 import React from "react";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 
-export const ModalOrder = ({ setIsOrder, setIsContact }) => {
+export const ModalOrder = ({ setIsOrder, setIsContact, isOrder }) => {
+  const closeModal = () => {
+    setIsOrder(false);
+    setIsContact(true);
+  }
   return (
     <>
-      <ModalOverlay setIsOrder={setIsOrder} />
+      <ModalOverlay setIsOrder={setIsOrder} isOrder={isOrder} />
       <div className="bag">
         <div className="bag-wrapper">
           <div className="bag-title">
@@ -46,7 +50,7 @@ export const ModalOrder = ({ setIsOrder, setIsContact }) => {
           <div className="bag-total">
             <span className="bag-total__span">Total : € </span>
             <button
-              onClick={() => setIsContact(true)}
+              onClick={() => closeModal()}
               className="button-dark bag-total__button"
             >
               Proceed to checkout
