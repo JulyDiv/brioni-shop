@@ -5,11 +5,13 @@ import { useState } from "react";
 import { ModalOrder } from "../ModalOrder/ModalOrder";
 import { ModalContact } from "../ModalContact/ModalContact";
 import { ModalThank } from "../ModalThank/ModalThank";
+import { ModalSearch } from "../ModalSearch/ModalSearch";
 
 export const Header = () => {
   const [isOrder, setIsOrder] = useState(false);
   const [isContact, setIsContact] = useState(false);
-  const [isThank, setIsThank] = useState(true);
+  const [isThank, setIsThank] = useState(false);
+  const [isSearch, setIsSearch] = useState(true);
   return (
     <>
       <header className="header">
@@ -41,7 +43,10 @@ export const Header = () => {
             />
 
             <div className="icon">
-              <button className="icon-link icon__search icon__search--mobile_visible"></button>
+              <button
+                className="icon-link icon__search icon__search--mobile_visible"
+                onClick={() => setIsSearch(true)}
+              ></button>
               <button className="icon-link icon__select icon__select--mobile_hidden"></button>
               <button className="icon-link icon__user icon__user--mobile_hidden"></button>
               <button
@@ -50,6 +55,9 @@ export const Header = () => {
               ></button>
               {/* <div className="icon-lable icon-bag icon-bag--active"></div> */}
             </div>
+            {isSearch && (
+              <ModalSearch isSearch={isSearch} setIsSearch={setIsSearch} />
+            )}
           </div>
         </div>
       </header>

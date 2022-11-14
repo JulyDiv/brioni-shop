@@ -1,39 +1,41 @@
 .search
     position: absolute
-    left: 1033px
-    top: 40px
-    z-index: 1001
+    right: 0
+    z-index: 3
+    display: block
+    width: 369px
+    height: 25px
     background-color: $bg-color1
-    display: none
     animation: search 0.5s ease-in 1 both reverse
-    &--visibile
-        display: block
     &-wrapper
         display: flex
-        justify-content: space-between
-        width: 369px
+        align-items: center
+        width: 100%
+    &__button
+        width: 10%
+        height: 28px
+        background-image: url("../../../public/img/search-icon.svg")
+        +background-image
+        &:hover, &:active
+            background-image: url("../../../public/img/search-icon-hover.svg")
     &-form
         display: flex
         justify-content: space-between
-        width: 320px
+        width: 100%
         height: 20px
-    &-input
-        width: 271px
-        background-color: inherit
-        border-bottom: 1px solid $text-color2
-        border-top: none
-        border-left: none
-        border-right: none
-        color: #fff
-        &:focus
-            border-bottom: 1px solid #ffffff
-            &::placeholder
-                color: #ffffff
-    &-button
-        padding: 0
-        border: none
-        background-color: inherit
-        cursor: pointer
+        &__input
+            margin-left: 25px
+            width: 81%
+            border-bottom: 1px solid $text-color2
+            color: $bg-color4
+            font-weight: 350
+            font-size: 16px
+            line-height: 19px
+            letter-spacing: 0.03em
+            &:focus
+                border-bottom: 1px solid $bg-color4
+                &::placeholder
+                    color: $bg-color4
 
 @keyframes search
     0%
@@ -42,3 +44,86 @@
     100%
         opacity: 0
         transform: translateX(100%)
+
+@media (max-width: 1200px)
+    .search
+        width: 35%
+        &__button
+            width: 12%
+        &-form
+            &__input
+                margin-left: 20px
+                width: 80%
+@media (min-width: 768px) and (max-width: 900px)
+    .search
+        width: 35%
+        &-form
+            &__input
+                font-size: 14px
+            &__button
+                width: 15px
+                height: 15px
+@media (min-width: 481px) and (max-width: 767px)
+    .search
+        display: none
+        &--mobile
+            display: block
+            position: fixed
+            left: 0
+            right: 0
+            padding: 41px 10px 41px 5px
+            width: 100%
+            height: 100px
+            background-color: rgba(38, 38, 38, 0.9)
+            animation: search 0.5s ease-in 1 both normal
+        &__button
+            // width: 5%
+            width: 30px
+            height: 30px
+        &-form
+            &__input
+                margin-left: 15px
+                width: 85%
+                font-size: 14px
+            &__button
+                width: 15px
+                height: 15px
+    @keyframes search
+        0%
+            opacity: 0
+            transform: translateY(-100px)
+        100%
+            opacity: 1
+            transform: translateY(80px)
+@media (min-width: 320px) and (max-width: 480px)
+    .search
+        display: none
+        &--mobile
+            display: block
+            position: fixed
+            left: 0
+            right: 0
+            padding: 41px 10px 41px 5px
+            width: 100%
+            height: 100px
+            background-color: rgba(38, 38, 38, 0.9)
+            animation: search 0.5s ease-in 1 both normal
+        &__button
+            width: 30px
+            height: 30px
+            // background-size: 70%
+        &-form
+            &__input
+                margin-left: 15px
+                width: 85%
+                font-size: 14px
+            &__button
+                width: 15px
+                height: 15px
+    @keyframes search
+        0%
+            opacity: 0
+            transform: translateY(-100px)
+        100%
+            opacity: 1
+            transform: translateY(70px)
