@@ -11,7 +11,7 @@ export const Header = () => {
   const [isOrder, setIsOrder] = useState(false);
   const [isContact, setIsContact] = useState(false);
   const [isThank, setIsThank] = useState(false);
-  const [isSearch, setIsSearch] = useState(true);
+  const [isSearch, setIsSearch] = useState(false);
   return (
     <>
       <header className="header">

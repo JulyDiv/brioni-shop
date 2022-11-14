@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { useState } from "react";
 import { BreadCrumb } from "../modules/BreadCrumb/BreadCrumb";
 import { SizeItem } from "../components/SizeItem";
 import { ChoiceItem } from "./ChoiceItem";
@@ -8,6 +9,7 @@ import { useSize } from "../hooks/useSize";
 import { useChoice } from "../hooks/useChoice";
 
 export const CardItem = ({ jacket }) => {
+  const [showMoreBtn, setShowMoreBtn] = useState(false);
   const size = useSize(jacket);
   const choice = useChoice(jacket);
   return (
@@ -28,12 +30,10 @@ export const CardItem = ({ jacket }) => {
               <span className="card-info__articl">{jacket.articl}</span>
               <img src="/img/select-catalog.svg" alt="Icon: select" />
             </div>
-
             <div className="card-info__name">
               <h3 className="card-info__title">{jacket.name}</h3>
               <span className="card-info__price">{jacket.price}</span>
             </div>
-
             <div className="card-info__color-block">
               <div className="line card-info__line"></div>
 
@@ -60,13 +60,20 @@ export const CardItem = ({ jacket }) => {
               Add to card
             </button>
             <p className="card-info__text">
-              The Brioni iconic {jacket.name} a staple from our Archive, has
-              been revised as a contemporary travel piece. This single breasted
-              jacket is based on our Virgilio fit but it features two special
-              front patch pockets with three different entrances studied for
-              practicality: top, side and middle to comfortably rest the hands.
-              The side leather belt is a nod to its past function to hold ...
-              <button className="card-info__link-button"> View all</button>
+              {jacket.description.length <= 320 ? (
+                jacket.description
+              ) : (
+                <>
+                  {jacket.description.substr(0, 320)}
+                  {!showMoreBtn && (
+                    <button className="card-info__link-button"
+                    onClick={() => setShowMoreBtn(true)}>
+                      ...{" "}View all
+                    </button>
+                  )}
+                  {showMoreBtn && jacket.description.substr(320)}
+                </>
+              )}
             </p>
           </div>
         </div>
