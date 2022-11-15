@@ -126,7 +126,9 @@ fieldset {
   background-color: inherit;
   border: 1px solid #E5E5E5;
   color: #333333;
+  font-family: "GTEestiProDisplay-Light";
   font-style: normal;
+  font-weight: 350;
   font-size: 14px;
   line-height: 16px;
 }
@@ -2834,11 +2836,12 @@ template {
   }
 }
 
+.character-mobile {
+  padding-bottom: 40px;
+}
+
 .character-mobile__button {
-  margin-bottom: 40px;
   width: 50%;
-  font-family: "GTEestiProDisplay-Thin";
-  font-weight: 300;
 }
 
 .character-mobile__button:hover {
@@ -2850,8 +2853,9 @@ template {
 }
 
 .character-media {
+  position: absolute;
   padding: 20px 20px 20px 20px;
-  width: 100%;
+  width: 90%;
   background-color: #fff;
   -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09);
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09);
@@ -2859,11 +2863,11 @@ template {
           animation: media 0.3s ease-in 1 both;
 }
 
-.character-media__line {
+.character__line {
   margin-bottom: 18px;
 }
 
-.character-media__span {
+.character__span {
   display: block;
   margin-bottom: 26px;
   font-family: "GTEestiProDisplay-Light";
@@ -2993,9 +2997,7 @@ template {
 }
 
 .card {
-  margin: auto;
   padding-top: 143px;
-  width: 90%;
   -webkit-animation: card 0.5s ease;
           animation: card 0.5s ease;
   background-color: white;

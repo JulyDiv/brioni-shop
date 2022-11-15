@@ -2,7 +2,7 @@ import React from "react";
 import { CatalogItem } from "../../components/CatalogItem";
 import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 import { Character } from "../../modules/Character/Character";
-import { CharacterMobileCatalog } from "../../modules/CharacterMobileCatalog/CharacterMobileCatalog";
+import { CharacterMobileCatalog } from "../../modules/CharacterMobile/CharacterMobileCatalog";
 
 export const getServerSideProps = async () => {
   const res = await fetch(

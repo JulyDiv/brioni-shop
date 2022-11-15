@@ -1,17 +1,35 @@
 import React from "react";
 
-export const CharacterDropdownList = ({ item }) => {
+export const CharacterDropdownList = ({ item, color, id, size }) => {
   return (
-    <div key={item.id} className="character-dropdown__option-item">
+    <div key={id} className="character-dropdown__option-item">
       <input
         className="character-dropdown__input"
         type="checkbox"
         id="character"
       />
       <div className="checkbox character-dropdown__checkbox"></div>
-      <label htmlFor="character" className="character-dropdown__label">
-        {item.label}
-      </label>
+      {item ? (
+        <label htmlFor="character" className="character-dropdown__label">
+          {item.label}
+        </label>
+      ) : (
+        ""
+      )}
+      {color ? (
+        <label htmlFor="character" className="character-dropdown__label">
+          {color}
+        </label>
+      ) : (
+        ""
+      )}
+      {size ? (
+        <label htmlFor="character" className="character-dropdown__label">
+          {size}
+        </label>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

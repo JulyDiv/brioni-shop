@@ -2,19 +2,15 @@ import React from "react";
 import { useState } from "react";
 import dbCharacter from "../../DBCharacter";
 import { CharacterButtonMobile } from "../../components/CharacterButtonMobile";
-import { CharacterDropdown } from "../../modules/CharacterDropdown/CharacterDropdown";
+import { CharacterDropdown } from "../CharacterDropdown/CharacterDropdown";
 
 export const CharacterMobileCatalog = () => {
   const [dropdownFilter, setDropdownFilter] = useState(false);
   const [dropdownSort, setDropdownSort] = useState(false);
-  // const onClick = () => {
-  //   dropdownFilter ? setDropdownFilter(false) : setDropdownFilter(true);
-  // }
   return (
     <div className="character-mobile">
       <CharacterButtonMobile
         name="Filter"
-        // onClick={onClick}
         onClick={() => {
           dropdownFilter ? setDropdownFilter(false) : setDropdownFilter(true);
         }}

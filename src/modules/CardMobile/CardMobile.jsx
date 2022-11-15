@@ -1,5 +1,5 @@
 import React from "react";
-import { CharacterMobileCard } from "../CharacterMobileCard/CharacterMobileCard";
+import { CharacterMobileCard } from "../CharacterMobile/CharacterMobileCard";
 import { SwiperCardMobile } from "../SwiperCardMobile/SwiperCardMobile";
 import { useChoice } from "../../hooks/useChoice";
 

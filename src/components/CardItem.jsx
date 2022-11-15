@@ -52,7 +52,14 @@ export const CardItem = ({ jacket }) => {
 
               <div className="line card-info__line"></div>
             </div>
-            <SizeItem {...size} />
+
+            <div className="card-info__size">
+              <span className="card-info__choose">Choose your size</span>
+              <div className="card-info__size-block">
+                <SizeItem {...size} />
+              </div>
+              <div className="line card-info__line"></div>
+            </div>
             <div className="card-info__mobile">
               <CardMobile jacket={jacket} />
             </div>
@@ -66,9 +73,11 @@ export const CardItem = ({ jacket }) => {
                 <>
                   {jacket.description.substr(0, 320)}
                   {!showMoreBtn && (
-                    <button className="card-info__link-button"
-                    onClick={() => setShowMoreBtn(true)}>
-                      ...{" "}View all
+                    <button
+                      className="card-info__link-button"
+                      onClick={() => setShowMoreBtn(true)}
+                    >
+                      ... View all
                     </button>
                   )}
                   {showMoreBtn && jacket.description.substr(320)}
