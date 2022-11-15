@@ -1,14 +1,14 @@
 import React from "react";
-import { CharacterMobile } from "../CharacterMobile/CharacterMobile";
+import { CharacterMobileCard } from "../CharacterMobileCard/CharacterMobileCard";
 import { SwiperCardMobile } from "../SwiperCardMobile/SwiperCardMobile";
 import { useChoice } from "../../hooks/useChoice";
 
-export const CardModalMobile = ({ jacket }) => {
+export const CardMobile = ({ jacket }) => {
   const choice = useChoice(jacket);
   return (
     <>
       <SwiperCardMobile {...choice} />
-      <CharacterMobile />
+      <CharacterMobileCard jacket={jacket} />
     </>
   );
 };

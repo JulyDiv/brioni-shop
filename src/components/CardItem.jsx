@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BreadCrumb } from "../modules/BreadCrumb/BreadCrumb";
 import { SizeItem } from "../components/SizeItem";
 import { ChoiceItem } from "./ChoiceItem";
-import { CardModalMobile } from "../modules/CardModalMobile/CardModalMobile";
+import { CardMobile } from "../modules/CardMobile/CardMobile";
 import { useSize } from "../hooks/useSize";
 import { useChoice } from "../hooks/useChoice";
 
@@ -54,7 +54,7 @@ export const CardItem = ({ jacket }) => {
             </div>
             <SizeItem {...size} />
             <div className="card-info__mobile">
-              <CardModalMobile jacket={jacket} />
+              <CardMobile jacket={jacket} />
             </div>
             <button className="button-dark card-info__button" type="submit">
               Add to card
