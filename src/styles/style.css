@@ -51,6 +51,9 @@ button {
 }
 
 input, textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 0;
   border: none;
   background-color: transparent;
@@ -3424,11 +3427,12 @@ template {
   width: 27px;
   height: 27px;
   border-radius: 50%;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border: 1px solid #FFFFFF;
   outline: 1px solid #000;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .card-info__item:last-child {
