@@ -26,7 +26,10 @@ export const Header = () => {
         )}
         <div className="container">
           <div className="navbar">
-            <MenuButton setIsMenuMobile={setIsMenuMobile} />
+            <MenuButton
+              setIsMenuMobile={setIsMenuMobile}
+              isMenuMobile={isMenuMobile}
+            />
             <div className="navbar-block">
               <Link href="/catalog" className="neon navbar-block__link">
                 Assortment
