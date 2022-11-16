@@ -15,10 +15,30 @@
     height: 100px
     &-button
         display: none
+        width: 30px
+        height: 16px
+        &--active
+            flex-direction: column
+            justify-content: space-between
+            align-items: center
         &__line
-            width: 30px
+            width: 100%
             height: 2px
             background-color: $text-color2
+            transition: all 0.1s ease
+            &:nth-of-type(1), &:nth-of-type(1)
+                transform-origin: left
+            &--hover
+                width: 100%
+                height: 2px
+                background-color: $bg-color4
+            &--active
+                &::nth-of-type(1)
+                    transform: rotate(45deg)
+                &::nth-of-type(2)
+                    opacity: 0
+                &::nth-of-type(3)
+                    transform: rotate(-45deg)
     &-block
         display: flex
         justify-content: space-between
@@ -90,20 +110,8 @@
     .navbar
         height: 80px
         &-button
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: space-between
-            padding: 0
-            background-color: inherit
-            border: none
-            cursor: pointer
-            width: 30px
-            height: 16px
-            &--visibile
-                display: block
-            &--hidden
-                display: none
+            &--active
+                display: flex
         &-block
             display: none
         &-logo
@@ -118,20 +126,8 @@
     .navbar
         height: 60px
         &-button
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: space-between
-            padding: 0
-            background-color: inherit
-            border: none
-            cursor: pointer
-            width: 30px
-            height: 16px
-            &--visibile
-                display: block
-            &--hidden
-                display: none
+            &--active
+                display: flex
         &-block
             display: none
         &-logo
@@ -147,17 +143,8 @@
     .navbar
         height: 50px
         &-button
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: space-between
-            background-color: inherit
-            width: 30px
-            height: 16px
-            &--visibile
-                display: block
-            &--hidden
-                display: none
+            &--active
+                display: flex
         &-block
             display: none
         &-logo

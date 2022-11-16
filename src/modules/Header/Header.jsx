@@ -6,24 +6,27 @@ import { ModalOrder } from "../ModalOrder/ModalOrder";
 import { ModalContact } from "../ModalContact/ModalContact";
 import { ModalThank } from "../ModalThank/ModalThank";
 import { ModalSearch } from "../ModalSearch/ModalSearch";
+import { MenuMobile } from "../MenuMobile/MenuMobile";
+import { MenuButton } from "../../components/MenuButton";
 
 export const Header = () => {
   const [isOrder, setIsOrder] = useState(false);
   const [isContact, setIsContact] = useState(false);
   const [isThank, setIsThank] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
+  const [isMenuMobile, setIsMenuMobile] = useState(false);
   return (
     <>
       <header className="header">
+        {isMenuMobile && (
+          <MenuMobile
+            setIsMenuMobile={setIsMenuMobile}
+            isMenuMobile={isMenuMobile}
+          />
+        )}
         <div className="container">
           <div className="navbar">
-            <button className="navbar-button">
-              <span className="navbar-button__line"></span>
-              <span className="navbar-button__line"></span>
-              <span className="navbar-button__line"></span>
-            </button>
-            {/* <button className="menu-close"></button> */}
-
+            <MenuButton setIsMenuMobile={setIsMenuMobile} />
             <div className="navbar-block">
               <Link href="/catalog" className="neon navbar-block__link">
                 Assortment

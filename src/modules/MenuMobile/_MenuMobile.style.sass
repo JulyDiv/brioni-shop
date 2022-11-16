@@ -1,0 +1,148 @@
+.menu
+    position: fixed
+    top: 80px
+    width: 370px
+    height: 100%
+    z-index: 1001
+    display: none
+    // &-close
+    //     width: 30px
+    //     height: 19px
+    //     background-color: $bg-color1
+    //     background-image: url('../../../public/img/close-search.svg')
+    //     background-position: center
+    //     background-repeat: no-repeat
+    &-button
+        background-color: inherit
+        &__image-up
+            display: none
+    &-mobile
+        padding: 49px 0 49px 20px
+        background-color: $text-color4
+        animation: menuMobile 0.5s ease-in 1 both
+        &__block-top
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: flex-start
+            margin-bottom: 46px
+            height: 116px
+        &__button
+            text-transform: uppercase
+            font-family: $font-light
+            color: $text-color3
+            font-style: normal
+            font-weight: 350
+            font-size: 14px
+            line-height: 16px
+            letter-spacing: 0.03em
+        &__block-bottom
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            margin-top: 47px
+            margin-bottom: 46px
+            height: 166px
+        &__link-bottom
+            color: $text-color3
+            font-style: normal
+            font-weight: 300
+            font-size: 14px
+            line-height: 16px
+    &-assortment
+        position: absolute
+        width: 94%
+        height: 100%
+        background-color: $text-color4
+        animation: menuAssortment 0.5s ease-in 1 both
+        &__button
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            margin-bottom: 46px
+            width: 109px
+            text-transform: uppercase
+            font-family: $font-light
+            color: $text-color3
+            font-style: normal
+            font-weight: 350
+            font-size: 14px
+            line-height: 16px
+            letter-spacing: 0.03em
+            &-image
+                padding-top: 1px
+        &__list
+            background-color: $text-color4
+        &__item
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 17px 20px 17px 0
+            width: 100%
+    &-costume
+        padding: 17px 0 34px 0
+        animation: menuCostume 0.5s ease-in 1 both
+        &__item
+            animation: itemCostume .6s forwards
+            opacity: 0
+            &:nth-child(1)
+                animation-delay: .1s
+            &:nth-child(2)
+                animation-delay: .2s
+            &:nth-child(3)
+                animation-delay: .3s
+            &:nth-child(4)
+                animation-delay: .4s
+            &:nth-child(5)
+                animation-delay: .5s
+            &:nth-child(6)
+                animation-delay: .6s
+        &__block
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            height: 216px
+        &__link
+            text-transform: uppercase
+            font-family: $font-light
+            color: $text-color3
+            font-style: normal
+            font-weight: 350
+            font-size: 14px
+            line-height: 16px
+            letter-spacing: 0.03em
+
+@keyframes menuMobile
+    0%
+        opacity: 1
+        transform: translateX(-370px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes menuAssortment
+    0%
+        opacity: 1
+        transform: translateX(-370px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes itemCostume
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@media (min-width: 768px) and (max-width: 900px)
+    .menu
+        display: block
+@media (min-width: 481px) and (max-width: 767px)
+    .menu
+        display: block
+        top: 60px
+@media (min-width: 320px) and (max-width: 480px)
+    .menu
+        display: block
+        top: 50px
+        width: 100%
