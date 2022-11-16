@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export const MenuButton = ({ setIsMenuMobile }) => {
+export const MenuButton = ({ setIsMenuMobile, isMenuMobile }) => {
   const [isHover, setIsHover] = useState(false);
   const onEnter = () => {
     setIsHover((current) => !current);
@@ -16,7 +16,7 @@ export const MenuButton = ({ setIsMenuMobile }) => {
     <>
       <button
         className="navbar-button navbar-button--active"
-        onClick={() => setIsMenuMobile(true)}
+        onClick={() => {isMenuMobile ? setIsMenuMobile(false) : setIsMenuMobile(true);}}
         // onClick={closeButton}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
