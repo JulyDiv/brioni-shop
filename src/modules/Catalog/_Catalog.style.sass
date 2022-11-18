@@ -9,16 +9,21 @@
         width: 280px
     &__button-light
         display: none
-    &-text
+    &__text
         margin: 0 0 93px 0
         max-width: 352px
+        line-height: 19px
     &-assortment
+        // display: grid
+        // grid-template-rows: 5em 200px 200px
+        // grid-template-columns: 200px 5em 50%
         display: flex
         justify-content: space-between
         flex-wrap: wrap
         padding: 50px 0 0 0
         width: 100%
         &__jacket
+            // padding-right: 45px
             margin-bottom: 46px
             width: 100%
             cursor: pointer
@@ -38,29 +43,33 @@
             margin-bottom: 12px
         &__text
             font-family: $font-light
-            font-style: normal
             color: $text-color3
             font-weight: 350
             font-size: 16px
             line-height: 19px
         &__price
             color: $text-color2
-            font-style: normal
             font-weight: 300
             font-size: 16px
             line-height: 19px
 
+@media (max-width: 1200px)
+    .catalog
+        &-assortment
+            &__image
+                width: 400px
 @media (min-width: 768px) and (max-width: 900px)
     .catalog
         &-assortment
             &__image
                 width: 335px
-            &__link
 @media (min-width: 481px) and (max-width: 767px)
     .catalog
         padding: 83px 0 50px 0
-        &-text
+        &__text
+            margin-bottom: 44px
             font-size: 14px
+            line-height: 16px
         &-assortment
             justify-content: center
             &__jacket
@@ -68,16 +77,18 @@
             &__image
             &__text, &__price
                 font-size: 14px
+                line-height: 16px
 @media (min-width: 320px) and (max-width: 480px)
     .catalog
-        padding-top: 73px
+        padding: 73px 0 0 0
         &__line
             display: none
         &-mobile
             display: block
-        &-text
+        &__text
             margin-bottom: 46px
             font-size: 14px
+            line-height: 16px
         // &__button-light
         //     display: flex
         //     width: 100%
@@ -89,6 +100,11 @@
         &-assortment
             justify-content: center
             &__jacket
+                margin-bottom: 36px
                 width: 100%
             &__image
+                margin-bottom: 18px
                 width: 100%
+            &__text, &__price
+                font-size: 14px
+                line-height: 16px

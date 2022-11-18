@@ -20,7 +20,7 @@ const Catalog = ({ jacket }) => {
       <section className="catalog">
         <div className="container">
           <BreadCrumb />
-          <p className="catalog-text">
+          <p className="catalog__text">
             Models for all occasions: from impeccably tailored classic blazers
             to more relaxed blazers for relax.
           </p>

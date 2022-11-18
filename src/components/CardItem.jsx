@@ -7,6 +7,7 @@ import { ChoiceItem } from "./ChoiceItem";
 import { CardMobile } from "../modules/CardMobile/CardMobile";
 import { useSize } from "../hooks/useSize";
 import { useChoice } from "../hooks/useChoice";
+import { CardInfoColor } from "./CardInfoColor";
 
 export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
@@ -34,25 +35,17 @@ export const CardItem = ({ jacket }) => {
               <h3 className="card-info__title">{jacket.name}</h3>
               <span className="card-info__price">{jacket.price}</span>
             </div>
+
             <div className="card-info__color-block">
               <div className="line card-info__line"></div>
 
               <span className="card-info__choose">Choose your color</span>
-              <div className="card-info__color">
-                <div className="card-info__item"></div>
-                <div className="card-info__item"></div>
-              </div>
-              <div className="card-info__color-name">
-                {jacket.color.map((item, id) => (
-                  <span className="card-info__name-item" key={id}>
-                    {item}
-                  </span>
-                ))}
-              </div>
 
+              <div className="card-info__color">
+                <CardInfoColor jacket={jacket} />
+              </div>
               <div className="line card-info__line"></div>
             </div>
-
             <div className="card-info__size">
               <span className="card-info__choose">Choose your size</span>
               <div className="card-info__size-block">
@@ -67,11 +60,11 @@ export const CardItem = ({ jacket }) => {
               Add to card
             </button>
             <p className="card-info__text">
-              {jacket.description.length <= 320 ? (
+              {jacket.description.length <= 300 ? (
                 jacket.description
               ) : (
                 <>
-                  {jacket.description.substr(0, 320)}
+                  {jacket.description.substr(0, 300)}
                   {!showMoreBtn && (
                     <button
                       className="card-info__link-button"
@@ -80,7 +73,7 @@ export const CardItem = ({ jacket }) => {
                       ... View all
                     </button>
                   )}
-                  {showMoreBtn && jacket.description.substr(320)}
+                  {showMoreBtn && jacket.description.substr(300)}
                 </>
               )}
             </p>

@@ -2328,14 +2328,17 @@ template {
 }
 
 @media (max-width: 1200px) {
-  .home {
-    padding-top: 80px;
-  }
   .home-info__block {
     width: 70%;
   }
   .home-info__title {
     font-size: 34px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .home {
+    padding-top: 80px;
   }
 }
 
@@ -2486,6 +2489,44 @@ template {
   text-decoration: none;
 }
 
+@media (max-width: 1200px) {
+  .info {
+    padding: 0 !important;
+  }
+  .info-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    height: 800px;
+  }
+  .info-block {
+    padding: 50px 0;
+    width: 80% !important;
+    height: 50% !important;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .info-block__title {
+    font-size: 25px;
+  }
+  .info-block__text, .info-block__link {
+    font-size: 15px;
+  }
+  .info__image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 900px) {
   .info {
     padding: 0 !important;
@@ -2515,10 +2556,7 @@ template {
   .info-block__title {
     font-size: 25px;
   }
-  .info-block__text {
-    font-size: 15px;
-  }
-  .info-block__link {
+  .info-block__text, .info-block__link {
     font-size: 15px;
   }
   .info__image {
@@ -2989,6 +3027,12 @@ template {
   line-height: 19px;
 }
 
+@media (max-width: 1200px) {
+  .catalog-assortment__image {
+    width: 400px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 900px) {
   .catalog-assortment__image {
     width: 335px;
@@ -3062,7 +3106,6 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 26px;
   width: 139px;
 }
 
@@ -3070,7 +3113,6 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 26px;
   padding-right: 30px;
 }
 
@@ -3085,6 +3127,8 @@ template {
 }
 
 .character__span {
+  display: block;
+  margin-bottom: 27px;
   font-family: "GTEestiProDisplay-Light";
   color: #333333;
   font-style: normal;
@@ -3095,7 +3139,7 @@ template {
 
 .character__button {
   width: 23px;
-  height: 100%;
+  height: 17px;
   background-image: url("../../../public/img/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -3136,17 +3180,6 @@ template {
 
 .character__line {
   margin-bottom: 18px;
-}
-
-.character__span {
-  display: block;
-  margin-bottom: 26px;
-  font-family: "GTEestiProDisplay-Light";
-  color: #333333;
-  font-style: normal;
-  font-weight: 350;
-  font-size: 14px;
-  line-height: 16px;
 }
 
 @-webkit-keyframes media {
@@ -3269,7 +3302,7 @@ template {
 }
 
 .card {
-  padding-top: 143px;
+  padding-top: 147px;
   -webkit-animation: card 0.5s ease;
           animation: card 0.5s ease;
   background-color: white;
@@ -3433,8 +3466,8 @@ template {
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border: 1px solid #FFFFFF;
+  outline: 1px solid #000;
   cursor: pointer;
-  overflow: hidden !important;
 }
 
 .card-info__item:last-child {

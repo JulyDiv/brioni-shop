@@ -1,5 +1,5 @@
 .card
-    padding-top: 143px
+    padding-top: 147px
     animation: card 0.5s ease
     background-color: white
     &-wrapper
@@ -32,7 +32,6 @@
         height: 630px
     &-info
         width: 447px
-        // height: 713px
         &__mobile
             display: none
         &__select
@@ -43,7 +42,6 @@
             cursor: pointer
         &__articl
             color: $text-color2
-            font-style: normal
             font-weight: 300
             font-size: 16px
             line-height: 19px
@@ -53,7 +51,6 @@
             margin-bottom: 14px
             font-family: $font-light
             color: $text-color3
-            font-style: normal
             font-weight: 350
             font-size: 28px
             line-height: 32px
@@ -63,7 +60,6 @@
             margin-bottom: 20px
             font-family: $font-light
             color: $text-color3
-            font-style: normal
             font-weight: 350
             font-size: 20px
             line-height: 23px
@@ -76,43 +72,36 @@
             height: 153px
         &__choose
             color: $text-color3
-            font-style: normal
             font-weight: 300
             font-size: 16px
             line-height: 19px
         &__color
             display: flex
-            align-items: center
-            width: 100%
+            height: 68px
+        &__color-name
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            margin-right: 30px
+            height: 68px
         &__item
-            margin-right: 16%
             width: 27px
             height: 27px
-            background-color: pink
+            +background-image
             border-radius: 50% !important
             -webkit-border-radius: 50% !important
             -moz-border-radius: 50% !important
             border: 1px solid $text-color4
-            // outline: 1px solid #000
+            outline: 1px solid #000
             cursor: pointer
             overflow: hidden !important
-            &:last-child
-                margin-right: 0px
             &:hover
                 outline: 1px solid white
-        &__color-name
-            display: flex
-            align-items: center
-            width: 100%
         &__name-item
-            margin-right: 7%
             color: $text-color3
-            font-style: normal
             font-weight: 300
             font-size: 16px
             line-height: 19px
-            &:last-child
-                margin-right: 0px
         &__size
             display: flex
             flex-direction: column
@@ -146,7 +135,7 @@
             &:hover:after
                 width: 100%
         &__button
-            margin-bottom: 47px
+            margin-bottom: 48px
             width: 200px
             height: 50px
         &__text, &__link-button
@@ -161,11 +150,11 @@
             &:hover
                 text-decoration: none
 
-@keyframes card
-    0%
-        transform: scale(0)
-    100%
-        transform: scale(1)
+// @keyframes card
+//     0%
+//         transform: scale(0)
+//     100%
+//         transform: scale(1)
 
 @media (max-width: 1200px)
     .card
@@ -185,6 +174,8 @@
 @media (min-width: 768px) and (max-width: 900px)
     .card
         padding-top: 128px
+        &-wrapper
+            padding-bottom: 0
         &-jackets
             flex-direction: column-reverse
             justify-content: flex-end
@@ -206,38 +197,37 @@
             height: auto
         &-info
             width: 40%
-            &__name-item
-                margin-right: 7%
-                color: $text-color3
-                font-style: normal
-                font-weight: 300
-                font-size: 14px
-                line-height: 19px
-                &:last-child
-                    margin-right: 0px
+            // &__name-item
+            //     color: $text-color3
+            //     font-weight: 300
+            //     font-size: 14px
+            //     line-height: 19px
             &__line
                 width: 100%
             &__title
-                font-size: 1em
             &__price
-                font-size: 1em
             &__color
-                width: 78%
-                height: 20%
-                &-block, &-name
-                    width: 100%
+                // width: 78%
+                // height: 20%
+                &-block
+                    // width: 100%
+                    // height: 150px
+                &-name
+                    // width: 100%
             &__size
                 width: 90%
                 &-item
                     font-size: 13px
             &__text, &__choose, &__item, &__articl, &__link
-                font-size: 13px
-                line-height: 24px
+                // font-size: 13px
+                // line-height: 24px
             &__button
-                width: 100%
+                // width: 100%
 @media (min-width: 481px) and (max-width: 767px)
     .card
         padding-top: 83px
+        &-wrapper
+            padding-bottom: 0px
         &-jackets
             flex-direction: column-reverse
             justify-content: flex-end
@@ -262,21 +252,30 @@
             &__line
                 width: 100%
             &__title
-                font-size: 1em
+                font-size: 20px
+                line-height: 23px
             &__price
-                font-size: 1em
+                font-size: 16px
+                line-height: 19px
             &__color
-                width: 78%
-                height: 20%
-                &-block, &-name
+                height: 66px
+                &-block
                     width: 100%
+                    height: 149px
+            &__color-name
+                margin-right: 39px
             &__size
-                width: 90%
-                &-item
-                    font-size: 13px
-            &__text, &__choose, &__item, &__articl, &__link
-                font-size: 13px
-                line-height: 24px
+                width: 100%
+                height: 109px
+                &-block
+                    justify-content: flex-start
+                    height: 52px
+                    column-gap: 8%
+            &__choose, &__name-item, &__articl, &__link-button, &__size-label
+                font-size: 14px
+                line-height: 16px
+            &__text
+                font-size: 14px
             &__button
                 width: 100%
 @media (min-width: 320px) and (max-width: 480px)
