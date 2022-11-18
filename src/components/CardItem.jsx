@@ -60,11 +60,11 @@ export const CardItem = ({ jacket }) => {
               Add to card
             </button>
             <p className="card-info__text">
-              {jacket.description.length <= 300 ? (
+              {jacket.description.length <= 320 ? (
                 jacket.description
               ) : (
                 <>
-                  {jacket.description.substr(0, 300)}
+                  {jacket.description.substr(0, 320)}
                   {!showMoreBtn && (
                     <button
                       className="card-info__link-button"
@@ -73,7 +73,7 @@ export const CardItem = ({ jacket }) => {
                       ... View all
                     </button>
                   )}
-                  {showMoreBtn && jacket.description.substr(300)}
+                  {showMoreBtn && jacket.description.substr(320)}
                 </>
               )}
             </p>

@@ -16,7 +16,7 @@ export const MenuAssortment = ({ setIsMenuMobile, setIsAssortment }) => {
         onClick={() => setIsAssortment(false)}
       >
         <img
-          src="img/arrow-left.svg"
+          src="/img/arrow-left.svg"
           alt="arrow left"
           class="menu-assortment__button-image"
         />

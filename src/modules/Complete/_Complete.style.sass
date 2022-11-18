@@ -1,7 +1,9 @@
 .complete
-    padding: 93px 0 100px 0
+    padding: 0px 0 100px 0
+    &-wrapper
+        padding: 93px 0 0 0
     &__title
-        margin-bottom: 40px
+        margin: 0 0 40px 0 !important
         font-family: $font-light
         color: $text-color3
         font-style: normal
@@ -10,9 +12,13 @@
         line-height: 46px
         letter-spacing: 0.02em
 
+// @media (max-width: 1200px)
+// @media (min-width: 768px) and (max-width: 900px)
 @media (min-width: 481px) and (max-width: 767px)
     .complete
-        padding: 46px 0 0px 0
+        //padding: 46px 0 0px 0
+        &-wrapper
+            padding: 46px 0 0 0
         &__title
             font-size: 22px
             line-height: 26px

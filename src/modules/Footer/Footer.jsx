@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="line footer__line"></div>
         <div className="footer-wrapper">
           <h4 className="footer__title">
-            Subscribe to <b>Brioni</b> news
+            Subscribe to <strong>Brioni</strong> news
           </h4>
           <form action="#" className="footer-form">
             <input

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useState } from "react";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import { MenuAssortment } from "./MenuAssortment";
@@ -36,7 +37,7 @@ export const MenuMobile = ({ setIsMenuMobile, isMenuMobile }) => {
 
           <div className="line"></div>
 
-          {/* <div className="menu-mobile__block-bottom">
+          <div className="menu-mobile__block-bottom">
             <Link href="#" className="menu-mobile__link-bottom">
               Favorites
             </Link>
@@ -49,7 +50,7 @@ export const MenuMobile = ({ setIsMenuMobile, isMenuMobile }) => {
             <Link href="#" className="menu-mobile__link-bottom">
               Customer servicer
             </Link>
-          </div> */}
+          </div>
 
           <div className="menu__line"></div>
         </div>
