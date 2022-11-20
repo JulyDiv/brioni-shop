@@ -15,7 +15,11 @@ export const SwiperCardMobile = ({ choice }) => {
     >
       {choice.map((item) => (
         <SwiperSlide key={item.id} className="swiper-mobile__slide">
-          <img src={item.name} className="swiper-mobile__image" alt="Image: Jacket" />
+          <img
+            src={item.name}
+            className="swiper-mobile__image"
+            alt="Image: Jacket"
+          />
         </SwiperSlide>
       ))}
     </Swiper>

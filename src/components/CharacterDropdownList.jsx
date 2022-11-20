@@ -18,7 +18,7 @@ export const CharacterDropdownList = ({ item, color, id, size }) => {
       )}
       {color ? (
         <label htmlFor="character" className="character-dropdown__label">
-          {color}
+          {color.colorName}
         </label>
       ) : (
         ""
