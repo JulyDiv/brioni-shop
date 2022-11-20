@@ -20,7 +20,7 @@ export const CatalogItem = ({ jacket }) => {
             />
             <div className="catalog-assortment__info">
               <span className="catalog-assortment__text">{jacket.name}</span>
-              <button className="catalog-assortment__button"></button>
+              <button className="catalog-assortment__icon"></button>
             </div>
             <span className="catalog-assortment__price">{jacket.price}</span>
           </div>

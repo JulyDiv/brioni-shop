@@ -2,30 +2,41 @@
     &-mobile
         padding-bottom: 40px
         &__button
-            //margin-bottom: 40px
             width: 50%
+            &::after
+                display: inline-block
+                content: ""
+                margin-left: 14px
+                width: 9px
+                height: 7px
+                background-image: url("../../../public/img/arrow-down.svg")
             &:hover
                 background-color: rgba(38, 38, 38, 0.1)
-        &__image
-            margin-left: 14px
+            &--active
+                background-color: rgba(38, 38, 38, 0.1)
+                &::after
+                    display: inline-block
+                    content: ""
+                    margin-left: 14px
+                    width: 9px
+                    height: 7px
+                    background-image: url("../../../public/img/arrow-up.svg")
     &-media
         position: absolute
-        padding: 20px 20px 20px 20px
-        width: 90%
+        padding: 20px 20px 0px 20px
+        width: 89%
         background-color: #fff
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09)
         animation: media 0.3s ease-in 1 both
-    &__line
-        margin-bottom: 18px
-    // &__span
-    //     display: block
-    //     margin-bottom: 26px
-    //     font-family: $font-light
-    //     color: $text-color3
-    //     font-style: normal
-    //     font-weight: 350
-    //     font-size: 14px
-    //     line-height: 16px
+        &__span
+            display: inline-block
+            margin-bottom: 26px
+            font-family: $font-light
+            color: $text-color3
+            font-weight: 350
+            +adapt-font-320-640
+        &__line
+            margin-bottom: 18px
 
 @keyframes media
     0%

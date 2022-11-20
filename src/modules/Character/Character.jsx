@@ -7,6 +7,26 @@ export const Character = () => {
   const [characterDropdownColor, setCharacterDropdownColor] = useState(false);
   const [characterDropdownSize, setCharacterDropdownSize] = useState(false);
   const [characterDropdownSort, setCharacterDropdownSort] = useState(false);
+
+  const onClickColor = (e) => {
+    e.currentTarget.classList.toggle("character__button--active");
+    characterDropdownColor
+      ? setCharacterDropdownColor(false)
+      : setCharacterDropdownColor(true);
+  };
+  const onClickSize = (e) => {
+    e.currentTarget.classList.toggle("character__button--active");
+    characterDropdownSize
+      ? setCharacterDropdownSize(false)
+      : setCharacterDropdownSize(true);
+  };
+  const onClickSort = (e) => {
+    e.currentTarget.classList.toggle("character__button--active");
+    characterDropdownSort
+      ? setCharacterDropdownSort(false)
+      : setCharacterDropdownSort(true);
+  };
+
   return (
     <div className="character">
       <div className="character__color-size">
@@ -14,11 +34,7 @@ export const Character = () => {
           <span className="character__span">Color</span>
           <button
             className="character__button"
-            onClick={() => {
-              characterDropdownColor
-                ? setCharacterDropdownColor(false)
-                : setCharacterDropdownColor(true);
-            }}
+            onClick={onClickColor}
           ></button>
         </div>
         {characterDropdownColor && (
@@ -30,11 +46,7 @@ export const Character = () => {
           <span className="character__span">Size</span>
           <button
             className="character__button"
-            onClick={() => {
-              characterDropdownSize
-                ? setCharacterDropdownSize(false)
-                : setCharacterDropdownSize(true);
-            }}
+            onClick={onClickSize}
           ></button>
         </div>
         {characterDropdownSize && (
@@ -49,11 +61,7 @@ export const Character = () => {
           <span className="character__span">Sort</span>
           <button
             className="character__button"
-            onClick={() => {
-              characterDropdownSort
-                ? setCharacterDropdownSort(false)
-                : setCharacterDropdownSort(true);
-            }}
+            onClick={onClickSort}
           ></button>
         </div>
       </div>

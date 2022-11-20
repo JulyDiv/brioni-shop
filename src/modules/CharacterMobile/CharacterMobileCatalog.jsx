@@ -7,13 +7,21 @@ import { CharacterDropdown } from "../CharacterDropdown/CharacterDropdown";
 export const CharacterMobileCatalog = () => {
   const [dropdownFilter, setDropdownFilter] = useState(false);
   const [dropdownSort, setDropdownSort] = useState(false);
+
+  const onClickFilter = (e) => {
+    e.currentTarget.classList.toggle("character-mobile__button--active");
+    dropdownFilter ? setDropdownFilter(false) : setDropdownFilter(true);
+  };
+  const onClickSort = (e) => {
+    e.currentTarget.classList.toggle("character-mobile__button--active");
+    dropdownSort ? setDropdownSort(false) : setDropdownSort(true);
+  };
+
   return (
     <div className="character-mobile">
       <CharacterButtonMobile
         name="Filter"
-        onClick={() => {
-          dropdownFilter ? setDropdownFilter(false) : setDropdownFilter(true);
-        }}
+        onClick={onClickFilter}
       />
       {dropdownFilter && (
         <div className="character-media">
@@ -27,9 +35,7 @@ export const CharacterMobileCatalog = () => {
 
       <CharacterButtonMobile
         name="Sort"
-        onClick={() => {
-          dropdownSort ? setDropdownSort(false) : setDropdownSort(true);
-        }}
+        onClick={onClickSort}
       />
       {dropdownSort && (
         <div className="character-media">

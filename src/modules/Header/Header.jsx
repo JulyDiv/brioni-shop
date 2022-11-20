@@ -31,7 +31,7 @@ export const Header = () => {
               isMenuMobile={isMenuMobile}
             />
             <div className="navbar-block">
-              <Link href="/catalog" className="neon navbar-block__link">
+              <Link href="/catalog" className="navbar-block__link">
                 Assortment
               </Link>
               <Link href="#" className="navbar-block__link">

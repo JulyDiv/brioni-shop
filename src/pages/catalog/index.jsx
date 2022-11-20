@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { CatalogItem } from "../../components/CatalogItem";
 import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 import { Character } from "../../modules/Character/Character";
@@ -15,6 +16,7 @@ export const getServerSideProps = async () => {
 };
 
 const Catalog = ({ jacket }) => {
+  const [showMoreBtn, setShowMoreBtn] = useState(false);
   return (
     <>
       <section className="catalog">
@@ -30,9 +32,23 @@ const Catalog = ({ jacket }) => {
             <CharacterMobileCatalog />
           </div>
           <div className="catalog-assortment">
-            <CatalogItem jacket={jacket} />
+            {jacket.length <= 6 ? (
+              <CatalogItem jacket={jacket} />
+            ) : (
+              <>
+                <CatalogItem jacket={jacket.slice(0, 6)} />
+                {!showMoreBtn && (
+                  <button
+                    className="button-dark catalog-assortment__button"
+                    onClick={() => setShowMoreBtn(true)}
+                  >
+                    Show more
+                  </button>
+                )}
+                {showMoreBtn && <CatalogItem jacket={jacket.slice(6)} />}
+              </>
+            )}
           </div>
-          <button className="button-dark catalog__button">Show more</button>
         </div>
       </section>
     </>

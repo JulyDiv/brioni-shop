@@ -3,11 +3,6 @@
     padding: 147px 0 100px 0
     &-mobile
         display: none
-    &__button
-        display: block
-        margin: auto
-        width: 280px
-        height: 40px
     &__button-light
         display: none
     &__text
@@ -15,25 +10,23 @@
         max-width: 352px
         line-height: 19px
     &-assortment
-        // display: grid
-        // grid-template-rows: 5em 200px 200px
-        // grid-template-columns: 200px 5em 50%
-        display: flex
-        justify-content: space-between
-        flex-wrap: wrap
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-auto-columns: 100%
+        column-gap: 45px
+        row-gap: 46px
         padding: 50px 0 0 0
         width: 100%
         &__jacket
-            // padding-right: 45px
-            margin-bottom: 46px
             width: 100%
             cursor: pointer
         &__image
             margin-bottom: 17px
             width: 370px
-        &__button
+        &__icon
             display: flex
             flex-shrink: 0
+            margin-left: 20px
             width: 18px
             height: 15px
             background-image: url("../../../public/img/select-catalog.svg")
@@ -50,18 +43,25 @@
         &__price
             color: $text-color2
             +font
+        &__button
+            grid-column: 2 / 3
+            margin: auto
+            width: 280px
+            height: 40px
 
 @media (max-width: 1200px)
     .catalog
         &-assortment
-            &__image
-                width: 400px
+            &__button
+                grid-column: 1 / 4
 @media (min-width: 768px) and (max-width: 900px)
     .catalog
         padding-top: 127px
         &-assortment
-            &__image
-                width: 335px
+            grid-template-columns: repeat(2, 1fr)
+            column-gap: 50px
+            &__button
+                grid-column: 1 / 3
 @media (min-width: 481px) and (max-width: 767px)
     .catalog
         padding: 83px 0 50px 0
@@ -69,15 +69,17 @@
             margin-bottom: 44px
             +adapt-font-320-640
         &-assortment
-            justify-content: center
-            &__jacket
-                margin-bottom: 36px
-            &__image
+            grid-template-columns: repeat(2, 1fr)
+            column-gap: 40px
+            row-gap: 36px
             &__text, &__price
                 +adapt-font-320-640
+            &__button
+                grid-column: 1 / 3
+                width: 200px
 @media (min-width: 320px) and (max-width: 480px)
     .catalog
-        padding: 73px 0 0 0
+        padding: 73px 0 50px 0
         &__line
             display: none
         &-mobile
@@ -85,22 +87,15 @@
         &__text
             margin-bottom: 46px
             +adapt-font-320-640
-        // &__button-light
-        //     display: flex
-        //     width: 100%
-        // &__character-button
-        //     &:hover
-        //         background-color: rgba(38, 38, 38, 0.1)
-        &__button
-            width: 100%
         &-assortment
-            justify-content: center
-            padding: 0
-            &__jacket
-                margin-bottom: 36px
+            grid-template-columns: 1fr
+            row-gap: 36px
+            &__button
+                grid-column: 1 / 1
                 width: 100%
+                +adapt-font-320-640
             &__image
                 margin-bottom: 18px
-                //width: 100%
+                width: 100%
             &__text, &__price
                 +adapt-font-320-640

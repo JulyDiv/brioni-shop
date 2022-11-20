@@ -2,7 +2,7 @@
     position: relative
     &-dropdown
         position: absolute
-        top: 45px
+        top: 46px
         z-index: 0
         padding: 25px 0px 0px 25px
         width: 260px
@@ -42,3 +42,10 @@
     100%
         opacity: 1
         transform: translateY(0px)
+
+@media (min-width: 320px) and (max-width: 480px)
+    .character
+        &-dropdown
+            &__label
+                color: $text-color3
+                +adapt-font-320-640
