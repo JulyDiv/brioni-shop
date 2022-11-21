@@ -1,46 +1,69 @@
 /* eslint-disable @next/next/no-img-element */
 import Swiper, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
+import { useEffect } from "react";
 
-export const swiper = new Swiper(".swiper", {
+//   useEffect(() => {
+export const swiper = new Swiper(".swiper2", {
   modules: [Navigation, Pagination, Scrollbar, Autoplay],
   speed: 500,
-  wrapperClass: "swiper-wrapper swiper-wrapper2",
+  wrapperClass: "swiper-wrapper swiper2-wrapper2",
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper2-button2-next2",
+    prevEl: ".swiper2-button2-prev2",
   },
-  //   autoplay: {
-  //     delay: 2500
-  //   },
+//   autoplay: {
+//     delay: 2500,
+//   },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
 });
 
+//   }, []);
+
+// export const swiper = new Swiper(".swiper2", {
+//   modules: [Navigation, Pagination, Scrollbar, Autoplay],
+//   speed: 500,
+//   wrapperClass: "swiper-wrapper swiper2-wrapper2",
+//   navigation: {
+//     nextEl: ".swiper2-button2-next2",
+//     prevEl: ".swiper2-button2-prev2",
+//   },
+//   autoplay: {
+//     delay: 2500,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+// });
+
 export const SwiperHome2 = () => {
-    return (
-      <div class="swiper">
-        <div class="swiper-wrapper swiper-wrapper2">
-          <div class="swiper-slide">
-            <img src="/img/home-slider-1.png" alt="slide" />
-          </div>
-          <div class="swiper-slide">
-            <img src="/img/home-slider-2.png" alt="slide" />
-          </div>
-          <div class="swiper-slide">
-            <img src="/img/home-slider-3.png" alt="slide" />
-          </div>
-          <div class="swiper-slide">
-            <img src="/img/home-slider-4.png" alt="slide" />
-          </div>
+  useEffect((swiper) => {
+    swiper;
+  }, []);
+  return (
+    <div className="swiper swiper2">
+      <div className="swiper-wrapper swiper2-wrapper2">
+        <div className="swiper-slide">
+          <img src="/img/home-slider-1.png" alt="slide" />
         </div>
-
-        <div class="swiper-pagination"></div>
-
-        <div class="swiper-button-prev swiper-button2-prev2"></div>
-        <div class="swiper-button-next swiper-button2-next2"></div>
-
+        <div className="swiper-slide">
+          <img src="/img/home-slider-2.png" alt="slide" />
+        </div>
+        <div className="swiper-slide">
+          <img src="/img/home-slider-3.png" alt="slide" />
+        </div>
+        <div className="swiper-slide">
+          <img src="/img/home-slider-4.png" alt="slide" />
+        </div>
       </div>
-    );
-}
+
+      <div className="swiper-pagination"></div>
+
+      <div className="swiper-button-prev swiper2-button2-prev2"></div>
+      <div className="swiper-button-next swiper2-button2-next2"></div>
+    </div>
+  );
+};
