@@ -66,12 +66,15 @@ export const CardItem = ({ jacket }) => {
                 <>
                   {jacket.description.substr(0, 320)}
                   {!showMoreBtn && (
-                    <button
-                      className="card-info__link-button"
-                      onClick={() => setShowMoreBtn(true)}
-                    >
-                      ... View all
-                    </button>
+                    <>
+                      <span> ... </span>
+                      <button
+                        className="card-info__link-button"
+                        onClick={() => setShowMoreBtn(true)}
+                      >
+                        View all
+                      </button>
+                    </>
                   )}
                   {showMoreBtn && jacket.description.substr(320)}
                 </>

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Preloader } from "../modules/Preloader/Preloader";
 import { Home } from "../modules/Home/Home";
 import { InfoBlock } from '../modules/InfoBlock/InfoBlock';
+import { Ambassador } from '../modules/Ambassador/Ambassador';
 
 export default function HomePage() {
   return (
@@ -28,6 +29,7 @@ export default function HomePage() {
             model in the perfect color and design and make it unique by adding your initials."
         link="Explore"
       />
+      <Ambassador />
     </div>
   );
 }

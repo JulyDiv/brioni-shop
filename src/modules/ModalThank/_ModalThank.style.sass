@@ -14,12 +14,10 @@
         justify-content: space-between
         &__span
             color: $text-color2
-            font-style: normal
             +font
     &__title
         margin: 38px 0 37px 0
         color: $text-color1
-        font-style: normal
         font-weight: 300
         font-size: 40px
         line-height: 46px
@@ -32,10 +30,12 @@
         height: 129px
         &__text
             color: $text-color1
-            font-style: normal
             +font
         &__link
             color: $text-color1
+            border-bottom: 1px solid $text-color2
+            &:hover
+                border: none
     &-form
         &__block
             position: relative
@@ -48,7 +48,6 @@
         &__title
             margin: 91px 0 43px 0
             color: $text-color1
-            font-style: normal
             font-weight: 300
             font-size: 28px
             line-height: 32px
@@ -59,7 +58,6 @@
             padding: 18px 24px
             width: 85%
             height: 100%
-            font-style: normal
             +font
             color: $bg-color4
             background-color: inherit

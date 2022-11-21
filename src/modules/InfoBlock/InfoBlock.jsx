@@ -17,8 +17,8 @@ export const InfoBlock = ({ title, description, link, imgLeft }) => {
         >
           <h2 className="info-block__title">{title}</h2>
           <p className="info-block__text">{description}</p>
-          <Link href="#" className="info-block__link">
-            {link}
+          <Link href="#" >
+            <span className="info-block__link">{link}</span>
           </Link>
         </div>
         <div

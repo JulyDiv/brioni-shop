@@ -32,7 +32,7 @@ export const ModalThank = ({ setIsThank, isThank }) => {
             </p>
             <p className="thank-info__text">
               If you have any questions about an order or delivery, please
-              contact us by writing to
+              contact us by writing to{" "}
               <Link href="#" className="thank-info__link">
                 our e-mail.
               </Link>

@@ -16,14 +16,11 @@
         flex-direction: column
         justify-content: space-between
         width: 100%
-        // height: 100%
         min-height: 749px
-        //flex-grow: 1
     &-title
         display: flex
         justify-content: space-between
         align-items: flex-start
-        // flex-shrink: 1
         width: 100%
         &__title
             margin-bottom: 43px
@@ -37,7 +34,6 @@
         display: flex
         flex-direction: column
         height: 325px
-        // flex-shrink: 1
     &-info
         display: flex
         padding: 25px 0
@@ -75,19 +71,17 @@
             font-size: 16px
             line-height: 19px
         &__button
-            max-height: 16px
             color: $text-color3
             font-family: $font-thin
             +font
-            text-decoration: underline
+            border-bottom: 1px solid $text-color2
             &:hover
-                text-decoration: none
+                border-bottom: 1px solid $text-color4
     &-total
         display: flex
         flex-direction: column
         justify-content: flex-end
         flex-grow: 1
-        //height: 116px
         &__span
             display: inline-block
             margin: 22px 0 45px 0

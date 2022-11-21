@@ -31,11 +31,10 @@
             font-family: $font-light
             color: $text-color3
             font-weight: 350
-            font-size: 16px
-            line-height: 19px
-            text-decoration: underline
+            +font
+            border-bottom: 1px solid $text-color2
             &:hover
-                text-decoration: none
+                border: none
 
 @media (max-width: 1200px)
     .info

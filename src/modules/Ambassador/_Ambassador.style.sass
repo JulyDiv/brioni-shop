@@ -1,0 +1,95 @@
+.ambassador
+    padding: 100px 0
+    &-wrapper
+        display: flex
+        width: 100%
+    &-info
+        position: relative
+        width: 100%
+        background-image: url(../../../public/img/ambassador.jpg)
+        +background-image
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(38, 38, 38, 0.85)
+        &__block
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            margin: 247px 0px 135px 228px
+            width: 573px
+            height: 218px
+        &__text
+            position: relative
+            font-family: $font-light
+            font-weight: 350
+            font-size: 28px
+            line-height: 32px
+            letter-spacing: 0.02em
+            color: rgba(255, 255, 255, 0.9)
+        &__link
+            position: relative
+            font-family: $font-light
+            font-weight: 350
+            +font
+            letter-spacing: 0.03em
+            color: rgba(255, 255, 255, 0.75)
+
+@media (max-width: 1200px)
+    .ambassador
+        &-info
+            display: flex
+            align-items: center
+            justify-content: center
+            &__block
+                margin: 150px auto
+                height: 190px
+            &__text
+                font-size: 20px
+            &__link
+                font-size: 14px
+@media (min-width: 768px) and (max-width: 900px)
+    .ambassador
+        padding: 50px 0
+        &-info
+            &__block
+                margin: 90px 0
+@media (min-width: 481px) and (max-width: 767px)
+    .ambassador
+        padding: 50px 0
+        &-wrapper
+            width: 100%
+        &-info
+            display: flex
+            align-items: center
+            justify-content: center
+            &__block
+                margin: 16% 0
+                width: 90%
+                height: 170px
+            &__text
+                font-size: 16px
+            &__link
+                font-size: 14px
+@media (min-width: 320px) and (max-width: 480px)
+    .ambassador
+        padding: 50px 0
+        &-info
+            display: flex
+            align-items: center
+            justify-content: center
+            &__block
+                margin: 16% 0
+                width: 90%
+                height: 112px
+            &__text
+                font-size: 13px
+                line-height: 24px
+            &__link
+                font-size: 10px
