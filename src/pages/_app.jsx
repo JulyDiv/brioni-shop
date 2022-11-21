@@ -1,5 +1,6 @@
 import "../../styles/style.sass";
 import "swiper/css/bundle";
+// import "swiper/css/bundle";
 import { Layout } from "../components/Layout";
 
 
