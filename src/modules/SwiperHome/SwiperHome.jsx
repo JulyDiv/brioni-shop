@@ -7,7 +7,7 @@ export const SwiperHome = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, A11y, Keyboard]}
-      wrapperClass="swiper-wrap"
+      //wrapperClass="swiper-wrap"
       spaceBetween={50}
       slidesPerView={1}
       navigation
