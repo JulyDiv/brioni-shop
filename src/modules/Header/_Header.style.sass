@@ -15,30 +15,44 @@
     height: 100px
     &-button
         display: none
-        width: 30px
         height: 16px
         &--active
             flex-direction: column
-            justify-content: space-between
             align-items: center
+            justify-content: center
         &__line
-            width: 100%
+            width: 30px
             height: 2px
             background-color: $text-color2
             transition: all 0.1s ease
-            &:nth-of-type(1), &:nth-of-type(1)
-                transform-origin: left
+            margin-bottom: 5px
+            &:nth-child(3)
+                margin-bottom: 0
             &--hover
-                width: 100%
+                width: 30px
                 height: 2px
                 background-color: $bg-color4
+                transition: all 0.1s ease
+                margin-bottom: 5px
+                &:nth-child(3)
+                    margin-bottom: 0
             &--active
-                &::nth-of-type(1)
-                    transform: rotate(45deg)
-                &::nth-of-type(2)
-                    opacity: 0
-                &::nth-of-type(3)
+                position: absolute
+                //width: 5%
+                width: 34px
+                height: 1px
+                background-color: $text-color2
+                transition: all 0.1s ease
+                &:nth-of-type(1)
+                    top: unset
+                    transition-delay: 0.1s
                     transform: rotate(-45deg)
+                &:nth-of-type(2)
+                    opacity: 0
+                &:nth-of-type(3)
+                    bottom: unset
+                    transition-delay: 0.1s
+                    transform: rotate(45deg)
     &-block
         display: flex
         justify-content: space-between
@@ -111,6 +125,7 @@
         &-button
             &--active
                 display: flex
+                width: 30px
         &-block
             display: none
         &-logo
@@ -129,6 +144,7 @@
         &-button
             &--active
                 display: flex
+                width: 30px
         &-block
             display: none
         &-logo
@@ -148,6 +164,7 @@
         &-button
             &--active
                 display: flex
+                width: 30px
         &-block
             display: none
         &-logo
