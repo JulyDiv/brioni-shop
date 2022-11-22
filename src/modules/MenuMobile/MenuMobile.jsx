@@ -19,7 +19,7 @@ export const MenuMobile = ({ setIsMenuMobile, isMenuMobile }) => {
               onClick={() => setIsAssortment(true)}
               className="menu-mobile__button"
             >
-              Assortment
+              ASSORTMENT
             </button>
             {isAssortment && (
               <MenuAssortment

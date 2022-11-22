@@ -20,7 +20,7 @@ export const MenuAssortment = ({ setIsMenuMobile, setIsAssortment }) => {
           alt="arrow left"
           class="menu-assortment__button-image"
         />
-        Assortment
+        ASSORTMENT
       </button>
 
       <div class="menu-assortment__list">

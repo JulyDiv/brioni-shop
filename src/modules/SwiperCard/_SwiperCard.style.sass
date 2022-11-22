@@ -16,12 +16,18 @@
             background-position: center !important
             &::after
                 content: '' !important
+            &:hover, &:active
+                border: 1px solid black !important
         &-prev
             left: 500px !important
             background-image: url("../../../public/img/card-arrow-prev.svg") !important
+            &:hover, &:active
+                background-image: url("../../../public/img/arrow-prev-black.svg") !important
         &-next
             right: 500px !important
             background-image: url("../../../public/img/card-arrow-next.svg") !important
+            &:hover, &:active
+                background-image: url("../../../public/img/arrow-next-black.svg") !important
 .swiper-card
     &__slide
         //width: 305px !important
