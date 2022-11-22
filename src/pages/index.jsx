@@ -15,7 +15,7 @@ export default function HomePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Preloader /> */}
-      {/* <Home />
+      <Home />
       <InfoBlock
         title="Spring collection 2022"
         description="Meeting modern trends, the Brioni spring-summer 2022 collection offers a reinterpretation of the laid-back Roman
@@ -30,7 +30,7 @@ export default function HomePage() {
             craftsmanship and your personal preferences. From outerwear to knitwear, shoes, socks and ties - create your favorite Brioni
             model in the perfect color and design and make it unique by adding your initials."
         link="Explore"
-      /> */}
+      />
       {/* <SwiperHome /> */}
       <SwiperHome2 />
       <Ambassador />

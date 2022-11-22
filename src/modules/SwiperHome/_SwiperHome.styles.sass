@@ -2,7 +2,8 @@
     &-wrapper2
         padding-bottom: 0
     &-button2-prev2
-        top: 362px !important
+        //top: 362px !important
+        top: 45% !important
         left: 140px !important
         width: 120px !important
         height: 120px !important
@@ -14,7 +15,8 @@
         background-image: url(../../../public/img/arrow-prev.svg) !important
         color: transparent !important
     &-button2-next2
-        top: 362px !important
+        // top: 362px !important
+        top: 45% !important
         right: 140px !important
         width: 120px !important
         height: 120px !important
@@ -34,3 +36,35 @@
         background-color: white !important
         width: 13px !important
         height: 13px !important
+
+// @media (max-width: 1200px)
+@media (min-width: 768px) and (max-width: 900px)
+    .swiper-pagination-bullet
+        background-color: inherit !important
+        width: 8px !important
+        height: 8px !important
+        border: 1px solid rgba(255, 255, 255, 0.6) !important
+        &-active
+            background-color: white !important
+            width: 11px !important
+            height: 11px !important
+@media (min-width: 481px) and (max-width: 767px)
+    .swiper-pagination-bullet
+        background-color: inherit !important
+        width: 8px !important
+        height: 8px !important
+        border: 1px solid rgba(255, 255, 255, 0.6) !important
+        &-active
+            background-color: white !important
+            width: 11px !important
+            height: 11px !important
+@media (min-width: 320px) and (max-width: 480px)
+    .swiper-pagination-bullet
+        background-color: inherit !important
+        width: 6px !important
+        height: 6px !important
+        border: 1px solid rgba(255, 255, 255, 0.6) !important
+        &-active
+            background-color: white !important
+            width: 9px !important
+            height: 9px !important
