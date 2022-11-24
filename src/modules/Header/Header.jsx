@@ -8,13 +8,17 @@ import { ModalThank } from "../ModalThank/ModalThank";
 import { ModalSearch } from "../ModalSearch/ModalSearch";
 import { MenuMobile } from "../MenuMobile/MenuMobile";
 import { MenuButton } from "../../components/MenuButton";
+import useIsOrder from "../../hooks/useIsOrder";
+import { useOrders } from "../../hooks/useOrders";
 
-export const Header = () => {
-  const [isOrder, setIsOrder] = useState(false);
+export const Header = ({ isOrder, orders, setIsOrder, setOrders }) => {
+  //const [isOrder, setIsOrder] = useState(false);
+  //const isOrder = useIsOrder();
   const [isContact, setIsContact] = useState(false);
   const [isThank, setIsThank] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const [isMenuMobile, setIsMenuMobile] = useState(false);
+  //const order = useOrders();
   return (
     <>
       <header className="header">
@@ -67,13 +71,19 @@ export const Header = () => {
           </div>
         </div>
       </header>
-      {isOrder && (
+      {/* {isOrder && <ModalOrder isOrder={isOrder} setIsOrder={setIsOrder} orders={orders} setOrders={setOrders} />} */}
+      {/* {isOrder.isOrder && (
         <ModalOrder
-          isOrder={isOrder}
-          setIsOrder={setIsOrder}
+          {...isOrder}
+          {...order}
+        />
+      )} */}
+      {/* {isOrder.isOrder && (
+        <ModalOrder
+          {...isOrder}
           setIsContact={setIsContact}
         />
-      )}
+      )} */}
       {isContact && (
         <ModalContact
           isContact={isContact}

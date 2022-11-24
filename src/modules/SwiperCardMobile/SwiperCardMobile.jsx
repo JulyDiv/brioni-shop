@@ -13,9 +13,10 @@ export const SwiperCardMobile = ({ choice }) => {
       scrollbar={{ hide: false, dragSize: 100 }}
       className="swiper-mobile"
     >
-      {choice.map((item) => (
-        <SwiperSlide key={item.id} className="swiper-mobile__slide">
+      {choice.map((item, id) => (
+        <SwiperSlide key={id} className="swiper-mobile__slide">
           <img
+            id={item.id}
             src={item.name}
             className="swiper-mobile__image"
             alt="Image: Jacket"

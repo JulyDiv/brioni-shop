@@ -1,15 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { OrderItem } from "../../components/OrderItem";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
+//import { useContext } from "react";
+//import { AppContext } from "../../context/AppContext";
 
-export const ModalOrder = ({ setIsOrder, setIsContact, isOrder }) => {
+export const ModalOrder = ({
+  setIsOrder,
+  setIsContact,
+  isOrder,
+  orders,
+  setOrders,
+}) => {
+  //const card = useContext(AppContext);
+
   const closeModal = () => {
     setIsOrder(false);
     setIsContact(true);
-  }
+  };
+
+  //console.log(card.orders);
+  //console.log(card);
+  //console.log(order);
   return (
     <>
-      <ModalOverlay setIsOrder={setIsOrder} isOrder={isOrder} />
+      {/* <ModalOverlay setIsOrder={setIsOrder} isOrder={isOrder} /> */}
       <div className="bag">
         <div className="bag-wrapper">
           <div className="bag-title">
@@ -27,25 +42,10 @@ export const ModalOrder = ({ setIsOrder, setIsContact, isOrder }) => {
           </div>
           <div className="bag-block">
             <div className="line bag-block__line"></div>
-
-            <div className="bag-info">
-              <div className="bag-info__image"></div>
-              <div className="bag-info__text">
-                <h3 className="bag-info__title">Name</h3>
-                <span className="bag-info__span">Color : </span>
-                <span className="bag-info__span">Size : </span>
-                <span className="bag-info__span">Quantity : </span>
-              </div>
-            </div>
-
-            <div className="line bag__line"></div>
-
-            <div className="bag-price">
-              <span className="bag-price__span">Price : </span>
-              <button className="bag-price__button">Delete</button>
-            </div>
+            {[...orders.values()].map((order, id) => (
+              <OrderItem key={id} order={order} />
+            ))}
           </div>
-
           <div className="bag-total">
             <div className="line bag__line"></div>
             <span className="bag-total__span">Total : € </span>

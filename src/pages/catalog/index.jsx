@@ -4,6 +4,7 @@ import { CatalogItem } from "../../components/CatalogItem";
 import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 import { Character } from "../../modules/Character/Character";
 import { CharacterMobileCatalog } from "../../modules/CharacterMobile/CharacterMobileCatalog";
+//import useIsOrder from "../../hooks/useIsOrder";
 
 export const getServerSideProps = async () => {
   const res = await fetch(

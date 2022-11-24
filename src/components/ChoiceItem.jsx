@@ -4,9 +4,10 @@ import React from "react";
 export const ChoiceItem = ({ choice }) => {
   return (
     <div className="card-choice">
-      {choice.map((item) => (
+      {choice.map((item, id) => (
           <img
-            key={item.id}
+            id={item.id}
+            key={id}
             className="card-choice__image"
             src={item.name}
             alt="Photo: jacket"

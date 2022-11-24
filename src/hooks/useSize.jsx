@@ -1,4 +1,6 @@
 import { useState } from "react";
+// import { useContext } from "react";
+// import { AppContext } from "../context/AppContext";
 
 const getSize = (size) =>
   size.map((item) => ({
@@ -7,6 +9,7 @@ const getSize = (size) =>
   }));
 
 export function useSize(jacket) {
+  //const card = useContext(AppContext);
   const windowSize = jacket.size ? getSize(jacket.size) : [];
   const [size, setSize] = useState(windowSize);
   const checkedSize = (index) => {
