@@ -13,17 +13,24 @@ import { CardModal } from "../modules/CardModal/CardModal";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
-export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, isOpenCard, setIsOpenCard }) => {
-
+export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, setIsOpenCard, isOpenCard }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
 
   const size = useSize(jacket);
   const choice = useChoice(jacket);
   const card = useContext(AppContext);
 
-  //console.log("card...>>>", card);
+  // const order = {
+  //   ...orders,
+  //   name: jacket.name,
+  //   id: jacket.id,
+  //   price: jacket.price,
+  //   img: jacket.img,
+  // };
+
+  console.log("card...>>>", card);
   //console.log("orders...>>>", orders);
-  //console.log("order...>>>", order);
+  //console.log("order...>>>", card.order);
   //console.log("jacket...>>>", jacket);
 
   return (
@@ -102,7 +109,7 @@ export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, isOpe
           </div>
         </div>
       </section>
-      {/* {isOpenCard && (
+      {card.isOpenCard && (
         <CardModal
           jacket={jacket}
           isOpenCard={isOpenCard}
@@ -110,7 +117,7 @@ export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, isOpe
           orders={orders}
           setOrders={setOrders}
         />
-      )} */}
+      )}
     </>
   );
 };

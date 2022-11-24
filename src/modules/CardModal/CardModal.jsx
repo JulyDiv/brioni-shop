@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 // import { ChoiceItem } from "../../components/ChoiceItem";
@@ -5,9 +6,12 @@ import React from "react";
 // import { useSize } from "../../hooks/useSize";
 // import { useChoice } from "../../hooks/useChoice";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export const CardModal = ({ isOpenCard, setIsOpenCard, orders, setOrders, jacket }) => {
 
+const card = useContext(AppContext);
   // const size = useSize(isOpenCard);
   // const choice = useChoice(isOpenCard);
 // const order = {
@@ -24,11 +28,11 @@ export const CardModal = ({ isOpenCard, setIsOpenCard, orders, setOrders, jacket
 
   return (
     <>
-      {/* <ModalOverlay setIsOpenCard={setIsOpenCard} /> */}
+      <ModalOverlay />
       <div key={jacket.id} className="card-modal">
         <h3>Товар добавлен в корзину</h3>
         <div className="bag-info">
-          <div className="bag-info__image"></div>
+          <img src={jacket.img} alt="Jacket" className="bag-info__image" />
           <div className="bag-info__text">
             <h3 className="bag-info__title">{jacket.name}</h3>
             <span className="bag-info__span">Color : </span>
@@ -43,7 +47,7 @@ export const CardModal = ({ isOpenCard, setIsOpenCard, orders, setOrders, jacket
           <button
             className="button-dark card-info__button"
             type="submit"
-            onClick={() => setIsOpenCard(false)}
+            onClick={() => card.addOrder()}
           >
             ок!
           </button>

@@ -11,6 +11,8 @@ export const Layout = ({
   setOrders,
   isOrder,
   setIsOrder,
+  labelOrder,
+  setLabelOrder
 }) => {
   return (
     <>
@@ -19,6 +21,8 @@ export const Layout = ({
         setOrders={setOrders}
         isOrder={isOrder}
         setIsOrder={setIsOrder}
+        labelOrder={labelOrder}
+        setLabelOrder={setLabelOrder}
       />
       {isOrder && (
         <ModalOrder

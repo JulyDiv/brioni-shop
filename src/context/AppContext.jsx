@@ -1,7 +1,4 @@
-import {
-  createContext,
-  useState,
-} from "react";
+import { createContext, useState } from "react";
 
 const AppContext = createContext();
 
@@ -12,16 +9,21 @@ const AppWrapper = ({
   setOrders,
   setIsOrder,
   jacket,
+  setIsOpenCard,
+  isOpenCard,
+  labelOrder, setLabelOrder
 }) => {
   const [dataJacket, setDataJacket] = useState(jacket);
+  const [stateOrder, setStateOrder] = useState({});
+  //const [labelOrder, setLabelOrder] = useState(false);
 
-  const order = {
+  const order = !stateOrder ? {
     ...orders,
-    name: jacket.name,
-    id: jacket.id,
-    price: jacket.price,
-    img: jacket.img,
-  };
+    name: dataJacket.name,
+    id: dataJacket.id,
+    price: dataJacket.price,
+    img: dataJacket.img,
+  } : {};
 
   const addOrder = () => {
     const list = new Map(orders);
@@ -33,7 +35,8 @@ const AppWrapper = ({
       list.set(jacket.id, order);
     }
     setOrders(list);
-    //setIsOpenCard(true);
+    isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
+    setLabelOrder(true);
   };
 
   const contextValue = {
@@ -44,6 +47,9 @@ const AppWrapper = ({
     addOrder,
     dataJacket,
     setDataJacket,
+    isOpenCard,
+    setIsOpenCard,
+    setLabelOrder
   };
 
   return (
