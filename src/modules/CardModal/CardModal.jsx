@@ -8,36 +8,32 @@ import React from "react";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import { Count } from "../Count/Count";
 
 export const CardModal = ({ isOpenCard, setIsOpenCard, orders, setOrders, jacket }) => {
 
 const card = useContext(AppContext);
+
   // const size = useSize(isOpenCard);
   // const choice = useChoice(isOpenCard);
-// const order = {
-//   ...isOpenCard,
-//   // name: isOpenCard.name,
-//   // id: isOpenCard.id,
-//   // price: isOpenCard.price,
-// };
-// const addOrder = () => {
-//   setOrders([...orders, order]);
-//   setIsOpenCard(false);
-// };
-//console.log("orders...>>>", orders);
+
+console.log("orders...>>>", orders);
 
   return (
     <>
       <ModalOverlay />
       <div key={jacket.id} className="card-modal">
-        <h3>Товар добавлен в корзину</h3>
+        <h3>Выберите количество</h3>
         <div className="bag-info">
           <img src={jacket.img} alt="Jacket" className="bag-info__image" />
           <div className="bag-info__text">
             <h3 className="bag-info__title">{jacket.name}</h3>
             <span className="bag-info__span">Color : </span>
             <span className="bag-info__span">Size : </span>
-            <span className="bag-price__span">Price : {jacket.price}</span>
+            <span className="bag-price__span">
+              Price : € {jacket.price.toLocaleString()}
+            </span>
+            <Count />
           </div>
         </div>
 
@@ -48,10 +44,11 @@ const card = useContext(AppContext);
             className="button-dark card-info__button"
             type="submit"
             onClick={() => card.addOrder()}
+            disabled={card.count < 1}
           >
             ок!
           </button>
-          {/* <button className="button-dark card-info__button" onClick={() => setIsOpenCard(false)}>
+          {/* <button className="button-dark card-info__button" onClick={() => card.setIsOpenCard(false)}>
             Cancel
           </button> */}
         </div>

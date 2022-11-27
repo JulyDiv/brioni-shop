@@ -12,7 +12,9 @@ export const Layout = ({
   isOrder,
   setIsOrder,
   labelOrder,
-  setLabelOrder
+  setLabelOrder,
+  labelSelect,
+  count
 }) => {
   return (
     <>
@@ -23,6 +25,9 @@ export const Layout = ({
         setIsOrder={setIsOrder}
         labelOrder={labelOrder}
         setLabelOrder={setLabelOrder}
+        labelSelect={labelSelect}
+        // counter={counter}
+        // setCounter={setCounter}
       />
       {isOrder && (
         <ModalOrder
@@ -30,6 +35,7 @@ export const Layout = ({
           setIsOrder={setIsOrder}
           orders={orders}
           setOrders={setOrders}
+          count={count}
         />
       )}
       {children}

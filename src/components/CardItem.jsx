@@ -54,7 +54,9 @@ export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, setIs
               </div>
               <div className="card-info__name">
                 <h3 className="card-info__title">{jacket.name}</h3>
-                <span className="card-info__price">{jacket.price}</span>
+                <span className="card-info__price">
+                  € {jacket.price.toLocaleString()}
+                </span>
               </div>
 
               <div className="card-info__color-block">

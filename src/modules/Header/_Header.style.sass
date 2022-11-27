@@ -94,17 +94,23 @@
         +background-image
         &__label
             position: absolute
-            top: 0
+            top: -3px
+            right: -7px
+            padding-top: 1px
             width: 19px
             height: 19px
             border-radius: 50% !important
             background-color: white
             color: $text-color3
+            +font
+            font-weight: 350
+            font-family: $font-light
     &__search
         background-image: url("../../../public/img/search-icon.svg")
         &:hover
             background-image: url("../../../public/img/search-icon-hover.svg")
     &__select
+        position: relative
         background-image: url("../../../public/img/select-icon.svg")
         &:hover
             background-image: url("../../../public/img/select-icon-hover.svg")
@@ -113,6 +119,7 @@
         &:hover
             background-image: url("../../../public/img/user-icon-hover.svg")
     &__bag
+        position: relative
         background-image: url("../../../public/img/bag-icon.svg")
         &:hover
             background-image: url("../../../public/img/bag-icon-hover.svg")

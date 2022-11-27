@@ -23,7 +23,9 @@ export const CatalogItem = ({ jacket }) => {
               <span className="catalog-assortment__text">{jacket.name}</span>
               <button className="catalog-assortment__icon"></button>
             </div>
-            <span className="catalog-assortment__price">{jacket.price}</span>
+            <span className="catalog-assortment__price">
+              € {jacket.price.toLocaleString()}
+            </span>
           </div>
         </>
       ))}
