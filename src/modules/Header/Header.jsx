@@ -1,28 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
-import { useState } from "react";
-import { useContext } from "react";
+import { useRouter } from "next/router";
 import { AppContext } from "../../context/AppContext";
-import { ModalOrder } from "../ModalOrder/ModalOrder";
 import { ModalContact } from "../ModalContact/ModalContact";
 import { ModalThank } from "../ModalThank/ModalThank";
 import { ModalSearch } from "../ModalSearch/ModalSearch";
 import { MenuMobile } from "../MenuMobile/MenuMobile";
 import { MenuButton } from "../../components/MenuButton";
-import useIsOrder from "../../hooks/useIsOrder";
-import { useOrders } from "../../hooks/useOrders";
 
-export const Header = ({ isOrder, orders, setIsOrder, setOrders, labelOrder, labelSelect }) => {
-  //const [isOrder, setIsOrder] = useState(false);
-  //const isOrder = useIsOrder();
-  const [isContact, setIsContact] = useState(false);
-  const [isThank, setIsThank] = useState(false);
+export const Header = ({}) => {
   const [isSearch, setIsSearch] = useState(false);
-  const [isMenuMobile, setIsMenuMobile] = useState(false);
-  //const [labelOrder, setLabelOrder] = useState(false);
-  //const order = useOrders();
-  const card = useContext(AppContext);
+  const router = useRouter();
+  const {
+    labelSelect,
+    totalCounter,
+    setLabelOrder,
+    setIsOrder,
+    isMenuMobile,
+    setIsMenuMobile,
+    isContact,
+    setIsContact,
+    isThank,
+    setIsThank,
+  } = useContext(AppContext);
   return (
     <>
       <header className="header">
@@ -62,17 +63,17 @@ export const Header = ({ isOrder, orders, setIsOrder, setOrders, labelOrder, lab
                 onClick={() => setIsSearch(true)}
               ></button>
               <button className="icon-link icon__select icon__select--mobile_hidden">
-                {labelSelect && <div className="icon-link__label">1</div>}
+                {labelSelect && <div className="icon-link__label"></div>}
               </button>
               <button className="icon-link icon__user icon__user--mobile_hidden"></button>
               <button
                 className="icon-link icon__bag icon__bag--mobile_visible"
                 onClick={() => setIsOrder(true)}
               >
-                {card.totalCounter === 0 ? (
-                  card.setLabelOrder(false)
+                {totalCounter === 0 ? (
+                  setLabelOrder(false)
                 ) : (
-                  <div className="icon-link__label">{card.totalCounter}</div>
+                  <div className="icon-link__label">{totalCounter}</div>
                 )}
               </button>
             </div>

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { BreadCrumb } from "../modules/BreadCrumb/BreadCrumb";
 import { SizeItem } from "../components/SizeItem";
 import { ChoiceItem } from "./ChoiceItem";
@@ -8,30 +7,15 @@ import { CardMobile } from "../modules/CardMobile/CardMobile";
 import { useSize } from "../hooks/useSize";
 import { useChoice } from "../hooks/useChoice";
 import { CardInfoColor } from "./CardInfoColor";
-import { ModalOrder } from "../modules/ModalOrder/ModalOrder";
 import { CardModal } from "../modules/CardModal/CardModal";
-import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
-export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, setIsOpenCard, isOpenCard }) => {
+export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
 
   const size = useSize(jacket);
   const choice = useChoice(jacket);
-  const card = useContext(AppContext);
-
-  // const order = {
-  //   ...orders,
-  //   name: jacket.name,
-  //   id: jacket.id,
-  //   price: jacket.price,
-  //   img: jacket.img,
-  // };
-
-  console.log("card...>>>", card);
-  //console.log("orders...>>>", orders);
-  //console.log("order...>>>", card.order);
-  //console.log("jacket...>>>", jacket);
+  const { addOrder, isOpenCard } = useContext(AppContext);
 
   return (
     <>
@@ -82,7 +66,7 @@ export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, setIs
               <button
                 className="button-dark card-info__button"
                 type="submit"
-                onClick={() => card.addOrder()}
+                onClick={() => addOrder()}
               >
                 Add to card
               </button>
@@ -111,13 +95,9 @@ export const CardItem = ({ jacket, isOrder, orders, setOrders, setIsOrder, setIs
           </div>
         </div>
       </section>
-      {card.isOpenCard && (
+      {isOpenCard && (
         <CardModal
           jacket={jacket}
-          isOpenCard={isOpenCard}
-          setIsOpenCard={setIsOpenCard}
-          orders={orders}
-          setOrders={setOrders}
         />
       )}
     </>

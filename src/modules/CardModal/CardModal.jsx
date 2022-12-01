@@ -10,14 +10,12 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { Count } from "../Count/Count";
 
-export const CardModal = ({ isOpenCard, setIsOpenCard, orders, setOrders, jacket }) => {
+export const CardModal = ({ jacket }) => {
 
-const card = useContext(AppContext);
+const { addOrder, count } = useContext(AppContext);
 
   // const size = useSize(isOpenCard);
   // const choice = useChoice(isOpenCard);
-
-console.log("orders...>>>", orders);
 
   return (
     <>
@@ -43,14 +41,11 @@ console.log("orders...>>>", orders);
           <button
             className="button-dark card-info__button"
             type="submit"
-            onClick={() => card.addOrder()}
-            disabled={card.count < 1}
+            onClick={() => addOrder()}
+            disabled={count < 1}
           >
             ок!
           </button>
-          {/* <button className="button-dark card-info__button" onClick={() => card.setIsOpenCard(false)}>
-            Cancel
-          </button> */}
         </div>
       </div>
     </>

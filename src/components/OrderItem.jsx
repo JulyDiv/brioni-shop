@@ -5,31 +5,30 @@ import { AppContext } from "../context/AppContext";
 
 export const OrderItem = ({ order }) => {
 
-  const card = useContext(AppContext);
-
-  // const totalPrice = order.price * order.count;
+  const { count, totalPrice, deleteOrder, setIsOpenCard } = useContext(AppContext);
 
   return (
     <>
-      <div key={order.id} className="bag-info">
+      <div
+        key={order.id}
+        className="bag-info"
+        onClick={() => setIsOpenCard({ ...order }, order.id)}
+      >
         <img src={order.img} alt="Jacket" className="bag-info__image" />
         <div className="bag-info__text">
           <h3 className="bag-info__title">{order.name}</h3>
           <span className="bag-info__span">Color : </span>
           <span className="bag-info__span">Size : </span>
-          <span className="bag-info__span">Quantity : {card.count}</span>
+          <span className="bag-info__span">Quantity : {count}</span>
         </div>
       </div>
-
-      <div className="line bag__line"></div>
-
       <div className="bag-price">
         <span className="bag-price__span">
-          Price : € {card.totalPrice(order).toLocaleString()}
+          Price : € {totalPrice(order).toLocaleString()}
         </span>
         <button
           className="bag-price__button"
-          onClick={() => card.deleteOrder(order.id)}
+          onClick={() => deleteOrder(order.id)}
         >
           Delete
         </button>

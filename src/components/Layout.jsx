@@ -1,43 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Header } from "../modules/Header/Header";
 import { Footer } from "../modules/Footer/Footer";
 import { ModalOrder } from "../modules/ModalOrder/ModalOrder";
-// import useIsOrder from "../hooks/useIsOrder";
-// import { useOrders } from "../hooks/useOrders";
+import { AppContext } from "../context/AppContext";
 
-export const Layout = ({
-  children,
-  orders,
-  setOrders,
-  isOrder,
-  setIsOrder,
-  labelOrder,
-  setLabelOrder,
-  labelSelect,
-  count
-}) => {
+export const Layout = ({ children }) => {
+  const { isOrder } = useContext(AppContext);
   return (
     <>
-      <Header
-        orders={orders}
-        setOrders={setOrders}
-        isOrder={isOrder}
-        setIsOrder={setIsOrder}
-        labelOrder={labelOrder}
-        setLabelOrder={setLabelOrder}
-        labelSelect={labelSelect}
-        // counter={counter}
-        // setCounter={setCounter}
-      />
-      {isOrder && (
-        <ModalOrder
-          isOrder={isOrder}
-          setIsOrder={setIsOrder}
-          orders={orders}
-          setOrders={setOrders}
-          count={count}
-        />
-      )}
+      <Header />
+      {isOrder && <ModalOrder />}
       {children}
       <Footer />
     </>

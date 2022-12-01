@@ -18,10 +18,17 @@ const AppWrapper = ({
   count,
   setCount,
   onChange,
+  isSelectModal,
+  setIsSelectModal,
+  isContact,
+  setIsContact,
+  isThank,
+  setIsThank,
+  isMenuMobile,
+  setIsMenuMobile,
 }) => {
   const [dataJacket, setDataJacket] = useState(jacket);
   const [stateOrder, setStateOrder] = useState({});
-  //const [labelOrder, setLabelOrder] = useState(false);
 
   const order = !stateOrder
     ? {
@@ -49,56 +56,30 @@ const AppWrapper = ({
     setLabelOrder(true);
   };
 
+  const addSelect = () => {
+    isSelectModal ? setIsSelectModal(false) : setIsSelectModal(true);
+    setLabelSelect(true);
+  };
+
   const deleteOrder = (id) => {
     let newOrder = [...orders.values()].filter((item) => item.id != id);
     setOrders(newOrder);
   };
 
-  // const total = [...orders.values()].reduce(
-  //   (result, order) => totalPrice(order) + result,
-  //   0
-  // );
-  //console.log(total);
-
-  // const totalPrice = [...orders.values()].map(
-  //   (order) => (order.price * order.count)
-  // );
-  // const totalPrice = [...orders.values()].reduce(
-  //   (result, order) => order.price * order.count, 0
-  // );
-
-
   const totalPrice = (order) => order.price * order.count;
 
-  const total = [...orders.values()].reduce((result, order) => totalPrice(order) + result, 0);
-
-
-  // const totalPrice = [...orders.values()].map((order, id) => {
-  //   let sum = 0;
-  //   if (order.id === order.id) {
-  //     sum = order.price * order.count;
-  //   }
-  //   return sum;
-  // }, 0
-  // );
-  //console.log(totalPrice);
+  const total = [...orders.values()].reduce(
+    (result, order) => totalPrice(order) + result,
+    0
+  );
 
   const totalCounter = [...orders.values()].reduce(
     (result, order) => order.count + result,
     0
   );
 
-  // const totalSum = [...orders.values()].reduce(
-  //   (result) => totalPrice + result,
-  //   0
-  // );
-
-  // const totalSum = [...orders.values()].reduce(
-  //   (result) => +totalPrice.slice(0, 1) + result,
-  //   0
-  // );
-
   const contextValue = {
+    jacket,
     isOrder,
     orders,
     order,
@@ -108,6 +89,8 @@ const AppWrapper = ({
     dataJacket,
     setDataJacket,
     isOpenCard,
+    isSelectModal,
+    setIsSelectModal,
     setIsOpenCard,
     labelOrder,
     setLabelOrder,
@@ -116,10 +99,18 @@ const AppWrapper = ({
     count,
     onChange,
     deleteOrder,
-    //totalSum,
     totalCounter,
     totalPrice,
-    total
+    total,
+    labelSelect,
+    setLabelOrder,
+    addSelect,
+    isContact,
+    setIsContact,
+    isThank,
+    setIsThank,
+    isMenuMobile,
+    setIsMenuMobile,
   };
 
   return (
