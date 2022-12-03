@@ -23,7 +23,7 @@ export const CardItem = ({ jacket }) => {
     activeSelect ? setActiveSelect(false) : setActiveSelect(true);
     addSelect();
   };
-
+  console.log(choice);
   return (
     <>
       <section key={jacket.id} className="card">
@@ -33,8 +33,8 @@ export const CardItem = ({ jacket }) => {
           <div className="card-wrapper">
             <div className="card-jackets">
               <ChoiceItem {...choice} />
-
-              <img className="card-main" src={jacket.img} alt="Photo: jacket" />
+              {/* <img className="card-main" src={jacket.choice.status === true} alt="Photo: jacket" /> */}
+              {/* <img className="card-main" src={jacket.img} alt="Photo: jacket" /> */}
             </div>
 
             <div className="card-info">
