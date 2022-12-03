@@ -5,11 +5,12 @@ export const ModalSearch = ({ isSearch, setIsSearch }) => {
   return (
     <div className="search search--mobile">
       <div className="search-wrapper">
-        <button
+        
+        <form action="#" className="search-form">
+          <button
           type="submit"
           className="search__button search__button--mobile_visible"
         ></button>
-        <form action="#" className="search-form">
           <input
             type="text"
             className="search-form__input"

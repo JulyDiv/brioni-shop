@@ -9,9 +9,7 @@ const getChoice = (choice) =>
 export function useChoice(jacket) {
   const windowChoice = jacket.choice ? getChoice(jacket.choice) : [];
   const [choice, setChoice] = useState(windowChoice);
-  //const [activeChoice, setActiveChoice] = useState(false);
   const [activeChoice, setActiveChoice] = useState(jacket.img);
-  //const [activeChoice, setActiveChoice] = useState("");
     const checkedChoice = (index) => {
       setChoice(
         choice.map((item, i) => {
