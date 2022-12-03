@@ -14,7 +14,7 @@ import {
   useIsMenuMobile,
   useIsOpenCard,
   useIsOrder,
-} from "../hooks/useIsOpenModal";
+} from "../hooks/useIs";
 
 function MyApp({ Component, pageProps }) {
   const order = useOrders();

@@ -31,7 +31,7 @@ export const Catalogs = ({ jacket }) => {
           more relaxed blazers for relax.
         </p>
         <Character />
-        <div className="line catalog__line"></div>
+        {/* <div className="line catalog__line"></div> */}
         <div className="catalog-mobile">
           <CharacterButtonMobile name="Filter" />
           <CharacterButtonMobile name="Sort" />

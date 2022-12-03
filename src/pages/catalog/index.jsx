@@ -29,7 +29,7 @@ export default function Catalog({ jacket }) {
             to more relaxed blazers for relax.
           </p>
           <Character />
-          <div className="line catalog__line"></div>
+          {/* <div className="line catalog__line"></div> */}
           <div className="catalog-mobile">
             <CharacterMobileCatalog />
           </div>

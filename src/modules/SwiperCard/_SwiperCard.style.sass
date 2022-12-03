@@ -41,7 +41,17 @@
         font-size: 16px
         line-height: 19px
     &__icon
+        display: flex
+        flex-shrink: 0
         margin-left: 10px
+        width: 18px
+        height: 15px
+        background-image: url("../../../public/img/select-catalog.svg")
+        +background-image
+        &--active
+            background-image: url("../../../public/img/select-active.svg")
+    // &__icon
+    //     margin-left: 10px
     &__select
         display: flex
         justify-content: space-between

@@ -2,8 +2,11 @@
 import React from "react";
 import { Navigation, Scrollbar, A11y, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+//import { AppContext } from "../../context/AppContext";
+import { SwiperCardSlide } from "./SwiperCardSlide";
 
 export const SwiperCard = ({ swiperCard }) => {
+  //console.log(swiperCard);
   return (
     <Swiper
       modules={[Navigation, Scrollbar, A11y, Keyboard]}
@@ -43,18 +46,9 @@ export const SwiperCard = ({ swiperCard }) => {
         },
       }}
     >
-      {swiperCard.map(({ id, name, price, img, like }) => (
-        <SwiperSlide key={id} className="swiper-card__slide">
-          <img src={img} className="swiper-card__image" alt="Image: Jacket" />
-          <div className="swiper-card__select">
-            <span className="swiper-card__text">{name}</span>
-            <img
-              src="/img/select-catalog.svg"
-              className="swiper-card__icon"
-              alt="Icon: select"
-            />
-          </div>
-          <span className="swiper-card__price">{price}</span>
+      {swiperCard.map((slide, id) => (
+        <SwiperSlide key={id}>
+          <SwiperCardSlide slide={slide} />
         </SwiperSlide>
       ))}
     </Swiper>

@@ -10,9 +10,8 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { Count } from "../Count/Count";
 
-export const CardModal = ({ jacket }) => {
-
-const { addOrder, count } = useContext(AppContext);
+export const CardModal = ({ jacket, title, button }) => {
+  const { addOrder, count } = useContext(AppContext);
 
   // const size = useSize(isOpenCard);
   // const choice = useChoice(isOpenCard);
@@ -21,32 +20,27 @@ const { addOrder, count } = useContext(AppContext);
     <>
       <ModalOverlay />
       <div key={jacket.id} className="card-modal">
-        <h3>Выберите количество</h3>
-        <div className="bag-info">
-          <img src={jacket.img} alt="Jacket" className="bag-info__image" />
-          <div className="bag-info__text">
-            <h3 className="bag-info__title">{jacket.name}</h3>
-            <span className="bag-info__span">Color : </span>
-            <span className="bag-info__span">Size : </span>
-            <span className="bag-price__span">
+        <h3 className="card-modal__title">{title}</h3>
+        <div className="card-modal__info">
+          <img src={jacket.img} alt="Jacket" className="card-modal__image" />
+          <div className="card-modal__text">
+            <h3 className="card-modal__name">{jacket.name}</h3>
+            <span className="card-modal__span">Color : </span>
+            <span className="card-modal__span">Size : </span>
+            <span className="card-modal__span">
               Price : € {jacket.price.toLocaleString()}
             </span>
             <Count />
           </div>
         </div>
-
-        <div className="line bag__line"></div>
-
-        <div className="bag-price">
-          <button
-            className="button-dark card-info__button"
-            type="submit"
-            onClick={() => addOrder()}
-            disabled={count < 1}
-          >
-            ок!
-          </button>
-        </div>
+        <button
+          className="button-dark card-modal__button"
+          type="submit"
+          onClick={() => addOrder()}
+          disabled={count < 1}
+        >
+          {button}
+        </button>
       </div>
     </>
   );

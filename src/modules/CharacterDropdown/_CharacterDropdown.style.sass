@@ -34,6 +34,16 @@
             appearance: none !important
             &--active
                 background-color: #000
+            &:after
+                content: ''
+                position: absolute
+                top: 7px
+                left: 8px
+                width: 7px
+                height: 4px
+                border-bottom: 2px solid lighten(#fff, 0)
+                border-left: 2px solid lighten(#fff, 0)
+                transform: translate(-50%, -65%) rotate(-45deg)
 
 @keyframes dropdownList
     0%

@@ -1,10 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { InputContact } from "../../components/InputContact";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 
 export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
+  const [activeCheckbox, setActiveCheckbox] = useState(false);
+  const onClick = () => {
+    setActiveCheckbox(true);
+    activeCheckbox ? setActiveCheckbox(false) : setActiveCheckbox(true);
+  };
   const closeModal = () => {
     setIsContact(false);
     setIsThank(true);
@@ -91,8 +96,13 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
 
             <div className="contact-checkbox">
               <input
-                className="checkbox contact-checkbox__input"
+                className={
+                  activeCheckbox
+                    ? "contact-checkbox__input contact-checkbox__input--active"
+                    : "contact-checkbox__input"
+                }
                 type="checkbox"
+                onClick={() => onClick()}
               />
               <span className="contact-checkbox__span">
                 <Link href="#" className="contact-checkbox__link">

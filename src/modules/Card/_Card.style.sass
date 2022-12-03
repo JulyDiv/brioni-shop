@@ -7,6 +7,7 @@
         justify-content: space-between
         align-items: flex-start
         padding: 50px 0 0px 0
+        border-top: 1px solid $bg-color3
     &-jackets
         display: flex
         justify-content: space-between
@@ -45,7 +46,15 @@
             color: $text-color2
             +font
         &__icon
-            margin-left: 10px
+            display: flex
+            flex-shrink: 0
+            margin-left: 20px
+            width: 18px
+            height: 15px
+            background-image: url("../../../public/img/select-catalog.svg")
+            +background-image
+            &--active
+                background-image: url("../../../public/img/select-active.svg")
         &__title
             margin-bottom: 14px
             font-family: $font-light
@@ -68,7 +77,10 @@
             flex-direction: column
             justify-content: space-between
             margin-bottom: 20px
+            padding: 22px 0
             height: 153px
+            border-top: 1px solid $bg-color3
+            border-bottom: 1px solid $bg-color3
         &__choose
             color: $text-color3
             +font
@@ -102,8 +114,10 @@
             flex-direction: column
             justify-content: space-between
             margin-bottom: 50px
+            padding: 0 0 22px 0
             // width: 314px
             height: 78px
+            border-bottom: 1px solid $bg-color3
         &__size-block
             display: flex
             justify-content: space-between

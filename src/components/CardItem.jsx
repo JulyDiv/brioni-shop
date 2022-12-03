@@ -12,17 +12,23 @@ import { AppContext } from "../context/AppContext";
 
 export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
+  const [activeSelect, setActiveSelect] = useState(false);
 
   const size = useSize(jacket);
   const choice = useChoice(jacket);
-  const { addOrder, isOpenCard } = useContext(AppContext);
+  const { addOrder, isOpenCard, addSelect } = useContext(AppContext);
+
+  const onClick = () => {
+    setActiveSelect(true);
+    activeSelect ? setActiveSelect(false) : setActiveSelect(true);
+    addSelect();
+  };
 
   return (
     <>
       <section key={jacket.id} className="card">
         <div className="container">
           <BreadCrumb jacket={jacket} />
-          <div className="line card__line"></div>
 
           <div className="card-wrapper">
             <div className="card-jackets">
@@ -34,7 +40,14 @@ export const CardItem = ({ jacket }) => {
             <div className="card-info">
               <div className="card-info__select">
                 <span className="card-info__articl">{jacket.articl}</span>
-                <img src="/img/select-catalog.svg" alt="Icon: select" />
+                <button
+                  className={
+                    activeSelect
+                      ? "card-info__icon card-info__icon--active"
+                      : "card-info__icon"
+                  }
+                  onClick={() => onClick()}
+                ></button>
               </div>
               <div className="card-info__name">
                 <h3 className="card-info__title">{jacket.name}</h3>
@@ -44,21 +57,21 @@ export const CardItem = ({ jacket }) => {
               </div>
 
               <div className="card-info__color-block">
-                <div className="line card-info__line"></div>
+                {/* <div className="line card-info__line"></div> */}
 
                 <span className="card-info__choose">Choose your color</span>
 
                 <div className="card-info__color">
                   <CardInfoColor jacket={jacket} />
                 </div>
-                <div className="line card-info__line"></div>
+                {/* <div className="line card-info__line"></div> */}
               </div>
               <div className="card-info__size">
                 <span className="card-info__choose">Choose your size</span>
                 <div className="card-info__size-block">
                   <SizeItem {...size} />
                 </div>
-                <div className="line card-info__line"></div>
+                {/* <div className="line card-info__line"></div> */}
               </div>
               <div className="card-info__mobile">
                 <CardMobile jacket={jacket} />
@@ -96,9 +109,7 @@ export const CardItem = ({ jacket }) => {
         </div>
       </section>
       {isOpenCard && (
-        <CardModal
-          jacket={jacket}
-        />
+        <CardModal jacket={jacket} title="Add to Cart" button="Add" />
       )}
     </>
   );

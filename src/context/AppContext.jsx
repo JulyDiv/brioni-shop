@@ -18,8 +18,6 @@ const AppWrapper = ({
   count,
   setCount,
   onChange,
-  isSelectModal,
-  setIsSelectModal,
   isContact,
   setIsContact,
   isThank,
@@ -29,6 +27,8 @@ const AppWrapper = ({
 }) => {
   const [dataJacket, setDataJacket] = useState(jacket);
   const [stateOrder, setStateOrder] = useState({});
+  const [isSelectModal, setIsSelectModal] = useState(false);
+  //const [activeSelect, setActiveSelect] = useState(false);
 
   const order = !stateOrder
     ? {
@@ -110,7 +110,7 @@ const AppWrapper = ({
     isThank,
     setIsThank,
     isMenuMobile,
-    setIsMenuMobile,
+    setIsMenuMobile
   };
 
   return (

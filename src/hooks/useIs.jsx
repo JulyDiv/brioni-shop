@@ -24,3 +24,8 @@ export function useIsMenuMobile() {
   const [isMenuMobile, setIsMenuMobile] = useState(false);
   return { isMenuMobile, setIsMenuMobile };
 }
+
+export function useIsActiveSelect() {
+  const [isActiveSelect, setIsActiveSelect] = useState(false);
+  return { isActiveSelect, setIsActiveSelect };
+}
