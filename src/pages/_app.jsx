@@ -16,6 +16,16 @@ import {
   useIsOrder,
 } from "../hooks/useIs";
 
+export const getServerSideProps = async () => {
+  const res = await fetch(
+    `https://encouraging-exuberant-park.glitch.me/catalog`
+  );
+  const data = await res.json();
+  return {
+    props: { jacket: data },
+  };
+};
+
 function MyApp({ Component, pageProps }) {
   const order = useOrders();
   const isOrder = useIsOrder();
@@ -38,6 +48,7 @@ function MyApp({ Component, pageProps }) {
       {...isContact}
       {...isMenuMobile}
       jacket={pageProps?.jacket}
+      //jacket={jacket}
     >
       <Layout>
         <Component {...pageProps} />

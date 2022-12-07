@@ -20,6 +20,8 @@ export const ModalOrder = () => {
     setIsOrder(false);
   };
 
+  //console.log(orders);
+
   return (
     <>
       <ModalOverlay setIsOrder={setIsOrder} isOrder={isOrder} />

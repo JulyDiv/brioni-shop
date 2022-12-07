@@ -14,9 +14,9 @@ export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
   const [activeSelect, setActiveSelect] = useState(false);
 
-  const size = useSize(jacket);
+  //const size = useSize(jacket);
   const choice = useChoice(jacket);
-  const { addOrder, isOpenCard, addSelect } = useContext(AppContext);
+  const { addOrder, isOpenCard, addSelect, size } = useContext(AppContext);
 
   const onClick = () => {
     setActiveSelect(true);
@@ -24,6 +24,7 @@ export const CardItem = ({ jacket }) => {
     addSelect();
   };
 
+  //console.log("CardItem:", jacket.size);
   return (
     <>
       <section key={jacket.id} className="card">
@@ -75,7 +76,7 @@ export const CardItem = ({ jacket }) => {
               <div className="card-info__size">
                 <span className="card-info__choose">Choose your size</span>
                 <div className="card-info__size-block">
-                  <SizeItem {...size} />
+                  <SizeItem jacket={jacket} />
                 </div>
                 {/* <div className="line card-info__line"></div> */}
               </div>

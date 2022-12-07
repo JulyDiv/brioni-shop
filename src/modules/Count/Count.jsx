@@ -1,20 +1,19 @@
 import React from "react";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
-import useCount from "../../hooks/useCount";
 
 export const Count = () => {
-  //const { count, setCount, onChange } = useCount();
-  const card = useContext(AppContext);
+  const { count } = useContext(AppContext);
+  //const card = useContext(AppContext);
 
-//console.log(card.count);
+  //console.log("count", card.count);
+  //console.log("count", count.count);
   return (
     <div className="count">
       <button
         className="count__button"
-        onClick={() => card.setCount(card.count - 1)}
-        // disabled={card.count <= 0}
-        disabled
+        onClick={() => count.setCount(count.count - 1)}
+        disabled={count.count <= 1}
       >
         -
       </button>
@@ -22,14 +21,12 @@ export const Count = () => {
         className="count__input"
         type="number"
         min="0"
-        value={card.count < 1 ? 0 : card.count}
-        //onChange={card.onChange}
-        disabled
+        value={count.count < 1 ? 0 : count.count}
+        onChange={count.onChange}
       />
       <button
         className="count__button"
-        onClick={() => card.setCount(card.count + 1)}
-        disabled
+        onClick={() => count.setCount(count.count + 1)}
       >
         +
       </button>

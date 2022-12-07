@@ -5,8 +5,8 @@ import { AppContext } from "../context/AppContext";
 
 export const OrderItem = ({ order }) => {
 
-  const { count, totalPrice, deleteOrder, setIsOpenCard } = useContext(AppContext);
-
+  const { count, totalPrice, deleteOrder, setIsOpenCard, colors, sizes } = useContext(AppContext);
+  console.log(order);
   return (
     <>
       <div
@@ -17,9 +17,9 @@ export const OrderItem = ({ order }) => {
         <img src={order.img} alt="Jacket" className="bag-info__image" />
         <div className="bag-info__text">
           <h3 className="bag-info__title">{order.name}</h3>
-          <span className="bag-info__span">Color : </span>
-          <span className="bag-info__span">Size : </span>
-          <span className="bag-info__span">Quantity : {count}</span>
+          <span className="bag-info__span">Color : {colors}</span>
+          <span className="bag-info__span">Size : {sizes}</span>
+          <span className="bag-info__span">Quantity : {order.count}</span>
         </div>
       </div>
       <div className="bag-price">

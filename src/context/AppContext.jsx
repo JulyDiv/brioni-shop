@@ -1,4 +1,6 @@
 import { createContext, useState } from "react";
+import { useSize } from "../hooks/useSize";
+import { useCount } from "../hooks/useCount";
 
 const AppContext = createContext();
 
@@ -15,9 +17,9 @@ const AppWrapper = ({
   setLabelOrder,
   labelSelect,
   setLabelSelect,
-  count,
-  setCount,
-  onChange,
+  // count,
+  // setCount,
+  // onChange,
   isContact,
   setIsContact,
   isThank,
@@ -25,33 +27,90 @@ const AppWrapper = ({
   isMenuMobile,
   setIsMenuMobile,
 }) => {
-  const [dataJacket, setDataJacket] = useState(jacket);
+  //const [dataJacket, setDataJacket] = useState(jacket);
+  const [color, setColor] = useState([]);
+  const [size, setSize] = useState([]);
+
   const [stateOrder, setStateOrder] = useState({});
+  //const [stateSize, setStateSize] = useState([]);
+  //const [stateColor, setStateColor] = useState([]);
   const [isSelectModal, setIsSelectModal] = useState(false);
-  //const [activeSelect, setActiveSelect] = useState(false);
+
+  // const getSize = (size) =>
+  //   size.map((item) => ({
+  //     name: item,
+  //     status: false,
+  //   }));
+  //console.log(getSize(size));
+  //console.log(jacket.size);
+  //const windowSize = jacket.size ? getSize(jacket.size) : [];
+  //const [size, setSize] = useState(windowSize);
+
+  //const color = useColor(jacket);
+
+  //const size = useSize(jacket);
+  const count = useCount();
 
   const order = !stateOrder
     ? {
         ...orders,
-        name: dataJacket.name,
-        id: dataJacket.id,
-        price: dataJacket.price,
-        img: dataJacket.img,
-        count: count,
+        count: count.count,
+        size: size,
+        color: color,
       }
     : {};
+
+  const checkedSize = (id) => {
+    const newSize = jacket.size.filter((item) => {
+      if (item.id === id) {
+        item.status = !item.status;
+      }
+      return item;
+    });
+    setSize(newSize);
+  };
+
+  const sizes = size
+    .filter((item) => item.status)
+    .map((item) => item.sizeName)
+    .join(", ");
+    console.log("sizes:", sizes);
+
+  // const sizes = size.size
+  //   .filter((item) => item.status)
+  //   .map((item) => item.name)
+  //   .join(", ");
+
+  const checkedColor = (id) => {
+    const newColor = jacket.color.filter((item) => {
+      if (item.id === id) {
+        item.status = !item.status;
+      }
+      return item;
+    });
+    setColor(newColor);
+  };
+
+  const colors = color
+    .filter((item) => item.status)
+    .map((item) => item.colorName)
+    .join(", ");
+  //console.log("colors", colors);
 
   const addOrder = () => {
     const list = new Map(orders);
     if (list.get(jacket.id)) {
       list.set(jacket.id, {
         ...jacket,
-        count: count,
+        count: count.count,
+        size: size,
+        color: color,
       });
     } else {
       list.set(jacket.id, order);
     }
     setOrders(list);
+    //setOrders([...orders, order])
     isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
     setLabelOrder(true);
   };
@@ -86,8 +145,6 @@ const AppWrapper = ({
     setIsOrder,
     setOrders,
     addOrder,
-    dataJacket,
-    setDataJacket,
     isOpenCard,
     isSelectModal,
     setIsSelectModal,
@@ -95,9 +152,14 @@ const AppWrapper = ({
     labelOrder,
     setLabelOrder,
     setLabelSelect,
-    setCount,
+    //setCount,
     count,
-    onChange,
+    sizes,
+    size,
+    checkedSize,
+    color,
+    colors,
+    //onChange,
     deleteOrder,
     totalCounter,
     totalPrice,
@@ -110,7 +172,8 @@ const AppWrapper = ({
     isThank,
     setIsThank,
     isMenuMobile,
-    setIsMenuMobile
+    setIsMenuMobile,
+    checkedColor,
   };
 
   return (
