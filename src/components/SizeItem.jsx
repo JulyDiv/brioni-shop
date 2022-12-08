@@ -7,11 +7,17 @@ export const SizeItem = ({ jacket }) => {
   return (
     <>
       {jacket.size.map(({ id, sizeName, status }) => (
-        <label key={id} className="card-info__size-label">
+        <label
+          key={id}
+          className={
+            status === true
+              ? "card-info__size-label card-info__size-label--active"
+              : "card-info__size-label"
+          }
+        >
           <input
             className="card-info__size-input"
             type="checkbox"
-            //checked={status}
             onChange={() => checkedSize(id)}
           />
           {sizeName}

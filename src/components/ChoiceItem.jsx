@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { use, useState } from "react";
 
 export const ChoiceItem = ({
   choice,
   setActiveChoice
 }) => {
+
+  //const [isChoice, setIsChoice] = useState(activeChoice);
 
   const onClick = (item) => {
     setActiveChoice(item.name);

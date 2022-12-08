@@ -14,7 +14,6 @@ export const Header = ({}) => {
   const [isSearch, setIsSearch] = useState(false);
   //const router = useRouter();
   const {
-    labelSelect,
     totalCounter,
     setLabelOrder,
     setIsOrder,
@@ -77,7 +76,6 @@ export const Header = ({}) => {
                 ) : (
                   <div className="icon-link__label">{totalCounterSelect}</div>
                 )}
-                {/* {labelSelect && <div className="icon-link__label"></div>} */}
               </button>
 
               <button className="icon-link icon__user icon__user--mobile_hidden"></button>

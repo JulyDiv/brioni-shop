@@ -28,6 +28,9 @@
             &:hover
                 border: 1px solid $text-color2
                 opacity: 1
+            &--active
+                border: 1px solid $text-color2
+                opacity: 1
     &-main
         width: 575px
         height: 630px
@@ -112,6 +115,9 @@
             overflow: hidden !important
             &:hover
                 outline: 1px solid white
+            &--active
+                border: none
+                outline: none
         &__name-item
             color: $text-color3
             +font
@@ -148,6 +154,9 @@
                 transition: width 0.2s ease-in-out
             &:hover:after
                 width: 100%
+            &--active
+                &::after
+                    width: 100%
         &__button
             margin-bottom: 48px
             width: 200px
