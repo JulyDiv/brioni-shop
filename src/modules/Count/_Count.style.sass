@@ -3,15 +3,19 @@
     justify-content: space-between
     align-items: center
     width: 70%
-    //height: 0px
     &__button
         width: 30px
         height: 20px
+        color: $text-color3
         text-align: center
         font-weight: 300
-        +font
+        font-size: 16px
         border-radius: 4px
-        border: 1px solid $bg-color3
+        border: 1px solid $text-color2
+        &:hover, &:active
+            border: 1px solid $text-color3
+        &:disabled
+            color: $bg-color3
     &__input
         width: 50%
         text-align: center

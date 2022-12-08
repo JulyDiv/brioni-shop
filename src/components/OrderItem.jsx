@@ -5,8 +5,8 @@ import { AppContext } from "../context/AppContext";
 
 export const OrderItem = ({ order }) => {
 
-  const { count, totalPrice, deleteOrder, setIsOpenCard, colors, sizes } = useContext(AppContext);
-  console.log(order);
+  const { totalPrice, deleteOrder, setIsOpenCard, colors, sizes } = useContext(AppContext);
+  //console.log(order);
   return (
     <>
       <div

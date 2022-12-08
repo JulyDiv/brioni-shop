@@ -4,8 +4,7 @@ import { AppContext } from "../context/AppContext";
 
 export const CardInfoColor = ({ jacket }) => {
   const { checkedColor } = useContext(AppContext);
-  //console.log(jacket.color);
-  //console.log("color:", color);
+
   return (
     <>
       {jacket.color.map(({ id, colorImg, colorName }) => (

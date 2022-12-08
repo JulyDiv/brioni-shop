@@ -1,10 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { CatalogItem } from "../../components/CatalogItem";
+import { AppContext } from "../../context/AppContext";
 import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 import { Character } from "../../modules/Character/Character";
 import { CharacterMobileCatalog } from "../../modules/CharacterMobile/CharacterMobileCatalog";
-//import { AppContext } from "../../context/AppContext";
 
 export const getServerSideProps = async () => {
   const res = await fetch(
@@ -17,7 +16,10 @@ export const getServerSideProps = async () => {
 };
 
 export default function Catalog({ jacket }) {
+
   const [showMoreBtn, setShowMoreBtn] = useState(false);
+
+  //const {  } = useContext(AppContext);
 
   return (
     <>
@@ -29,21 +31,22 @@ export default function Catalog({ jacket }) {
             to more relaxed blazers for relax.
           </p>
           <Character />
-          {/* <div className="line catalog__line"></div> */}
           <div className="catalog-mobile">
             <CharacterMobileCatalog />
           </div>
           <div className="catalog-assortment">
             {jacket.length <= 6
               ? jacket.map((jacket) => (
-                  <>
-                    <CatalogItem jacket={jacket} />
-                  </>
+                    <CatalogItem
+                      key={jacket.id}
+                      jacket={jacket}
+                    />
                 ))
               : jacket.slice(0, 6).map((jacket) => (
-                  <>
-                    <CatalogItem jacket={jacket} />
-                  </>
+                    <CatalogItem
+                      key={jacket.id}
+                      jacket={jacket}
+                    />
                 ))}
             {!showMoreBtn && (
               <button
@@ -55,31 +58,14 @@ export default function Catalog({ jacket }) {
             )}
             {showMoreBtn &&
               jacket.slice(6).map((jacket) => (
-                <>
-                  <CatalogItem jacket={jacket} />
-                </>
+                  <CatalogItem
+                    key={jacket.id}
+                    jacket={jacket}
+                  />
               ))}
-            {/* {jacket.length <= 6 ? (
-              <CatalogItem jacket={jacket} pos={pos} />
-            ) : (
-              <>
-                <CatalogItem jacket={jacket.slice(0, 6)} pos={pos} />
-                {!showMoreBtn && (
-                  <button
-                    className="button-dark catalog-assortment__button"
-                    onClick={() => setShowMoreBtn(true)}
-                  >
-                    Show more
-                  </button>
-                )}
-                {showMoreBtn && (
-                  <CatalogItem jacket={jacket.slice(6)} pos={pos} />
-                )}
-              </>
-            )} */}
           </div>
         </div>
       </section>
     </>
   );
-};
+}

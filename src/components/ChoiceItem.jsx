@@ -5,9 +5,11 @@ export const ChoiceItem = ({
   choice,
   setActiveChoice
 }) => {
+
   const onClick = (item) => {
     setActiveChoice(item.name);
   };
+
   return (
     <>
       {choice.map((item) => (

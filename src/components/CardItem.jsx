@@ -4,7 +4,6 @@ import { BreadCrumb } from "../modules/BreadCrumb/BreadCrumb";
 import { SizeItem } from "../components/SizeItem";
 import { ChoiceItem } from "./ChoiceItem";
 import { CardMobile } from "../modules/CardMobile/CardMobile";
-import { useSize } from "../hooks/useSize";
 import { useChoice } from "../hooks/useChoice";
 import { CardInfoColor } from "./CardInfoColor";
 import { CardModal } from "../modules/CardModal/CardModal";
@@ -14,7 +13,6 @@ export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
   const [activeSelect, setActiveSelect] = useState(false);
 
-  //const size = useSize(jacket);
   const choice = useChoice(jacket);
   const { addOrder, isOpenCard, addSelect, size } = useContext(AppContext);
 
@@ -23,8 +21,7 @@ export const CardItem = ({ jacket }) => {
     activeSelect ? setActiveSelect(false) : setActiveSelect(true);
     addSelect();
   };
-
-  //console.log("CardItem:", jacket.size);
+//console.log(jacket);
   return (
     <>
       <section key={jacket.id} className="card">
@@ -64,21 +61,18 @@ export const CardItem = ({ jacket }) => {
               </div>
 
               <div className="card-info__color-block">
-                {/* <div className="line card-info__line"></div> */}
 
                 <span className="card-info__choose">Choose your color</span>
 
                 <div className="card-info__color">
                   <CardInfoColor jacket={jacket} />
                 </div>
-                {/* <div className="line card-info__line"></div> */}
               </div>
               <div className="card-info__size">
                 <span className="card-info__choose">Choose your size</span>
                 <div className="card-info__size-block">
                   <SizeItem jacket={jacket} />
                 </div>
-                {/* <div className="line card-info__line"></div> */}
               </div>
               <div className="card-info__mobile">
                 <CardMobile jacket={jacket} />

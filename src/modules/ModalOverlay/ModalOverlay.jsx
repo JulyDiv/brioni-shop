@@ -9,6 +9,8 @@ export const ModalOverlay = ({
   isOrder,
   isContact,
   isThank,
+  isSelect,
+  setIsSelect
 }) => {
   const closeModal = () => {
     if (isOrder) {
@@ -19,6 +21,8 @@ export const ModalOverlay = ({
       setIsThank(false);
     } else if (isMenuMobile) {
       setIsMenuMobile(false);
+    } else if (isSelect) {
+      setIsSelect(false);
     }
   };
   return (

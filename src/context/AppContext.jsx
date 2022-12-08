@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { useSize } from "../hooks/useSize";
 import { useCount } from "../hooks/useCount";
 
 const AppContext = createContext();
@@ -17,38 +16,19 @@ const AppWrapper = ({
   setLabelOrder,
   labelSelect,
   setLabelSelect,
-  // count,
-  // setCount,
-  // onChange,
   isContact,
   setIsContact,
   isThank,
   setIsThank,
   isMenuMobile,
   setIsMenuMobile,
+  isSelect, setIsSelect, selects, setSelects
 }) => {
-  //const [dataJacket, setDataJacket] = useState(jacket);
   const [color, setColor] = useState([]);
   const [size, setSize] = useState([]);
-
   const [stateOrder, setStateOrder] = useState({});
-  //const [stateSize, setStateSize] = useState([]);
-  //const [stateColor, setStateColor] = useState([]);
-  const [isSelectModal, setIsSelectModal] = useState(false);
+  const [stateSelect, setStateSelect] = useState({});
 
-  // const getSize = (size) =>
-  //   size.map((item) => ({
-  //     name: item,
-  //     status: false,
-  //   }));
-  //console.log(getSize(size));
-  //console.log(jacket.size);
-  //const windowSize = jacket.size ? getSize(jacket.size) : [];
-  //const [size, setSize] = useState(windowSize);
-
-  //const color = useColor(jacket);
-
-  //const size = useSize(jacket);
   const count = useCount();
 
   const order = !stateOrder
@@ -74,12 +54,6 @@ const AppWrapper = ({
     .filter((item) => item.status)
     .map((item) => item.sizeName)
     .join(", ");
-    console.log("sizes:", sizes);
-
-  // const sizes = size.size
-  //   .filter((item) => item.status)
-  //   .map((item) => item.name)
-  //   .join(", ");
 
   const checkedColor = (id) => {
     const newColor = jacket.color.filter((item) => {
@@ -95,7 +69,6 @@ const AppWrapper = ({
     .filter((item) => item.status)
     .map((item) => item.colorName)
     .join(", ");
-  //console.log("colors", colors);
 
   const addOrder = () => {
     const list = new Map(orders);
@@ -115,14 +88,35 @@ const AppWrapper = ({
     setLabelOrder(true);
   };
 
+  const select = !stateSelect
+    ? {
+        ...selects,
+        count: count.count,
+      }
+    : {};
+
   const addSelect = () => {
-    isSelectModal ? setIsSelectModal(false) : setIsSelectModal(true);
+    const list = new Map(selects);
+    if (list.get(jacket.id)) {
+      list.set(jacket.id, {
+        ...jacket,
+        count: count.count,
+      });
+    } else {
+      list.set(jacket.id, select);
+    }
+    setSelects(list);
     setLabelSelect(true);
   };
 
   const deleteOrder = (id) => {
     let newOrder = [...orders.values()].filter((item) => item.id != id);
     setOrders(newOrder);
+  };
+
+  const deleteSelect = (id) => {
+    let newSelect = [...selects.values()].filter((item) => item.id != id);
+    setSelects(newSelect);
   };
 
   const totalPrice = (order) => order.price * order.count;
@@ -137,43 +131,50 @@ const AppWrapper = ({
     0
   );
 
+  //let totalCounterSelect;
+  const totalCounterSelect = [...selects.values()].reduce(
+    (result, select) => select.count + result,
+    0
+  );
+
   const contextValue = {
     jacket,
-    isOrder,
-    orders,
-    order,
-    setIsOrder,
-    setOrders,
-    addOrder,
-    isOpenCard,
-    isSelectModal,
-    setIsSelectModal,
-    setIsOpenCard,
     labelOrder,
     setLabelOrder,
-    setLabelSelect,
-    //setCount,
+    isOrder,
+    setIsOrder,
+    orders,
+    setOrders,
+    order,
+    addOrder,
+    deleteOrder,
+    isOpenCard,
+    setIsOpenCard,
     count,
     sizes,
     size,
     checkedSize,
     color,
     colors,
-    //onChange,
-    deleteOrder,
+    checkedColor,
     totalCounter,
+    totalCounterSelect,
     totalPrice,
     total,
-    labelSelect,
-    setLabelOrder,
-    addSelect,
     isContact,
     setIsContact,
     isThank,
     setIsThank,
     isMenuMobile,
     setIsMenuMobile,
-    checkedColor,
+    labelSelect,
+    setLabelSelect,
+    isSelect,
+    setIsSelect,
+    selects,
+    setSelects,
+    deleteSelect,
+    addSelect,
   };
 
   return (

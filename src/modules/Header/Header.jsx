@@ -8,10 +8,11 @@ import { ModalThank } from "../ModalThank/ModalThank";
 import { ModalSearch } from "../ModalSearch/ModalSearch";
 import { MenuMobile } from "../MenuMobile/MenuMobile";
 import { MenuButton } from "../../components/MenuButton";
+import { ModalSelect } from "../ModalSelect/ModalSelect";
 
 export const Header = ({}) => {
   const [isSearch, setIsSearch] = useState(false);
-  const router = useRouter();
+  //const router = useRouter();
   const {
     labelSelect,
     totalCounter,
@@ -23,6 +24,10 @@ export const Header = ({}) => {
     setIsContact,
     isThank,
     setIsThank,
+    isSelect,
+    setIsSelect,
+    setLabelSelect,
+    totalCounterSelect,
   } = useContext(AppContext);
   return (
     <>
@@ -62,10 +67,21 @@ export const Header = ({}) => {
                 className="icon-link icon__search icon__search--mobile_visible"
                 onClick={() => setIsSearch(true)}
               ></button>
-              <button className="icon-link icon__select icon__select--mobile_hidden">
-                {labelSelect && <div className="icon-link__label"></div>}
+
+              <button
+                className="icon-link icon__select icon__select--mobile_hidden"
+                onClick={() => setIsSelect(true)}
+              >
+                {totalCounterSelect === 0 ? (
+                  setLabelSelect(false)
+                ) : (
+                  <div className="icon-link__label">{totalCounterSelect}</div>
+                )}
+                {/* {labelSelect && <div className="icon-link__label"></div>} */}
               </button>
+
               <button className="icon-link icon__user icon__user--mobile_hidden"></button>
+
               <button
                 className="icon-link icon__bag icon__bag--mobile_visible"
                 onClick={() => setIsOrder(true)}

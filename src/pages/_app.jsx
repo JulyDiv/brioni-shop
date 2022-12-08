@@ -1,12 +1,11 @@
 import "../../styles/style.sass";
 import "swiper/css/bundle";
 import { Layout } from "../components/Layout";
-//import { useIsOrder } from "../hooks/useIsOrder";
-//import { useIsOpenCard } from "../hooks/useIsOpenCard";
 import { useLabelOrder } from "../hooks/useLabelOrder";
 import { useLabelSelect } from "../hooks/useLabelSelect";
 import { useCount } from "../hooks/useCount";
 import { useOrders } from "../hooks/useOrders";
+import { useSelects } from "../hooks/useSelects";
 import { AppWrapper } from "../context/AppContext";
 import {
   useIsContact,
@@ -14,17 +13,18 @@ import {
   useIsMenuMobile,
   useIsOpenCard,
   useIsOrder,
+  useIsSelect,
 } from "../hooks/useIs";
 
-export const getServerSideProps = async () => {
-  const res = await fetch(
-    `https://encouraging-exuberant-park.glitch.me/catalog`
-  );
-  const data = await res.json();
-  return {
-    props: { jacket: data },
-  };
-};
+// export const getServerSideProps = async () => {
+//   const res = await fetch(
+//     `https://encouraging-exuberant-park.glitch.me/catalog`
+//   );
+//   const data = await res.json();
+//   return {
+//     props: { jacket: data },
+//   };
+// };
 
 function MyApp({ Component, pageProps }) {
   const order = useOrders();
@@ -36,6 +36,8 @@ function MyApp({ Component, pageProps }) {
   const isThank = useIsThank();
   const isContact = useIsContact();
   const isMenuMobile = useIsMenuMobile();
+  const isSelect = useIsSelect();
+  const selects = useSelects();
   return (
     <AppWrapper
       {...order}
@@ -47,8 +49,9 @@ function MyApp({ Component, pageProps }) {
       {...isThank}
       {...isContact}
       {...isMenuMobile}
+      {...isSelect}
+      {...selects}
       jacket={pageProps?.jacket}
-      //jacket={jacket}
     >
       <Layout>
         <Component {...pageProps} />

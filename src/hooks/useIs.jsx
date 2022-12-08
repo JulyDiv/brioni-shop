@@ -29,3 +29,8 @@ export function useIsActiveSelect() {
   const [isActiveSelect, setIsActiveSelect] = useState(false);
   return { isActiveSelect, setIsActiveSelect };
 }
+
+export function useIsSelect() {
+  const [isSelect, setIsSelect] = useState(false);
+  return { isSelect, setIsSelect };
+}

@@ -1,0 +1,125 @@
+.select
+    position: absolute
+    padding: 45px 200px 50px 200px
+    width: 850px
+    // height: auto
+    // height: 100%
+    min-height: 844px
+    right: 0
+    top: 0
+    z-index: 4
+    display: flex
+    flex-direction: column
+    background-color: $text-color4
+    animation: select 0.5s ease-in 1 both reverse
+    overflow: hidden
+    &-wrapper
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin: 0 0 15px 0
+        padding: 0 15px 0 0
+        width: 100%
+        height: 649px
+        overflow: auto
+        &::-webkit-scrollbar
+            width: 2px
+            background-color: $bg-color3
+        &::-webkit-scrollbar-track
+            width: 5px
+        &::-webkit-scrollbar-thumb
+            width: 5px
+            border-radius: 1.5px
+            background-color: $text-color2
+    &-title
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        width: 100%
+        &__title
+            margin-bottom: 43px
+            font-family: $font-light
+            color: $text-color3
+            font-weight: 350
+            font-size: 28px
+            line-height: 32px
+            letter-spacing: 0.02em
+    &-block
+        //height: 200px
+        &__jacket
+            width: 100%
+            //height: 200px
+        &__image
+            //width: 100%
+            height: 300px
+        &__icon
+            display: flex
+            flex-shrink: 0
+            margin-left: 20px
+            width: 18px
+            height: 15px
+            background-image: url("../../../public/img/select-active.svg")
+            +background-image
+            // &--active
+            //     background-image: url("../../../public/img/select-active.svg")
+    &-total
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        flex-grow: 1
+        border-top: 1px solid #E5E5E5
+        &__span
+            display: inline-block
+            margin: 22px 0 45px 0
+            color: $text-color2
+            +font
+        &__button
+            height: 50px
+
+@keyframes select
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 1
+        transform: translateX(100%)
+
+@media (max-width: 1200px)
+    .select
+        width: 490px
+        padding: 45px 20px 50px 20px
+// @media (min-width: 768px) and (max-width: 900px)
+@media (min-width: 481px) and (max-width: 767px)
+    .select
+        width: 100%
+        padding: 20px 20px 40px 20px
+        &-title
+            &__title
+                font-size: 20px
+        &-info
+            &__span
+                +adapt-font-320-640
+        &-price
+            &__span, &__button
+                +adapt-font-320-640
+        &-total
+            &__span, &__button
+                +adapt-font-320-640
+@media (min-width: 320px) and (max-width: 480px)
+    .select
+        width: 100%
+        padding: 20px 10px 40px 10px
+        &-title
+            &__title
+                margin-bottom: 35px
+                font-size: 20px
+        &-info
+            &__span
+                +adapt-font-320-640
+        &-price
+            width: 100%
+            &__span, &__button
+                +adapt-font-320-640
+        &-total
+            &__span, &__button
+                +adapt-font-320-640

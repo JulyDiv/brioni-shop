@@ -6,15 +6,46 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
 export const CatalogItem = ({ jacket }) => {
-  const { addSelect } = useContext(AppContext);
+  const { count, selects, setSelects } = useContext(AppContext);
   const [activeSelect, setActiveSelect] = useState(false);
 
-  const onClick = () => {
-    setActiveSelect(true);
-    activeSelect ? setActiveSelect(false) : setActiveSelect(true);
-    addSelect();
+  const select = {
+    ...selects,
+    //count: count.count,
   };
 
+  const deleteSelect = (id) => {
+    let newSelect = [...selects.values()].filter((item) => item.id != id);
+    setSelects(newSelect);
+  };
+
+  const addSelect = () => {
+    const list = new Map(selects);
+    if (list.get(jacket.id)) {
+      list.set(jacket.id, {
+        ...jacket,
+        count: count.count,
+      });
+    } else {
+      list.set(jacket.id, select);
+    }
+    setSelects(list);
+    console.log(list);
+    setActiveSelect(true);
+    activeSelect ? setActiveSelect(false) : setActiveSelect(true);
+  };
+
+  // const totalCounterSelect = [...selects.values()].reduce(
+  //   (result, select) => select.count + result,
+  //   0
+  // );
+
+  // const onClick = () => {
+  //   setActiveSelect(true);
+  //   activeSelect ? setActiveSelect(false) : setActiveSelect(true);
+  // };
+
+  //console.log(jacket);
   return (
     <>
       <div className="catalog-assortment__jacket">
@@ -37,7 +68,7 @@ export const CatalogItem = ({ jacket }) => {
                 ? "catalog-assortment__icon catalog-assortment__icon--active"
                 : "catalog-assortment__icon"
             }
-            onClick={() => onClick()}
+            onClick={() => addSelect()}
           ></button>
         </div>
         <span className="catalog-assortment__price">
