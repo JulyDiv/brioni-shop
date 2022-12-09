@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 //import { AppContext } from "../../context/AppContext";
 import { SwiperCardSlide } from "./SwiperCardSlide";
 
-export const SwiperCard = ({ swiperCard }) => {
+export const SwiperCard = ({ swiperCard, jacket }) => {
   //console.log(swiperCard);
   return (
     <Swiper
@@ -48,7 +48,7 @@ export const SwiperCard = ({ swiperCard }) => {
     >
       {swiperCard.map((slide, id) => (
         <SwiperSlide key={id}>
-          <SwiperCardSlide slide={slide} />
+          <SwiperCardSlide slide={slide} jacket={jacket} />
         </SwiperSlide>
       ))}
     </Swiper>

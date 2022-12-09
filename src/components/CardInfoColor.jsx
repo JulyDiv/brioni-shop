@@ -8,21 +8,17 @@ export const CardInfoColor = ({ jacket }) => {
     <>
       {jacket.color.map(({ id, colorImg, colorName, status }) => (
         <div key={id} className="card-info__color-name">
-          <label>
+          <label className={
+                status === true
+                  ? "card-info__item card-info__item--active"
+                  : "card-info__item"
+              }>
             <input
               className="card-info__size-input"
               type="checkbox"
               onChange={() => checkedColor(id)}
             />
-            <img
-              src={colorImg}
-              alt="color"
-              className={
-                status === true
-                  ? "card-info__item card-info__item--active"
-                  : "card-info__item"
-              }
-            />
+              <img src={colorImg} alt="color" />
           </label>
           <span className="card-info__name-item">{colorName}</span>
         </div>

@@ -22,7 +22,7 @@ export default function Card({ jacket }) {
   return (
     <>
       <CardItem jacket={jacket} />
-      <Complete />
+      <Complete jacket={jacket} />
     </>
   );
 }

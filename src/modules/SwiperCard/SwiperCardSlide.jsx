@@ -3,13 +3,31 @@ import React, { useState, useContext } from "react";
 import { SwiperSlide } from "swiper/react";
 import { AppContext } from "../../context/AppContext";
 
-export const SwiperCardSlide = ({ slide }) => {
-  const { addSelect } = useContext(AppContext);
+export const SwiperCardSlide = ({ slide, jacket }) => {
+  const { count, selects, setSelects } = useContext(AppContext);
   const [activeSelect, setActiveSelect] = useState(false);
-  const onClick = () => {
+    const select = {
+      ...selects,
+      ...jacket
+      //count: count.count,
+    };
+  const addSelect = () => {
+    const list = new Map(selects);
+    if (list.get(slide.id)) {
+      list.set(slide.id, {
+        ...jacket,
+        ...slide,
+        count: count.count,
+      });
+    } else {
+      list.set(slide.id, select);
+    }
+    setSelects(list);
+    console.log(list);
+    console.log(jacket);
     setActiveSelect(true);
     activeSelect ? setActiveSelect(false) : setActiveSelect(true);
-    addSelect();
+    //addSelect();
   };
   //console.log(slide);
   return (
@@ -23,7 +41,7 @@ export const SwiperCardSlide = ({ slide }) => {
               ? "swiper-card__icon swiper-card__icon--active"
               : "swiper-card__icon"
           }
-          onClick={() => onClick()}
+          onClick={() => addSelect()}
         ></button>
       </div>
       <span className="swiper-card__price">{slide.price}</span>
