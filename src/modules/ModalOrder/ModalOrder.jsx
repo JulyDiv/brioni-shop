@@ -39,40 +39,55 @@ export const ModalOrder = () => {
             />
           </button>
         </div>
-        <div className="bag-wrapper">
-          {[...orders.values()].length ? (
+
+        {[...orders.values()].length ? (
+          <>
+          <div className="bag-wrapper">
             <div className="bag-block">
               {[...orders.values()].map((order, id) => (
                 <OrderItem key={id + new Date()} order={order} />
               ))}
             </div>
-          ) : (
-            <>
-              <div className="line bag-block__line"></div>
-              <img
-                src="/img/bag-icon.svg"
-                alt="bag"
-                style={{
-                  width: "75%",
-                  display: "flex",
-                  margin: "0 auto 50px auto",
-                }}
-              />
+            </div>
+            <div className="bag-total">
+              <span className="bag-total__span">
+                Total : € {total.toLocaleString()}
+              </span>
               <button
-                className="button-dark"
-                style={{
-                  width: "75%",
-                  height: "50px",
-                  margin: "auto",
-                }}
-                onClick={() => onClick()}
+                onClick={() => closeModal()}
+                className="button-dark bag-total__button"
               >
-                Start Shopping
+                Proceed to checkout
               </button>
-            </>
-          )}
-        </div>
-        <div className="bag-total">
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="line bag-block__line"></div>
+            <img
+              src="/img/bag-icon.svg"
+              alt="bag"
+              style={{
+                width: "75%",
+                display: "flex",
+                margin: "0 auto 50px auto",
+              }}
+            />
+            <button
+              className="button-dark"
+              style={{
+                width: "75%",
+                height: "50px",
+                margin: "auto",
+              }}
+              onClick={() => onClick()}
+            >
+              Start Shopping
+            </button>
+          </>
+        )}
+
+        {/* <div className="bag-total">
           <span className="bag-total__span">
             Total : € {total.toLocaleString()}
           </span>
@@ -82,7 +97,7 @@ export const ModalOrder = () => {
           >
             Proceed to checkout
           </button>
-        </div>
+        </div> */}
       </div>
     </>
   );

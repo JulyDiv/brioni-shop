@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AppContext } from "../../context/AppContext";
@@ -27,7 +27,31 @@ export const Header = ({}) => {
     setIsSelect,
     setLabelSelect,
     totalCounterSelect,
+    isOrder,
   } = useContext(AppContext);
+
+  // const onModal = () => {
+  //   setIsOrder(true);
+  //   if (document.body.style.overflow !== "hidden") {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "scroll";
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const body = document.querySelector("body");
+  //   body.style.overflowY = isOrder ? "hidden" : "auto";
+  // }, [isOrder]);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
+    body.style.marginRight =
+      isOrder || isContact || isSelect ? scrollBarWidth : "0";
+    body.style.overflow = isOrder || isContact || isSelect ? "hidden" : "auto";
+  }, [isOrder, isContact, isSelect]);
+
   return (
     <>
       <header className="header">
