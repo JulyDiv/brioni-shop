@@ -30,27 +30,20 @@ export const Header = ({}) => {
     isOrder,
   } = useContext(AppContext);
 
-  // const onModal = () => {
-  //   setIsOrder(true);
-  //   if (document.body.style.overflow !== "hidden") {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "scroll";
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const body = document.querySelector("body");
-  //   body.style.overflowY = isOrder ? "hidden" : "auto";
-  // }, [isOrder]);
+  const onClick = () => {
+    setIsSelect(true);
+  }
 
   useEffect(() => {
     const body = document.querySelector("body");
     const scrollBarWidth = window.innerWidth - document.body.offsetWidth;
     body.style.marginRight =
-      isOrder || isContact || isSelect ? scrollBarWidth : "0";
-    body.style.overflow = isOrder || isContact || isSelect ? "hidden" : "auto";
-  }, [isOrder, isContact, isSelect]);
+      isOrder || isContact || isSelect || isMenuMobile ? scrollBarWidth : "0";
+    body.style.overflow =
+      isOrder || isContact || isSelect || isThank || isMenuMobile
+        ? "hidden"
+        : "auto";
+  }, [isOrder, isContact, isSelect, isThank, isMenuMobile]);
 
   return (
     <>
@@ -93,7 +86,7 @@ export const Header = ({}) => {
 
               <button
                 className="icon-link icon__select icon__select--mobile_hidden"
-                onClick={() => setIsSelect(true)}
+                onClick={() => onClick()}
               >
                 {totalCounterSelect === 0 ? (
                   setLabelSelect(false)

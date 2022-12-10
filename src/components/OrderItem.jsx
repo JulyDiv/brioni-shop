@@ -12,7 +12,7 @@ export const OrderItem = ({ order }) => {
       <div
         key={order.id}
         className="bag-info"
-        onClick={() => setIsOpenCard({ ...order }, order.id)}
+        //onClick={() => setIsOpenCard({ ...order }, order.id)}
       >
         <img src={order.img} alt="Jacket" className="bag-info__image" />
         <div className="bag-info__text">

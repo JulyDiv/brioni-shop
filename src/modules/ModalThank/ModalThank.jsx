@@ -9,18 +9,18 @@ export const ModalThank = ({ setIsThank, isThank }) => {
       <ModalOverlay setIsThank={setIsThank} isThank={isThank} />
       <div className="thank">
         <div className="thank-wrapper">
-          <div className="thank-block">
-            <span className="thank-block__span">
+          <div className="thank-title">
+            <span className="thank-title__span">
               Product Code UJIG0LO16031100
             </span>
             <button
               onClick={() => setIsThank(false)}
-              className="close-button thank-block__button"
+              className="close-button thank-title__button"
             >
               <img
                 src="/img/close-search.svg"
                 alt="close"
-                className="thank-block__image"
+                className="thank-title__image"
               />
             </button>
           </div>

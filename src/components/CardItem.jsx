@@ -14,14 +14,23 @@ export const CardItem = ({ jacket }) => {
   const [activeSelect, setActiveSelect] = useState(false);
 
   const choice = useChoice(jacket);
-  const { addOrder, isOpenCard, addSelect, size } = useContext(AppContext);
+  const {
+    addOrder,
+    isOpenCard,
+    addSelect,
+    isOpenSelect,
+    deleteSelect, select
+  } = useContext(AppContext);
 
   const onClick = () => {
     setActiveSelect(true);
-    activeSelect ? setActiveSelect(false) : setActiveSelect(true);
+    //activeSelect ? setActiveSelect(false) : setActiveSelect(true);
     addSelect();
+    // if (activeSelect === true) {
+    //   deleteSelect();
+    // }
   };
-//console.log(jacket);
+
   return (
     <>
       <section key={jacket.id} className="card">
@@ -51,6 +60,7 @@ export const CardItem = ({ jacket }) => {
                       : "card-info__icon"
                   }
                   onClick={() => onClick()}
+                  //onClick={() => addSelect()}
                 ></button>
               </div>
               <div className="card-info__name">
@@ -61,7 +71,6 @@ export const CardItem = ({ jacket }) => {
               </div>
 
               <div className="card-info__color-block">
-
                 <span className="card-info__choose">Choose your color</span>
 
                 <div className="card-info__color">
@@ -111,6 +120,9 @@ export const CardItem = ({ jacket }) => {
       </section>
       {isOpenCard && (
         <CardModal jacket={jacket} title="Add to Cart" button="Add" />
+      )}
+      {isOpenSelect && (
+        <CardModal jacket={jacket} title="Add to Select" button="Select" />
       )}
     </>
   );

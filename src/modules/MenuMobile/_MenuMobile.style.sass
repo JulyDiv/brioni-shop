@@ -4,18 +4,15 @@
     width: 370px
     height: 100%
     z-index: 4
+    overflow-x: hidden
+    overflow-y: auto
     display: none
-    // &-close
-    //     width: 30px
-    //     height: 19px
-    //     background-color: $bg-color1
-    //     background-image: url('../../../public/img/close-search.svg')
-    //     background-position: center
-    //     background-repeat: no-repeat
-    &-button
-        background-color: inherit
-        &__image-up
-            display: none
+    &::-webkit-scrollbar
+        width: 0
+    // &-button
+    //     background-color: inherit
+    //     &__image-up
+    //         display: none
     &-mobile
         padding: 49px 0 49px 20px
         background-color: $text-color4
@@ -40,10 +37,11 @@
             display: flex
             flex-direction: column
             justify-content: space-between
+            align-items: flex-start
             margin-top: 47px
             margin-bottom: 46px
             height: 166px
-        &__link-bottom
+        &__button-bottom
             color: $text-color3
             font-style: normal
             font-weight: 300

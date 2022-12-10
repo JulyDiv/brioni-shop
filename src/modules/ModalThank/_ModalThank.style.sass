@@ -1,17 +1,26 @@
 .thank
-    position: absolute
+    position: fixed
     top: 0
     right: 0
     z-index: 4
-    padding: 47px 200px 50px 200px
+    padding: 0px 200px 50px 200px
     width: 1050px
+    height: 100%
     background-color: $bg-color1
     animation: thank 0.5s ease-in 1 both reverse
+    overflow-x: hidden
+    overflow-y: auto
+    &::-webkit-scrollbar
+        width: 0
     &-wrapper
         width: 100%
-    &-block
+    &-title
+        position: sticky
+        top: 0
         display: flex
         justify-content: space-between
+        padding: 47px 0 0 0
+        background-color: $bg-color1
         &__span
             color: $text-color2
             +font
@@ -45,6 +54,9 @@
             width: 285px
             height: 55px
             border: 1px solid $text-color2
+            background-color: $bg-color1
+            &:hover, &:active, &:focus, &:disabled
+                border: 1px solid $bg-color4
         &__title
             margin: 91px 0 43px 0
             color: $text-color1
@@ -82,13 +94,17 @@
 
 @media (max-width: 1200px)
     .thank
-        padding: 47px 20px 50px 20px
+        padding: 0px 20px 50px 20px
         width: 690px
+        &-title
+            padding: 47px 0 0 0
 // @media (min-width: 768px) and (max-width: 900px)
 @media (min-width: 481px) and (max-width: 767px)
     .thank
-        padding: 23px 20px 50px 20px
+        padding: 0px 20px 50px 20px
         width: 100%
+        &-title
+            padding: 23px 0 0 0
         &__title
             margin: 32px 0 33px 0
             line-height: 23px
@@ -114,8 +130,10 @@
                 +adapt-font-320-640
 @media (min-width: 320px) and (max-width: 480px)
     .thank
-        padding: 23px 10px 50px 10px
+        padding: 0px 10px 50px 10px
         width: 100%
+        &-title
+            padding: 23px 0 0 0
         &__title
             margin: 32px 0 33px 0
             line-height: 23px

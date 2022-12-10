@@ -23,8 +23,8 @@ export const SwiperCardSlide = ({ slide, jacket }) => {
       list.set(slide.id, select);
     }
     setSelects(list);
-    console.log(list);
-    console.log(jacket);
+    //console.log(list);
+    //console.log(jacket);
     setActiveSelect(true);
     activeSelect ? setActiveSelect(false) : setActiveSelect(true);
     //addSelect();

@@ -46,7 +46,6 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
                 <InputContact placeholder="Enter e-mail" />
                 <InputContact placeholder="Phone number" />
               </fieldset>
-              <div className="contact__line"></div>
               <h3 className="contact-sign__title">Shipping address</h3>
               <fieldset className="contact-fieldset">
                 <InputContact placeholder="First name" />
@@ -63,7 +62,9 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
               <textarea
                 name="#"
                 placeholder="Comment"
-                className="contact-input contact__comment"
+                rows="8"
+                maxLength={710}
+                className="contact-input contact-form__comment"
               />
             </div>
 

@@ -22,12 +22,16 @@ const AppWrapper = ({
   setIsThank,
   isMenuMobile,
   setIsMenuMobile,
-  isSelect, setIsSelect, selects, setSelects
+  isSelect,
+  setIsSelect,
+  selects,
+  setSelects,
 }) => {
   const [color, setColor] = useState([]);
   const [size, setSize] = useState([]);
   const [stateOrder, setStateOrder] = useState({});
   const [stateSelect, setStateSelect] = useState({});
+  const [isOpenSelect, setIsOpenSelect] = useState(false);
 
   const count = useCount();
 
@@ -83,9 +87,8 @@ const AppWrapper = ({
       list.set(jacket.id, order);
     }
     setOrders(list);
-    //setOrders([...orders, order])
     isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
-    setLabelOrder(true);
+    //setLabelOrder(true);
   };
 
   const select = !stateSelect
@@ -95,7 +98,7 @@ const AppWrapper = ({
       }
     : {};
 
-  const addSelect = () => {
+  const addSelect = (id) => {
     const list = new Map(selects);
     if (list.get(jacket.id)) {
       list.set(jacket.id, {
@@ -106,7 +109,13 @@ const AppWrapper = ({
       list.set(jacket.id, select);
     }
     setSelects(list);
-    setLabelSelect(true);
+    //setIsOpenSelect(true);
+    isOpenSelect ? setIsOpenSelect(false) : setIsOpenSelect(true);
+    //selects ? deleteOrder(id) : "";
+    //setLabelSelect(true);
+    // setActiveSelect(true);
+    // activeSelect ? setActiveSelect(false) : setActiveSelect(true);
+    //activeSelect ? "" : "";
   };
 
   const deleteOrder = (id) => {
@@ -175,6 +184,8 @@ const AppWrapper = ({
     setSelects,
     deleteSelect,
     addSelect,
+    isOpenSelect,
+    setIsOpenSelect,
   };
 
   return (

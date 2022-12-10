@@ -10,7 +10,7 @@ export const ModalOverlay = ({
   isContact,
   isThank,
   isSelect,
-  setIsSelect
+  setIsSelect,
 }) => {
   const closeModal = () => {
     if (isOrder) {
@@ -27,7 +27,11 @@ export const ModalOverlay = ({
   };
   return (
     <>
-      <div className="modal-overlay" onClick={() => closeModal()} style={{ zIndex: isMenuMobile === true ? "0" : "" }}></div>
+      <div
+        className="modal-overlay"
+        onClick={() => closeModal()}
+        style={{ zIndex: isMenuMobile === true ? "0" : "" }}
+      ></div>
     </>
   );
 };

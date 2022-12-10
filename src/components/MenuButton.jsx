@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const MenuButton = ({ setIsMenuMobile, isMenuMobile }) => {
   const [isHover, setIsHover] = useState(false);
@@ -14,6 +14,10 @@ export const MenuButton = ({ setIsMenuMobile, isMenuMobile }) => {
     setIsActive((current) => !current);
     isMenuMobile ? setIsMenuMobile(false) : setIsMenuMobile(true);
   };
+
+  useEffect(() => {
+    isMenuMobile ? setIsActive(true) : setIsActive(false);
+  }, [isMenuMobile]);
 
   return (
     <>

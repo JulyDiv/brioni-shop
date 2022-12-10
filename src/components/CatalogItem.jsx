@@ -4,20 +4,23 @@ import Link from "next/link";
 import { useState } from "react";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { SelectModal } from "../modules/SelectModal/SelectModal";
 
 export const CatalogItem = ({ jacket }) => {
-  const { count, selects, setSelects } = useContext(AppContext);
+  const { count, selects, setSelects, deleteSelect } =
+    useContext(AppContext);
   const [activeSelect, setActiveSelect] = useState(false);
+  const [isSelectModal, setIsSelectModal] = useState(false);
 
   const select = {
     ...selects,
     //count: count.count,
   };
 
-  const deleteSelect = (id) => {
-    let newSelect = [...selects.values()].filter((item) => item.id != id);
-    setSelects(newSelect);
-  };
+  // const deleteSelect = (id) => {
+  //   let newSelect = [...selects.values()].filter((item) => item.id != id);
+  //   setSelects(newSelect);
+  // };
 
   const addSelect = () => {
     const list = new Map(selects);
@@ -30,20 +33,13 @@ export const CatalogItem = ({ jacket }) => {
       list.set(jacket.id, select);
     }
     setSelects(list);
-    console.log(list);
+
     setActiveSelect(true);
-    activeSelect ? setActiveSelect(false) : setActiveSelect(true);
+    //activeSelect ? setActiveSelect(false) : setActiveSelect(true);
+    //setIsSelectModal(true);
+    //activeSelect ? deleteSelect(id) : "";
+    isSelectModal ? setIsSelectModal(false) : setIsSelectModal(true);
   };
-
-  // const totalCounterSelect = [...selects.values()].reduce(
-  //   (result, select) => select.count + result,
-  //   0
-  // );
-
-  // const onClick = () => {
-  //   setActiveSelect(true);
-  //   activeSelect ? setActiveSelect(false) : setActiveSelect(true);
-  // };
 
   //console.log(jacket);
   return (
@@ -68,13 +64,22 @@ export const CatalogItem = ({ jacket }) => {
                 ? "catalog-assortment__icon catalog-assortment__icon--active"
                 : "catalog-assortment__icon"
             }
-            onClick={() => addSelect()}
+             onClick={() => addSelect()}
+            //onClick={!activeSelect ? deleteSelect() : addSelect()}
           ></button>
         </div>
         <span className="catalog-assortment__price">
           € {jacket.price.toLocaleString()}
         </span>
       </div>
+      {isSelectModal && (
+        <SelectModal
+          jacket={jacket}
+          addSelect={addSelect}
+          title="Add to Select"
+          button="Select"
+        />
+      )}
     </>
   );
 };

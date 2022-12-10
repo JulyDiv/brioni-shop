@@ -1,11 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { useRouter } from "next/router";
 import { AppContext } from "../context/AppContext";
 
 export const SelectItem = ({ select }) => {
-    const { deleteSelect } = useContext(AppContext);
-    //console.log(select);
+  const { deleteSelect, setIsSelect } = useContext(AppContext);
+  const router = useRouter();
+  const onClick = () => {
+    router.push(`/catalog/${select.id}`);
+    setIsSelect(false);
+  };
   return (
     <>
       <div key={select.id} className="select-jacket">
@@ -13,6 +17,7 @@ export const SelectItem = ({ select }) => {
           src={select.img}
           alt="Photo: Jacket"
           className="select-jacket__image"
+          onClick={() => onClick()}
         />
         <div className="select-jacket__info">
           <span className="select-jacket__text">{select.name}</span>
