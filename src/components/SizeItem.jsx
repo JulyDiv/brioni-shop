@@ -1,12 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 
 export const SizeItem = ({ jacket }) => {
-  const { checkedSize } = useContext(AppContext);
+  const { changeSize } = useContext(AppContext);
+  const [activeSize, setActiveSize] = useState();
+
+  const onClick = (item) => {
+    setActiveSize(item);
+  }
 
   return (
     <>
-      {jacket.size.map(({ id, sizeName, status }) => (
+      {jacket.size.map((item, id) => (
+        <label
+          key={id}
+          className={
+            activeSize === item
+              ? "card-info__size-label card-info__size-label--active"
+              : "card-info__size-label"
+          }
+          onClick={() => onClick(item)}
+        >
+          <input
+            className="card-info__size-input"
+            type="radio"
+            value={item}
+            name="size"
+            onChange={changeSize}
+          />
+          {item}
+        </label>
+      ))}
+      {/* {jacket.size.map(({ id, sizeName, status }) => (
         <label
           key={id}
           className={
@@ -22,7 +47,7 @@ export const SizeItem = ({ jacket }) => {
           />
           {sizeName}
         </label>
-      ))}
+      ))} */}
     </>
   );
 };

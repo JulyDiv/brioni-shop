@@ -5,6 +5,7 @@ import { SizeItem } from "../components/SizeItem";
 import { ChoiceItem } from "./ChoiceItem";
 import { CardMobile } from "../modules/CardMobile/CardMobile";
 import { useChoice } from "../hooks/useChoice";
+import { useColor } from "../hooks/useColor";
 import { CardInfoColor } from "./CardInfoColor";
 import { CardModal } from "../modules/CardModal/CardModal";
 import { AppContext } from "../context/AppContext";
@@ -14,6 +15,8 @@ export const CardItem = ({ jacket }) => {
   const [activeSelect, setActiveSelect] = useState(false);
 
   const choice = useChoice(jacket);
+  //const color = useColor();
+
   const {
     addOrder,
     isOpenCard,
@@ -118,9 +121,9 @@ export const CardItem = ({ jacket }) => {
           </div>
         </div>
       </section>
-      {isOpenCard && (
+      {/* {isOpenCard && (
         <CardModal jacket={jacket} title="Add to Cart" button="Add" />
-      )}
+      )} */}
       {isOpenSelect && (
         <CardModal jacket={jacket} title="Add to Select" button="Select" />
       )}

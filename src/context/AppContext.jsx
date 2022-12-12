@@ -26,70 +26,88 @@ const AppWrapper = ({
   setIsSelect,
   selects,
   setSelects,
+  color,
+  changeColor,
+  size,
+  changeSize
 }) => {
-  const [color, setColor] = useState([]);
-  const [size, setSize] = useState([]);
+  //const [color, setColor] = useState([]);
+  //const [size, setSize] = useState([]);
   const [stateOrder, setStateOrder] = useState({});
   const [stateSelect, setStateSelect] = useState({});
   const [isOpenSelect, setIsOpenSelect] = useState(false);
 
   const count = useCount();
 
-  const order = !stateOrder
-    ? {
-        ...orders,
-        count: count.count,
-        size: size,
-        color: color,
-      }
-    : {};
+  // const order = !stateOrder
+  //   ? {
+  //       ...orders,
+  //       count: count.count,
+  //       size: size,
+  //       color: color,
+  //     }
+  //   : {};
 
-  const checkedSize = (id) => {
-    const newSize = jacket.size.filter((item) => {
-      if (item.id === id) {
-        item.status = !item.status;
-      }
-      return item;
-    });
-    setSize(newSize);
-  };
+    const order = {
+          ...jacket,
+          count: count.count,
+          size: size,
+          color: color,
+        };
 
-  const sizes = size
-    .filter((item) => item.status)
-    .map((item) => item.sizeName)
-    .join(", ");
+  // const checkedSize = (id) => {
+  //   const newSize = jacket.size.filter((item) => {
+  //     if (item.id === id) {
+  //       item.status = !item.status;
+  //     }
+  //     return item;
+  //   });
+  //   setSize(newSize);
+  // };
 
-  const checkedColor = (id) => {
-    const newColor = jacket.color.filter((item) => {
-      if (item.id === id) {
-        item.status = !item.status;
-      }
-      return item;
-    });
-    setColor(newColor);
-  };
+  // const sizes = size
+  //   .filter((item) => item.status)
+  //   .map((item) => item.sizeName)
+  //   .join(", ");
 
-  const colors = color
-    .filter((item) => item.status)
-    .map((item) => item.colorName)
-    .join(", ");
+  // const checkedColor = (id) => {
+  //   const newColor = jacket.color.filter((item) => {
+  //     if (item.id === id) {
+  //       item.status = !item.status;
+  //     }
+  //     return item;
+  //   });
+  //   setColor(newColor);
+  // };
+
+  // const colors = color
+  //   .filter((item) => item.status)
+  //   .map((item) => item.colorName)
+  //   .join(", ");
+
+  //console.log(color);
+  //console.log(colors);
 
   const addOrder = () => {
-    const list = new Map(orders);
-    if (list.get(jacket.id)) {
-      list.set(jacket.id, {
-        ...jacket,
-        count: count.count,
-        size: size,
-        color: color,
-      });
-    } else {
-      list.set(jacket.id, order);
-    }
-    setOrders(list);
-    isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
-    //setLabelOrder(true);
+    setOrders([...orders, order]);
+    //isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
   };
+
+  // const addOrder = () => {
+  //   const list = new Map(orders);
+  //   if (list.get(jacket.id)) {
+  //     list.set(jacket.id, {
+  //       ...jacket,
+  //       count: count.count,
+  //       size: size,
+  //       color: color,
+  //     });
+  //   } else {
+  //     list.set(jacket.id, order);
+  //   }
+  //   setOrders(list);
+  //   isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
+  // };
 
   const select = !stateSelect
     ? {
@@ -118,10 +136,15 @@ const AppWrapper = ({
     //activeSelect ? "" : "";
   };
 
-  const deleteOrder = (id) => {
-    let newOrder = [...orders.values()].filter((item) => item.id != id);
-    setOrders(newOrder);
-  };
+  // const deleteOrder = (id) => {
+  //   let newOrder = [...orders.values()].filter((item) => item.id != id);
+  //   setOrders(newOrder);
+  // };
+
+    const deleteOrder = (index) => {
+      let newOrder = orders.filter((item, i) => index !== i);
+      setOrders(newOrder);
+    };
 
   const deleteSelect = (id) => {
     let newSelect = [...selects.values()].filter((item) => item.id != id);
@@ -130,15 +153,25 @@ const AppWrapper = ({
 
   const totalPrice = (order) => order.price * order.count;
 
-  const total = [...orders.values()].reduce(
-    (result, order) => totalPrice(order) + result,
-    0
-  );
+  // const total = [...orders.values()].reduce(
+  //   (result, order) => totalPrice(order) + result,
+  //   0
+  // );
 
-  const totalCounter = [...orders.values()].reduce(
-    (result, order) => order.count + result,
-    0
-  );
+    const total = orders.reduce(
+      (result, order) => totalPrice(order) + result,
+      0
+    );
+
+  // const totalCounter = [...orders.values()].reduce(
+  //   (result, order) => order.count + result,
+  //   0
+  // );
+
+    const totalCounter = orders.reduce(
+      (result, order) => order.count + result,
+      0
+    );
 
   //let totalCounterSelect;
   const totalCounterSelect = [...selects.values()].reduce(
@@ -160,12 +193,14 @@ const AppWrapper = ({
     isOpenCard,
     setIsOpenCard,
     count,
-    sizes,
+    //sizes,
     size,
-    checkedSize,
+    changeSize,
+    //checkedSize,
     color,
-    colors,
-    checkedColor,
+    changeColor,
+    //colors,
+    //checkedColor,
     totalCounter,
     totalCounterSelect,
     totalPrice,

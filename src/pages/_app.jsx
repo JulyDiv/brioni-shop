@@ -4,6 +4,8 @@ import { Layout } from "../components/Layout";
 import { useLabelOrder } from "../hooks/useLabelOrder";
 import { useLabelSelect } from "../hooks/useLabelSelect";
 import { useCount } from "../hooks/useCount";
+import { useColor } from "../hooks/useColor";
+import { useSize } from "../hooks/useSize";
 import { useOrders } from "../hooks/useOrders";
 import { useSelects } from "../hooks/useSelects";
 import { AppWrapper } from "../context/AppContext";
@@ -28,6 +30,8 @@ function MyApp({ Component, pageProps }) {
   const isMenuMobile = useIsMenuMobile();
   const isSelect = useIsSelect();
   const selects = useSelects();
+  const color = useColor();
+  const size = useSize();
   return (
     <AppWrapper
       {...order}
@@ -41,6 +45,8 @@ function MyApp({ Component, pageProps }) {
       {...isMenuMobile}
       {...isSelect}
       {...selects}
+      {...color}
+      {...size}
       jacket={pageProps?.jacket}
     >
       <Layout>

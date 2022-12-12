@@ -39,15 +39,21 @@ export const ModalOrder = () => {
             />
           </button>
         </div>
-
-        {[...orders.values()].length ? (
+        {orders.length ? (
+          <>
+            <div className="bag-wrapper">
+              <div className="bag-block">
+                {orders.map((order, index) => (
+                  <OrderItem key={index} order={order} index={index} />
+                ))}
+                {/* {[...orders.values()].length ? (
           <>
           <div className="bag-wrapper">
             <div className="bag-block">
               {[...orders.values()].map((order, id) => (
                 <OrderItem key={id + new Date()} order={order} />
-              ))}
-            </div>
+              ))} */}
+              </div>
             </div>
             <div className="bag-total">
               <span className="bag-total__span">
