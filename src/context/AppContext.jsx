@@ -36,9 +36,27 @@ const AppWrapper = ({
   const [stateOrder, setStateOrder] = useState({});
   const [stateSelect, setStateSelect] = useState({});
   const [isOpenSelect, setIsOpenSelect] = useState(false);
+  const [activeColor, setActiveColor] = useState();
+  const [activeSize, setActiveSize] = useState();
 
   const count = useCount();
 
+  useEffect(() => {
+    const orders = localStorage.orders ? JSON.parse(localStorage.orders) : [];
+    if (orders !== null) {
+      setOrders(orders);
+    }
+  }, [setOrders]);
+  useEffect(() => {
+    window.addEventListener("beforeunload", () => {
+      localStorage.orders = JSON.stringify(orders)
+    });
+    return () => {
+      window.removeEventListener("beforeunload", () => {
+        localStorage.orders = JSON.stringify(orders);
+      });
+    }
+  }, [orders]);
   // const order = !stateOrder
   //   ? {
   //       ...orders,
@@ -116,7 +134,7 @@ const AppWrapper = ({
       }
     : {};
 
-  const addSelect = (id) => {
+  const addSelect = () => {
     const list = new Map(selects);
     if (list.get(jacket.id)) {
       list.set(jacket.id, {
@@ -173,7 +191,6 @@ const AppWrapper = ({
       0
     );
 
-  //let totalCounterSelect;
   const totalCounterSelect = [...selects.values()].reduce(
     (result, select) => select.count + result,
     0
@@ -221,6 +238,10 @@ const AppWrapper = ({
     addSelect,
     isOpenSelect,
     setIsOpenSelect,
+    activeColor,
+    setActiveColor,
+    activeSize,
+    setActiveSize
   };
 
   return (

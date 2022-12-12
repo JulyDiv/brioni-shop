@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 
 export const SizeItem = ({ jacket }) => {
-  const { changeSize } = useContext(AppContext);
-  const [activeSize, setActiveSize] = useState();
+  const { changeSize, activeSize, setActiveSize } = useContext(AppContext);
 
   const onClick = (item) => {
     setActiveSize(item);

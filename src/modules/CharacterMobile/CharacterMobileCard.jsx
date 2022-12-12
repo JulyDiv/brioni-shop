@@ -1,12 +1,18 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { CharacterButtonMobile } from "../../components/CharacterButtonMobile";
-import { CharacterDropdownList } from "../../components/CharacterDropdownList";
 
 export const CharacterMobileCard = ({ jacket }) => {
-  const { checkedColor, checkedSize } = useContext(AppContext);
+
+  const { changeColor, changeSize, activeColor, setActiveColor, activeSize, setActiveSize } = useContext(AppContext);
+
   const [dropdownColor, setDropdownColor] = useState(false);
   const [dropdownSize, setDropdownSize] = useState(false);
+
+  const onClick = (item) => {
+    dropdownColor ? setActiveColor(item) : setActiveSize(item);
+  }
+
   return (
     <div className="character-mobile">
       <CharacterButtonMobile
@@ -18,19 +24,24 @@ export const CharacterMobileCard = ({ jacket }) => {
       {dropdownColor && (
         <div className="character-media">
           <div className="character-dropdown__option-list">
-            {jacket.color.map(({ id, colorName, status }) => (
+            {jacket.color.map((item, id) => (
               <div key={id} className="character-dropdown__option-item">
                 <input
                   className={
-                    status === true
+                    activeColor === item
                       ? "character-dropdown__input character-dropdown__input--active"
                       : "character-dropdown__input"
                   }
-                  type="checkbox"
-                  onChange={() => checkedColor(id)}
+                  type="radio"
+                  value={item.colorName}
+                  name="color"
+                  onChange={changeColor}
+                  onClick={() => onClick(item)}
                 />
                 <div className="checkbox character-dropdown__checkbox"></div>
-                <label className="character-dropdown__label">{colorName}</label>
+                <label className="character-dropdown__label">
+                  {item.colorName}
+                </label>
               </div>
             ))}
           </div>
@@ -45,19 +56,22 @@ export const CharacterMobileCard = ({ jacket }) => {
       />
       {dropdownSize && (
         <div className="character-media">
-          {jacket.size.map(({ sizeName, id, status }) => (
+          {jacket.size.map((item, id) => (
             <div key={id} className="character-dropdown__option-item">
               <input
                 className={
-                  status === true
+                  activeSize === item
                     ? "character-dropdown__input character-dropdown__input--active"
                     : "character-dropdown__input"
                 }
-                type="checkbox"
-                onChange={() => checkedSize(id)}
+                type="radio"
+                value={item}
+                name="size"
+                onChange={changeSize}
+                onClick={() => onClick(item)}
               />
               <div className="checkbox character-dropdown__checkbox"></div>
-              <label className="character-dropdown__label">{sizeName}</label>
+              <label className="character-dropdown__label">{item}</label>
             </div>
           ))}
         </div>

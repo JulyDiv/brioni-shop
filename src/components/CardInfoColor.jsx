@@ -3,8 +3,7 @@ import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 
 export const CardInfoColor = ({ jacket }) => {
-  const { changeColor, color } = useContext(AppContext);
-  const [activeColor, setActiveColor] = useState();
+  const { changeColor, activeColor, setActiveColor } = useContext(AppContext);
 
   const onClick = (item) => {
     setActiveColor(item);
