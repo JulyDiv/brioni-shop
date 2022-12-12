@@ -7,7 +7,7 @@ export const CardMobile = ({ jacket }) => {
   const choice = useChoice(jacket);
   return (
     <>
-      <SwiperCardMobile {...choice} />
+      <SwiperCardMobile {...choice} jacket={jacket} />
       <CharacterMobileCard jacket={jacket} />
     </>
   );

@@ -19,7 +19,7 @@ export const CardItem = ({ jacket }) => {
     isOpenCard,
     addSelect,
     isOpenSelect,
-    deleteSelect, select
+    deleteSelect, colors
   } = useContext(AppContext);
 
   const onClick = () => {
@@ -40,7 +40,7 @@ export const CardItem = ({ jacket }) => {
           <div className="card-wrapper">
             <div className="card-jackets">
               <div className="card-choice">
-                <ChoiceItem {...choice} />
+                <ChoiceItem {...choice} jacket={jacket} />
               </div>
               <div className="card-main">
                 <img

@@ -19,7 +19,6 @@ export const ModalSearch = ({ setIsSearch }) => {
             className="search-form__button search-form__button-close"
             onClick={() => setIsSearch(false)}
           >
-            {/* <img src="/img/close-search.svg" alt="close" /> */}
           </button>
         </form>
       </div>

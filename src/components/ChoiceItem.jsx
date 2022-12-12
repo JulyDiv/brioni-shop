@@ -1,28 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { use, useState } from "react";
+import React from "react";
 
-export const ChoiceItem = ({
-  choice,
-  setActiveChoice
-}) => {
-
-  //const [isChoice, setIsChoice] = useState(activeChoice);
+export const ChoiceItem = ({ choice, setActiveChoice, changeChoice, jacket }) => {
 
   const onClick = (item) => {
-    setActiveChoice(item.name);
+    setActiveChoice(item);
   };
 
   return (
     <>
-      {choice.map((item) => (
-        <img
-          key={item.id}
-          className="card-choice__image"
-          src={item.name}
-          alt="Photo: jacket"
-          checked={item.status}
-          onClick={() => onClick(item)}
-        />
+      {jacket.choice.map((item, id) => (
+        <label key={id}>
+          <img
+            className={
+              choice === item
+                ? "card-choice__image card-choice__image--active"
+                : "card-choice__image"
+            }
+            src={item}
+            alt="Photo: jacket"
+            onClick={() => onClick(item)}
+          />
+          <input
+            className="card-info__size-input"
+            type="radio"
+            value={item}
+            name="choice"
+            //status={choice === item}
+            onChange={changeChoice}
+          />
+        </label>
       ))}
     </>
   );

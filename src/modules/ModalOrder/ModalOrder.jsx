@@ -77,7 +77,7 @@ export const ModalOrder = () => {
               className="button-dark"
               style={{
                 width: "75%",
-                height: "50px",
+                minHeight: "50px",
                 margin: "auto",
               }}
               onClick={() => onClick()}
@@ -86,18 +86,6 @@ export const ModalOrder = () => {
             </button>
           </>
         )}
-
-        {/* <div className="bag-total">
-          <span className="bag-total__span">
-            Total : € {total.toLocaleString()}
-          </span>
-          <button
-            onClick={() => closeModal()}
-            className="button-dark bag-total__button"
-          >
-            Proceed to checkout
-          </button>
-        </div> */}
       </div>
     </>
   );
