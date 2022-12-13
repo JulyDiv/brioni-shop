@@ -28,7 +28,7 @@ export const CardInfoColor = ({ jacket }) => {
               value={item.colorName}
               onChange={changeColor}
             />
-            <img src={item.colorImg} alt="color" className="card-info__item" />
+            <img src={item.colorImg} alt="color" className="card-info__item-image" />
           </label>
           <span className="card-info__name-item">{item.colorName}</span>
         </div>
