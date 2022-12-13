@@ -29,7 +29,7 @@ const AppWrapper = ({
   color,
   changeColor,
   size,
-  changeSize
+  changeSize,
 }) => {
   //const [color, setColor] = useState([]);
   //const [size, setSize] = useState([]);
@@ -49,14 +49,34 @@ const AppWrapper = ({
   }, [setOrders]);
   useEffect(() => {
     window.addEventListener("beforeunload", () => {
-      localStorage.orders = JSON.stringify(orders)
+      localStorage.orders = JSON.stringify(orders);
     });
     return () => {
       window.removeEventListener("beforeunload", () => {
         localStorage.orders = JSON.stringify(orders);
       });
-    }
+    };
   }, [orders]);
+
+  // useEffect(() => {
+  //   const selects = localStorage.selects
+  //     ? JSON.parse(localStorage.selects)
+  //     : [];
+  //   if (selects !== null) {
+  //     setSelects(selects);
+  //   }
+  // }, [setSelects]);
+  // useEffect(() => {
+  //   window.addEventListener("beforeunload", () => {
+  //     localStorage.selects = JSON.stringify(selects);
+  //   });
+  //   return () => {
+  //     window.removeEventListener("beforeunload", () => {
+  //       localStorage.selects = JSON.stringify(selects);
+  //     });
+  //   };
+  // }, [selects]);
+
   // const order = !stateOrder
   //   ? {
   //       ...orders,
@@ -66,12 +86,12 @@ const AppWrapper = ({
   //     }
   //   : {};
 
-    const order = {
-          ...jacket,
-          count: count.count,
-          size: size,
-          color: color,
-        };
+  const order = {
+    ...jacket,
+    count: count.count,
+    size: size,
+    color: color,
+  };
 
   // const checkedSize = (id) => {
   //   const newSize = jacket.size.filter((item) => {
@@ -159,10 +179,10 @@ const AppWrapper = ({
   //   setOrders(newOrder);
   // };
 
-    const deleteOrder = (index) => {
-      let newOrder = orders.filter((item, i) => index !== i);
-      setOrders(newOrder);
-    };
+  const deleteOrder = (index) => {
+    let newOrder = orders.filter((item, i) => index !== i);
+    setOrders(newOrder);
+  };
 
   const deleteSelect = (id) => {
     let newSelect = [...selects.values()].filter((item) => item.id != id);
@@ -176,20 +196,17 @@ const AppWrapper = ({
   //   0
   // );
 
-    const total = orders.reduce(
-      (result, order) => totalPrice(order) + result,
-      0
-    );
+  const total = orders.reduce((result, order) => totalPrice(order) + result, 0);
 
   // const totalCounter = [...orders.values()].reduce(
   //   (result, order) => order.count + result,
   //   0
   // );
 
-    const totalCounter = orders.reduce(
-      (result, order) => order.count + result,
-      0
-    );
+  const totalCounter = orders.reduce(
+    (result, order) => order.count + result,
+    0
+  );
 
   const totalCounterSelect = [...selects.values()].reduce(
     (result, select) => select.count + result,
@@ -241,7 +258,7 @@ const AppWrapper = ({
     activeColor,
     setActiveColor,
     activeSize,
-    setActiveSize
+    setActiveSize,
   };
 
   return (
