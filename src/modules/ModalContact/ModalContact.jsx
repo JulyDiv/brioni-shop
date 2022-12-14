@@ -1,19 +1,45 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import Link from "next/link";
-import { InputContact } from "../../components/InputContact";
+import { useForm } from "react-hook-form";
+//import { useForm } from "react-hook-form";
+//import { InputContact } from "../../components/InputContact";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
+//import { useForm } from "react-hook-form";
 
 export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
+  //   const {
+  //     register,
+  //     handleSubmit,
+  //     watch,
+  //     formState: { errors },
+  //   } = useForm();
+  // const onSubmit = (data) => console.log(data);
   const [activeCheckbox, setActiveCheckbox] = useState(false);
+  const [valueEmail, setValueEmail] = useState("");
+
   const onClick = () => {
     setActiveCheckbox(true);
     activeCheckbox ? setActiveCheckbox(false) : setActiveCheckbox(true);
   };
+
   const closeModal = () => {
     setIsContact(false);
     setIsThank(true);
   };
+
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  // } = useForm({
+  //   mode: "onBlur",
+  //   defaultValues: { email: valueEmail },
+  // });
+  // const onSubmit = () => {
+  // };
+  //onSubmit={handleSubmit(onSubmit)}
   return (
     <>
       <ModalOverlay setIsContact={setIsContact} isContact={isContact} />
@@ -43,12 +69,80 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
                 Sign in
               </Link>
               <fieldset className="contact-fieldset">
-                <InputContact placeholder="Enter e-mail" />
-                <InputContact placeholder="Phone number" />
+                <input
+                  // {...register("email", {
+                  //   required: {
+                  //     value: true,
+                  //     message: "Поле обязательно для заполнения",
+                  //   },
+                  //   maxLength: {
+                  //     value: 20,
+                  //     message: "Количество символов до 20-ти",
+                  //   },
+                  //   pattern: {
+                  //     value: /[A-Za-z]+/i,
+                  //     message: "Неверные символы",
+                  //   },
+                  // })}
+                  // style={{ border: errors.email && "1px solid red" }}
+                  type="email"
+                  className="contact-input contact-input__input"
+                  placeholder="Enter e-mail"
+                />
+                {/* {errors?.email?.message && (
+                  <p style={{ color: "red" }}>{errors?.email?.message}</p>
+                )} */}
+                <input
+                  type="number"
+                  className="contact-input contact-input__input"
+                  placeholder="Phone number"
+                />
+                {/* <InputContact placeholder="Enter e-mail" />
+                <InputContact placeholder="Phone number" /> */}
               </fieldset>
               <h3 className="contact-sign__title">Shipping address</h3>
               <fieldset className="contact-fieldset">
-                <InputContact placeholder="First name" />
+                <input
+                  type="text"
+                  className="contact-input contact-input__input"
+                  placeholder="First name"
+                />
+                <input
+                  type="text"
+                  className="contact-input contact-input__input"
+                  placeholder="Last name"
+                />
+                <input
+                  type="text"
+                  className="contact-input contact-input__input"
+                  placeholder="Country"
+                />
+                <input
+                  type="number"
+                  className="contact-input contact-input__input"
+                  placeholder="Postal code"
+                />
+                <input
+                  type="text"
+                  className="contact-input contact-input__input"
+                  placeholder="Region"
+                />
+                <input
+                  type="text"
+                  className="contact-input contact-input__input"
+                  placeholder="City"
+                />
+                <input
+                  type="text"
+                  className="contact-input contact-input__input"
+                  placeholder="Street address"
+                />
+                <input
+                  type="text"
+                  className="contact-input contact-input__input"
+                  placeholder="Appartment"
+                />
+                {/* <InputContact placeholder="First name" />
                 <InputContact placeholder="Last name" />
                 <InputContact placeholder="Country" />
                 <InputContact placeholder="Postal code" />
@@ -57,7 +151,7 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
                 <InputContact placeholder="City" />
 
                 <InputContact placeholder="Street address" />
-                <InputContact placeholder="Appartment" />
+                <InputContact placeholder="Appartment" /> */}
               </fieldset>
               <textarea
                 name="#"
@@ -116,6 +210,7 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
             <button
               type="submit"
               onClick={() => closeModal()}
+              //disabled
               className="button-light contact-form__button"
             >
               Proceed to payment

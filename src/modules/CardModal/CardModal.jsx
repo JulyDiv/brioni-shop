@@ -6,7 +6,7 @@ import { AppContext } from "../../context/AppContext";
 import { Count } from "../Count/Count";
 
 export const CardModal = ({ jacket, title, button }) => {
-  const { addOrder, colors, sizes, addSelect, isOpenCard, color } = useContext(AppContext);
+  const { addOrder, colors, sizes, addSelect, isOpenCard, color, size } = useContext(AppContext);
   return (
     <>
       <ModalOverlay />
@@ -17,7 +17,7 @@ export const CardModal = ({ jacket, title, button }) => {
           <div className="card-modal__text">
             <h3 className="card-modal__name">{jacket.name}</h3>
             <span className="card-modal__span">Color : {color}</span>
-            <span className="card-modal__span">Size : {sizes}</span>
+            <span className="card-modal__span">Size : {size}</span>
             {/* <span className="card-modal__span">Color : {colors}</span> */}
             {/* <span className="card-modal__span">Size : {sizes}</span> */}
             {/* {colors ? (
@@ -33,12 +33,13 @@ export const CardModal = ({ jacket, title, button }) => {
             <span className="card-modal__span">
               Price : € {jacket.price.toLocaleString()}
             </span>
-            {sizes ? <Count /> : ""}
+            <Count />
+            {/* {sizes ? <Count /> : ""} */}
           </div>
         </div>
         <button
           className="button-dark card-modal__button"
-          onClick={isOpenCard ? addOrder() : addSelect()}
+          //onClick={() => addOrder()}
         >
           {button}
         </button>

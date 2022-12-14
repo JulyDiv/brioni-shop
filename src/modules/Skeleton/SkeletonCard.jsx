@@ -7,39 +7,24 @@ export const SkeletonCard = ({ jacket }) => {
     <>
       <section className="card">
         <div className="container">
-          <BreadCrumb jacket={jacket} />
-          <div className="card-wrapper">
+          {/* <BreadCrumb jacket={jacket} /> */}
+          <div
+            className="skeleton card-wrapper"
+          >
             <div className="card-jackets">
-              <div className="sceleton card-choice">
-                <div
-                  className="skeleton card-choice__image"
-                  style={{ height: "90px" }}
-                ></div>
-                <div
-                  className="skeleton card-choice__image"
-                  style={{ height: "90px" }}
-                ></div>
-                <div
-                  className="skeleton card-choice__image"
-                  style={{ height: "90px" }}
-                ></div>
-                <div
-                  className="skeleton card-choice__image"
-                  style={{ height: "90px" }}
-                ></div>
-                <div
-                  className="skeleton card-choice__image"
-                  style={{ height: "90px" }}
-                ></div>
+              <div
+                className="skeleton-box card-choice"
+                style={{ height: "620px" }}
+              >
               </div>
               <div
-                className="skeleton skeleton__card-main"
+                className="skeleton-box skeleton__card-main"
                 style={{ width: "575px", height: "650px" }}
               ></div>
             </div>
             <div
-              className="skeleton skeleton__card-info"
-              style={{ width: "447px", height: "700px" }}
+              className="skeleton-box skeleton__card-info"
+              style={{ width: "450px", height: "700px", marginLeft: "52px" }}
             ></div>
           </div>
         </div>

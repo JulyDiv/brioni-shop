@@ -10,7 +10,7 @@ export const ChoiceItem = ({ choice, setActiveChoice, changeChoice, jacket }) =>
   return (
     <>
       {jacket.choice.map((item, id) => (
-        <label key={id}>
+        <label key={id} className="card-choice__label">
           <img
             className={
               choice === item

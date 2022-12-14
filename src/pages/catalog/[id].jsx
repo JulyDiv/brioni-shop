@@ -20,21 +20,20 @@ export const getServerSideProps = async (context) => {
 };
 
 export default function Card({ jacket }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  //const [isSkeleton, setIsSkeleton] = useState(true);
 
-  useEffect(() => {
-    if (!jacket) {
-      setIsLoading(true);
-    }
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5500);
-  }, [jacket]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 5500);
+  // }, []);
 
   return (
     <>
       <CardItem jacket={jacket} />
       <Complete jacket={jacket} />
+      {isLoading && <SkeletonCard jacket={jacket} />}
       {/* {isLoading ? (
         <SkeletonCard jacket={jacket} />
       ) : (

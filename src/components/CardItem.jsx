@@ -8,6 +8,7 @@ import { useChoice } from "../hooks/useChoice";
 import { CardInfoColor } from "./CardInfoColor";
 import { CardModal } from "../modules/CardModal/CardModal";
 import { AppContext } from "../context/AppContext";
+import { Count } from "../modules/Count/Count";
 
 export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
@@ -84,6 +85,7 @@ export const CardItem = ({ jacket }) => {
                   <SizeItem jacket={jacket} />
                 </div>
               </div>
+              <Count />
               <div className="card-info__mobile">
                 <CardMobile jacket={jacket} />
               </div>

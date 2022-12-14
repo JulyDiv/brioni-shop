@@ -21,8 +21,9 @@ export const Count = () => {
         className="count__input"
         type="number"
         min="0"
-        value={count.count < 1 ? 0 : count.count}
-        onChange={count.onChange}
+        value={count.count < 1 ? 1 : count.count}
+        disabled
+        //onChange={count.onChange}
       />
       <button
         className="count__button"

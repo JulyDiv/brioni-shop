@@ -36,8 +36,8 @@ const AppWrapper = ({
   const [stateOrder, setStateOrder] = useState({});
   const [stateSelect, setStateSelect] = useState({});
   const [isOpenSelect, setIsOpenSelect] = useState(false);
-  const [activeColor, setActiveColor] = useState();
-  const [activeSize, setActiveSize] = useState();
+  const [activeColor, setActiveColor] = useState(null);
+  const [activeSize, setActiveSize] = useState(null);
 
   const count = useCount();
 
@@ -127,8 +127,14 @@ const AppWrapper = ({
   //console.log(colors);
 
   const addOrder = () => {
-    setOrders([...orders, order]);
-    //isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
+    //setOrders([...orders, order]);
+    if (!activeColor) {
+      alert("Выберите цвет")
+    } else if (!activeSize) {
+      alert("Выберите размер")
+    } else {
+      setOrders([...orders, order]);
+    }
   };
 
   // const addOrder = () => {
