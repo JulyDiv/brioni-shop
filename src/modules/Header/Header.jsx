@@ -114,18 +114,18 @@ export const Header = ({}) => {
           </div>
         </div>
       </header>
-      {/* <ModalContact
+      <ModalContact
         isContact={isContact}
         setIsContact={setIsContact}
         setIsThank={setIsThank}
-      /> */}
-      {isContact && (
+      />
+      {/* {isContact && (
         <ModalContact
           isContact={isContact}
           setIsContact={setIsContact}
           setIsThank={setIsThank}
         />
-      )}
+      )} */}
       {isThank && <ModalThank isThank={isThank} setIsThank={setIsThank} />}
     </>
   );
