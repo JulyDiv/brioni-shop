@@ -29,24 +29,36 @@
         padding: 20px 24px
         background-color: rgba(102, 102, 102, 0.15)
         color: $bg-color4
+        &__block
+            position: relative
         &__input
             margin-bottom: 25px
-            width: 46%
+            width: 100%
             height: 60px
             &::placeholder
                 +font
                 color: $text-color2
             &:hover, &:active, &:focus, &:disabled
                 background-color: rgba(102, 102, 102, 0.521)
+        &__message
+            position: absolute
+            bottom: 0
+            left: 0
+            color: #860f0f
     &-fieldset
-        display: flex
-        justify-content: space-between
-        flex-wrap: wrap
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        column-gap: 45px
+        //row-gap: 25px
+        // display: flex
+        // justify-content: space-between
+        // flex-wrap: wrap
     &-wrapper
         width: 100%
     &-title
         position: sticky
         top: 0
+        z-index: 1
         display: flex
         justify-content: space-between
         width: 100%

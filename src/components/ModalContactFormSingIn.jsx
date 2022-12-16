@@ -27,37 +27,45 @@ export const ModalContactFormSingIn = ({ valueEmail, valuePhone }) => {
             Sign in
           </button>
           <fieldset className="contact-fieldset">
-            <input
-              {...register("email", {
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                //   value:
-                //     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                  message: "Invalid email address",
-                },
-              })}
-              style={{ border: errors.email && "1px solid #421717" }}
-              type="email"
-              className="contact-input contact-input__input"
-              placeholder="Enter e-mail"
-            />
-            {errors?.email?.message && (
-              <p style={{ color: "#421717" }}>{errors?.email?.message}</p>
-            )}
-            <input
-              {...register("phone", {
-                pattern: {
-                  value: /^[1-9]+[0-9]*$/,
-                  message: "Неверные символы",
-                },
-              })}
-              style={{ border: errors.phone && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="Phone number"
-            />
-            {errors?.phone?.message && (
-              <p style={{ color: "#421717" }}>{errors?.phone?.message}</p>
-            )}
+            <div className="contact-input__block">
+              <input
+                {...register("email", {
+                  pattern: {
+                    //value: /[A-Za-z]+/i,
+                    value:
+                      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: "Some parts are missing '@'",
+                  },
+                })}
+                style={{ border: errors.email && "1px solid #421717" }}
+                type="email"
+                className="contact-input contact-input__input"
+                placeholder="Enter e-mail"
+              />
+              {errors?.email?.message && (
+                <span className="contact-input__message">
+                  {errors?.email?.message}
+                </span>
+              )}
+            </div>
+            <div className="contact-input__block">
+              <input
+                {...register("phone", {
+                  pattern: {
+                    value: /^[1-9]+[0-9]*$/,
+                    message: "Invalid characters",
+                  },
+                })}
+                style={{ border: errors.phone && "1px solid #421717" }}
+                className="contact-input contact-input__input"
+                placeholder="Phone number"
+              />
+              {errors?.phone?.message && (
+                <span className="contact-input__message">
+                  {errors?.phone?.message}
+                </span>
+              )}
+            </div>
           </fieldset>
         </div>
       </form>

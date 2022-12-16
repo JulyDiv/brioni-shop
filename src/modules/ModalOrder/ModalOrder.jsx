@@ -68,29 +68,19 @@ export const ModalOrder = () => {
             </div>
           </>
         ) : (
-          <>
-            <div className="line bag-block__line"></div>
+          <div className="bag-empty">
             <img
+              className="bag-empty__image"
               src="/img/bag-icon.svg"
               alt="bag"
-              style={{
-                width: "75%",
-                display: "flex",
-                margin: "0 auto 50px auto",
-              }}
             />
             <button
-              className="button-dark"
-              style={{
-                width: "75%",
-                minHeight: "50px",
-                margin: "auto",
-              }}
+              className="button-dark bag-empty__button"
               onClick={() => onClick()}
             >
               Start Shopping
             </button>
-          </>
+          </div>
         )}
       </div>
     </>

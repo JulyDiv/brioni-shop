@@ -65,14 +65,12 @@ export const ModalSelect = () => {
               src="/img/select-icon.svg"
               alt="select"
             />
-            <div className="select-total">
-              <button
-                className="button-dark select-total__button"
-                onClick={() => onClick()}
-              >
-                Start Shopping
-              </button>
-            </div>
+            <button
+              className="button-dark select-block__button"
+              onClick={() => onClick()}
+            >
+              Start Shopping
+            </button>
           </div>
         )}
       </div>
