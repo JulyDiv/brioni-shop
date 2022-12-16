@@ -62,7 +62,7 @@ export const CardItem = ({ jacket }) => {
                       ? "card-info__icon card-info__icon--active"
                       : "card-info__icon"
                   }
-                  onClick={() => onClick()}
+                  onClick={() => onClick(jacket.id)}
                 ></button>
               </div>
               <div className="card-info__name">

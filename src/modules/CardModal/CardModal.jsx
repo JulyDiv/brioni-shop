@@ -33,13 +33,13 @@ export const CardModal = ({ jacket, title, button }) => {
             <span className="card-modal__span">
               Price : € {jacket.price.toLocaleString()}
             </span>
-            <Count />
+            {/* <Count /> */}
             {/* {sizes ? <Count /> : ""} */}
           </div>
         </div>
         <button
           className="button-dark card-modal__button"
-          //onClick={() => addOrder()}
+          onClick={addSelect()}
         >
           {button}
         </button>
