@@ -116,14 +116,11 @@
             //-moz-border-radius: 50%
             // border: 1px solid $text-color4
             // outline: 1px solid #000
-            cursor: pointer
-            overflow: hidden
+            //cursor: pointer
+            //overflow: hidden
             //-webkit-transform: translate3d(0, 0, 0)
             // &:hover
             //     outline: 1px solid white
-            &--active
-                border: none
-                outline: none
             &-image
                 padding: 1px
                 //position: absolute
@@ -136,8 +133,11 @@
                 //outline: 1px solid #000
                 //border: 1px solid $text-color4
                 border: 1px solid #000
-                //&:hover
-                    //outline: 1px solid white
+                cursor: pointer
+                &:hover, &:active
+                    border: none
+                &--active
+                    border: none
         &__name-item
             color: $text-color3
             +font
