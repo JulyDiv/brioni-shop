@@ -9,6 +9,7 @@ import { CardInfoColor } from "./CardInfoColor";
 import { CardModal } from "../modules/CardModal/CardModal";
 import { AppContext } from "../context/AppContext";
 import { Count } from "../modules/Count/Count";
+import { ErrorModal } from "../modules/ErrorModal/ErrorModal";
 
 export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
@@ -21,7 +22,7 @@ export const CardItem = ({ jacket }) => {
     isOpenCard,
     addSelect,
     isOpenSelect,
-    deleteSelect, colors
+    isErrorModalSize
   } = useContext(AppContext);
 
   const onClick = () => {
@@ -62,7 +63,6 @@ export const CardItem = ({ jacket }) => {
                       : "card-info__icon"
                   }
                   onClick={() => onClick()}
-                  //onClick={() => addSelect()}
                 ></button>
               </div>
               <div className="card-info__name">
@@ -83,6 +83,7 @@ export const CardItem = ({ jacket }) => {
                 <span className="card-info__choose">Choose your size</span>
                 <div className="card-info__size-block">
                   <SizeItem jacket={jacket} />
+                  {isErrorModalSize && <ErrorModal description="Choose a size" />}
                 </div>
               </div>
               <Count />

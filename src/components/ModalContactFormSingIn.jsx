@@ -30,14 +30,14 @@ export const ModalContactFormSingIn = ({ valueEmail, valuePhone }) => {
             <input
               {...register("email", {
                 pattern: {
-                  //value: /[A-Za-z]+/i,
-                  value:
-                    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  value: /[A-Za-z]+/i,
+                //   value:
+                //     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                   message: "Invalid email address",
                 },
               })}
               style={{ border: errors.email && "1px solid #421717" }}
-              //type="email"
+              type="email"
               className="contact-input contact-input__input"
               placeholder="Enter e-mail"
             />
@@ -47,12 +47,11 @@ export const ModalContactFormSingIn = ({ valueEmail, valuePhone }) => {
             <input
               {...register("phone", {
                 pattern: {
-                  value: [0 - 9],
+                  value: /^[1-9]+[0-9]*$/,
                   message: "Неверные символы",
                 },
               })}
               style={{ border: errors.phone && "1px solid #421717" }}
-              //type="number"
               className="contact-input contact-input__input"
               placeholder="Phone number"
             />

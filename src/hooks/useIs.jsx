@@ -34,3 +34,13 @@ export function useIsSelect() {
   const [isSelect, setIsSelect] = useState(false);
   return { isSelect, setIsSelect };
 }
+
+export function useIsErrorModalColor() {
+  const [isErrorModalColor, setIsErrorModalColor] = useState(false);
+  return { isErrorModalColor, setIsErrorModalColor };
+}
+
+export function useIsErrorModalSize() {
+  const [isErrorModalSize, setIsErrorModalSize] = useState(false);
+  return { isErrorModalSize, setIsErrorModalSize };
+}

@@ -30,6 +30,10 @@ const AppWrapper = ({
   changeColor,
   size,
   changeSize,
+  isErrorModalColor,
+  setIsErrorModalColor,
+  isErrorModalSize,
+  setIsErrorModalSize,
 }) => {
   //const [color, setColor] = useState([]);
   //const [size, setSize] = useState([]);
@@ -126,15 +130,24 @@ const AppWrapper = ({
   //console.log(color);
   //console.log(colors);
 
+  useEffect(() => {
+    //color ? setIsErrorModalColor(false) : ""
+    //size ? setIsErrorModalSize(false) : ""
+  }, []);
+
   const addOrder = () => {
-    //setOrders([...orders, order]);
-    if (!activeColor) {
-      alert("Выберите цвет")
-    } else if (!activeSize) {
-      alert("Выберите размер")
+    color ? setIsErrorModalColor(false) : setIsErrorModalColor(true);
+    size ? setIsErrorModalSize(false) : setIsErrorModalSize(true);
+    if (!color) {
+      setIsErrorModalColor(true);
+    } else if (!size) {
+      setIsErrorModalSize(true);
     } else {
       setOrders([...orders, order]);
     }
+    // if (color && size) {
+    //   setOrders([...orders, order]);
+    // }
   };
 
   // const addOrder = () => {
@@ -265,6 +278,8 @@ const AppWrapper = ({
     setActiveColor,
     activeSize,
     setActiveSize,
+    isErrorModalColor,
+    isErrorModalSize,
   };
 
   return (

@@ -1,0 +1,20 @@
+.error
+    position: absolute
+    top: 70px
+    left: 140px
+    padding: 20px 10px
+    width: 150px
+    border-radius: 4px
+    box-shadow: $shadow
+    background-color: white
+    animation: error 0.3s ease-in both
+    &-wrapper
+        display: flex
+        justify-content: center
+        width: 100%
+
+@keyframes error
+    0%
+        opacity: 0
+    100%
+        opacity: 1

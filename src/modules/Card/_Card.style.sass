@@ -82,6 +82,7 @@
             line-height: 23px
             letter-spacing: 0.03em
         &__color-block
+            position: relative
             display: flex
             flex-direction: column
             justify-content: space-between
@@ -107,14 +108,14 @@
             height: 27px
             +background-image
             border-radius: 50% !important
-            //-webkit-border-radius: 50% !important
-            -webkit-border-radius: 27px 27px 27px 27px !important
+            -webkit-border-radius: 50% !important
+            //-webkit-border-radius: 27px 27px 27px 27px !important
             -moz-border-radius: 50% !important
             border: 1px solid $text-color4
             outline: 1px solid #000
             cursor: pointer
             overflow: hidden !important
-            //transform: translateZ(0)
+            -webkit-transform: translate3d(0, 0, 0)
             &:hover
                 outline: 1px solid white
             &--active
@@ -127,6 +128,7 @@
             color: $text-color3
             +font
         &__size
+            position: relative
             display: flex
             flex-direction: column
             justify-content: space-between

@@ -16,6 +16,8 @@ import {
   useIsOpenCard,
   useIsOrder,
   useIsSelect,
+  useIsErrorModalColor,
+  useIsErrorModalSize,
 } from "../hooks/useIs";
 
 function MyApp({ Component, pageProps }) {
@@ -32,6 +34,8 @@ function MyApp({ Component, pageProps }) {
   const selects = useSelects();
   const color = useColor();
   const size = useSize();
+  const isErrorModalColor = useIsErrorModalColor();
+  const isErrorModalSize = useIsErrorModalSize();
   return (
     <AppWrapper
       {...order}
@@ -47,6 +51,8 @@ function MyApp({ Component, pageProps }) {
       {...selects}
       {...color}
       {...size}
+      {...isErrorModalColor}
+      {...isErrorModalSize}
       jacket={pageProps?.jacket}
     >
       <Layout>

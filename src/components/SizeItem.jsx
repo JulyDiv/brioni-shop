@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
+import { ErrorModal } from "../modules/ErrorModal/ErrorModal";
 
 export const SizeItem = ({ jacket }) => {
-  const { changeSize, activeSize, setActiveSize } = useContext(AppContext);
+  const { changeSize, activeSize, setActiveSize, isErrorModal } = useContext(AppContext);
 
   const onClick = (item) => {
     setActiveSize(item);
@@ -30,23 +31,6 @@ export const SizeItem = ({ jacket }) => {
           {item}
         </label>
       ))}
-      {/* {jacket.size.map(({ id, sizeName, status }) => (
-        <label
-          key={id}
-          className={
-            status === true
-              ? "card-info__size-label card-info__size-label--active"
-              : "card-info__size-label"
-          }
-        >
-          <input
-            className="card-info__size-input"
-            type="checkbox"
-            onChange={() => checkedSize(id)}
-          />
-          {sizeName}
-        </label>
-      ))} */}
     </>
   );
 };
