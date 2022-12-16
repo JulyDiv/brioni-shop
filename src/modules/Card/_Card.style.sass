@@ -108,17 +108,17 @@
             width: 27px
             height: 27px
             +background-image
-            border-radius: 50% !important
-            -webkit-border-radius: 50% !important
+            //border-radius: 50% !important
+            //-webkit-border-radius: 50% !important
             //-webkit-border-radius: 27px 27px 27px 27px !important
-            -moz-border-radius: 50%
+            //-moz-border-radius: 50%
             // border: 1px solid $text-color4
             // outline: 1px solid #000
             cursor: pointer
             //overflow: hidden
             //-webkit-transform: translate3d(0, 0, 0)
-            &:hover
-                outline: 1px solid white
+            // &:hover
+            //     outline: 1px solid white
             &--active
                 border: none
                 outline: none
@@ -126,10 +126,12 @@
                 //position: absolute
                 width: 100%
                 height: 100%
-                border: 1px solid $text-color4
-                outline: 1px solid #000
+                //border: 1px solid $text-color4
+                //outline: 1px solid #000
                 border-radius: 50% !important
                 -webkit-border-radius: 50% !important
+                //&:hover
+                    //outline: 1px solid white
         &__name-item
             color: $text-color3
             +font
@@ -151,9 +153,6 @@
             width: 314px
         &__size-input
             display: none
-            border-radius: 50% !important
-            -webkit-border-radius: 50% !important
-            -moz-border-radius: 50% !important
             cursor: pointer
         &__size-label
             position: relative
