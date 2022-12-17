@@ -8,21 +8,35 @@ export const CharacterMobileCatalog = () => {
   const [dropdownFilter, setDropdownFilter] = useState(false);
   const [dropdownSort, setDropdownSort] = useState(false);
 
+  const closeCharacter = () => {
+    const closeBtn = document.querySelector(".character-media");
+    closeBtn.classList.toggle("character-media--hidden");
+  };
+
   const onClickFilter = (e) => {
     e.currentTarget.classList.toggle("character-mobile__button--active");
-    dropdownFilter ? setDropdownFilter(false) : setDropdownFilter(true);
+    if (dropdownFilter) {
+      setTimeout(() => {
+        setDropdownFilter(false);
+      }, 300);
+      closeCharacter();
+    }
+    if (!dropdownFilter) setDropdownFilter(true);
   };
   const onClickSort = (e) => {
     e.currentTarget.classList.toggle("character-mobile__button--active");
-    dropdownSort ? setDropdownSort(false) : setDropdownSort(true);
+    if (dropdownSort) {
+      setTimeout(() => {
+        setDropdownSort(false);
+      }, 300);
+      closeCharacter();
+    }
+    if (!dropdownSort) setDropdownSort(true);
   };
 
   return (
     <div className="character-mobile">
-      <CharacterButtonMobile
-        name="Filter"
-        onClick={onClickFilter}
-      />
+      <CharacterButtonMobile name="Filter" onClick={onClickFilter} />
       {dropdownFilter && (
         <div className="character-media">
           <span className="character-media__span">Color</span>
@@ -33,10 +47,7 @@ export const CharacterMobileCatalog = () => {
         </div>
       )}
 
-      <CharacterButtonMobile
-        name="Sort"
-        onClick={onClickSort}
-      />
+      <CharacterButtonMobile name="Sort" onClick={onClickSort} />
       {dropdownSort && (
         <div className="character-media">
           <CharacterDropdown itemList={dbCharacter.sort} />
