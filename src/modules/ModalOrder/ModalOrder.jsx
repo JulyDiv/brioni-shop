@@ -6,13 +6,22 @@ import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import { AppContext } from "../../context/AppContext";
 
 export const ModalOrder = () => {
-  const { orders, totalCounter, setIsOrder, total, isOrder, setIsContact } = useContext(AppContext);
+  const { orders, totalCounter, setIsOrder, total, isOrder, setIsContact } =
+    useContext(AppContext);
 
   const router = useRouter();
 
   const closeModal = () => {
     setIsOrder(false);
     setIsContact(true);
+  };
+
+  const closeOrder = () => {
+    setTimeout(() => {
+      setIsOrder(false);
+    }, 500);
+    const closeBtn = document.querySelector(".bag");
+    closeBtn.classList.toggle("bag--hidden");
   };
 
   const onClick = () => {
@@ -29,7 +38,7 @@ export const ModalOrder = () => {
             Your Bag ({totalCounter === 0 ? "Empty" : totalCounter})
           </h3>
           <button
-            onClick={() => setIsOrder(false)}
+            onClick={() => closeOrder()}
             className="close-button bag-title__button"
           >
             <img

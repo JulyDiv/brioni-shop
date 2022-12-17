@@ -16,15 +16,8 @@
     overflow-y: auto
     &::-webkit-scrollbar
         width: 0
-    // &::-webkit-scrollbar
-    //     width: 2px
-    //     background-color: $bg-color3
-    // &::-webkit-scrollbar-track
-    //     width: 5px
-    // &::-webkit-scrollbar-thumb
-    //     width: 5px
-    //     border-radius: 1.5px
-    //     background-color: $text-color2
+    &--hidden
+        animation: bagClose 0.5s ease-in 1 both
     &-empty
         display: flex
         flex-direction: column
@@ -146,6 +139,13 @@
         transform: translateX(0px)
     100%
         opacity: 1
+        transform: translateX(100%)
+@keyframes bagClose
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 0
         transform: translateX(100%)
 
 @media (max-width: 1200px)

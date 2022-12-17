@@ -13,7 +13,11 @@ export const ModalSelect = () => {
   const router = useRouter();
 
   const closeModal = () => {
-    setIsSelect(false);
+    setTimeout(() => {
+      setIsSelect(false);
+    }, 500)
+    const closeBtn = document.querySelector(".select");
+    closeBtn.classList.toggle("select--hidden");
   };
 
   const onClick = () => {

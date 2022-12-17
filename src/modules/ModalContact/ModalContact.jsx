@@ -5,7 +5,6 @@ import { ModalContactFormSingIn } from "../../components/ModalContactFormSingIn"
 import { ModalContactForm } from "../../components/ModalContactForm";
 
 export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
-
   const [activeCheckbox, setActiveCheckbox] = useState(false);
   const [valueEmail, setValueEmail] = useState("");
   const [valuePhone, setValuePhone] = useState("");
@@ -20,6 +19,14 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
     setIsThank(true);
   };
 
+  const closeContact = () => {
+    setTimeout(() => {
+      setIsContact(false);
+    }, 500);
+    const closeBtn = document.querySelector(".contact");
+    closeBtn.classList.toggle("contact--hidden");
+  };
+
   return (
     <>
       <ModalOverlay setIsContact={setIsContact} isContact={isContact} />
@@ -28,7 +35,7 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
           <div className="contact-title">
             <h2 className="contact-title__title">Contact Information</h2>
             <button
-              onClick={() => setIsContact(false)}
+              onClick={() => closeContact()}
               className="close-button contact-title__button"
             >
               <img

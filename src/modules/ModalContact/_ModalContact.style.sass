@@ -2,7 +2,7 @@
     position: fixed
     right: 0
     top: 0
-    z-index: 4
+    z-index: 5
     padding: 0px 200px 70px 200px
     width: 1050px
     height: 100%
@@ -12,6 +12,8 @@
     overflow-y: auto
     &::-webkit-scrollbar
         width: 0
+    &--hidden
+        animation: contactClose 0.5s ease-in 1 both
     &-form
         &__button
             width: 100%
@@ -162,6 +164,13 @@
         transform: translateX(0px)
     100%
         opacity: 1
+        transform: translateX(100%)
+@keyframes contactClose
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 0
         transform: translateX(100%)
 
 @media (max-width: 1200px)

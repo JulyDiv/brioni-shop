@@ -1,52 +1,82 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Navigation, Pagination, A11y, Keyboard } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Swiper, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
+import { useEffect } from "react";
+
+//   useEffect(() => {
+// export const swiper = new Swiper(".swiper2", {
+//   modules: [Navigation, Pagination, Scrollbar, Autoplay],
+//   speed: 500,
+//   wrapperClass: "swiper-wrapper swiper2-wrapper2",
+//   navigation: {
+//     nextEl: ".swiper2-button2-next2",
+//     prevEl: ".swiper2-button2-prev2",
+//   },
+//   pagination: {
+//     el: ".swiper2-pagination2",
+//     clickable: true,
+//   },
+// });
+
+//   }, []);
+
+// export const swiper = new Swiper(".swiper2", {
+//   modules: [Navigation, Pagination, Scrollbar, Autoplay],
+//   speed: 500,
+//   wrapperClass: "swiper-wrapper swiper2-wrapper2",
+//   navigation: {
+//     nextEl: ".swiper2-button2-next2",
+//     prevEl: ".swiper2-button2-prev2",
+//   },
+//   autoplay: {
+//     delay: 2500,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+// });
 
 export const SwiperHome = () => {
+  useEffect(() => {
+    const swiper = new Swiper(".swiper2", {
+      modules: [Navigation, Pagination, Scrollbar, Autoplay],
+      speed: 500,
+      wrapperClass: "swiper-wrapper swiper2-wrapper2",
+      navigation: {
+        nextEl: ".swiper2-button2-next2",
+        prevEl: ".swiper2-button2-prev2",
+      },
+        autoplay: {
+          delay: 2500,
+        },
+      pagination: {
+        el: ".swiper2-pagination2",
+        clickable: true,
+      },
+    });
+  }, []);
   return (
-    <Swiper
-      modules={[Navigation, Pagination, A11y, Keyboard]}
-      wrapperClass="swiper-wrap"
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      keyboard={{ enabled: true, onlyInViewport: false }}
-      pagination={{ clickable: true }}
-      //   onSwiper={(swiper) => console.log(swiper)}
-      //   onSlideChange={() => console.log("slide change")}
-      className="swiper"
-      //className="swiper"
-    >
-        <SwiperSlide>
-          <img
-            src="/img/home-slider-1.png"
-            alt="slide"
-            className="swiper1-slide1__image"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="/img/home-slider-2.png"
-            alt="slide"
-            className="swiper1-slide1__image"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="/img/home-slider-3.png"
-            alt="slide"
-            className="swiper1-slide1__image"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="/img/home-slider-4.png"
-            alt="slide"
-            className="swiper1-slide1__image"
-          />
-        </SwiperSlide>
-    </Swiper>
-  
+    <div className="swiper swiper2">
+      <div className="swiper-wrapper swiper2-wrapper2">
+        <div className="swiper-slide">
+          <img src="/img/home-slider-1.png" alt="slide" />
+        </div>
+        <div className="swiper-slide">
+          <img src="/img/home-slider-2.png" alt="slide" />
+        </div>
+        <div className="swiper-slide">
+          <img src="/img/home-slider-3.png" alt="slide" />
+        </div>
+        <div className="swiper-slide">
+          <img src="/img/home-slider-4.png" alt="slide" />
+        </div>
+      </div>
+
+      <div className="swiper-pagination swiper2-pagination2"></div>
+
+      <div className="swiper-button-prev swiper2-button2-prev2"></div>
+      <div className="swiper-button-next swiper2-button2-next2"></div>
+    </div>
   );
 };

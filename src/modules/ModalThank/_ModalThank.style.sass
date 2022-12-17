@@ -12,6 +12,8 @@
     overflow-y: auto
     &::-webkit-scrollbar
         width: 0
+    &--hidden
+        animation: thankClose 0.5s ease-in 1 both
     &-wrapper
         width: 100%
     &-title
@@ -90,6 +92,13 @@
         transform: translateX(0px)
     100%
         opacity: 1
+        transform: translateX(100%)
+@keyframes thankClose
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    100%
+        opacity: 0
         transform: translateX(100%)
 
 @media (max-width: 1200px)

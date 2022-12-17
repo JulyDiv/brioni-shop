@@ -4,7 +4,6 @@ import { Home } from "../modules/Home/Home";
 import { InfoBlock } from '../modules/InfoBlock/InfoBlock';
 import { Ambassador } from '../modules/Ambassador/Ambassador';
 import { SwiperHome } from '../modules/SwiperHome/SwiperHome';
-import { SwiperHome2 } from '../modules/SwiperHome/SwiperHome2';
 
 export default function HomePage() {
   return (
@@ -31,8 +30,7 @@ export default function HomePage() {
             model in the perfect color and design and make it unique by adding your initials."
         link="Explore"
       />
-      {/* <SwiperHome /> */}
-      <SwiperHome2 />
+      <SwiperHome />
       <Ambassador />
     </div>
   );

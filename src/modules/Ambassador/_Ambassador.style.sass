@@ -1,5 +1,8 @@
 .ambassador
     padding: 100px 0
+    opacity: 0
+    &-animation
+        animation: ambassador 1s ease-in-out 1 reverse both
     &-wrapper
         display: flex
         width: 100%
@@ -40,6 +43,14 @@
             +font
             letter-spacing: 0.03em
             color: rgba(255, 255, 255, 0.75)
+
+@keyframes ambassador
+    0%
+        transform: translateY(0px)
+        opacity: 1
+    100%
+        transform: translateY(100%)
+        opacity: 0
 
 @media (max-width: 1200px)
     .ambassador
