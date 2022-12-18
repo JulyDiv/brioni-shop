@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
   const isContact = useIsContact();
   const isMenuMobile = useIsMenuMobile();
   const isSelect = useIsSelect();
-  const selects = useSelects();
+  const select = useSelects();
   const color = useColor();
   const size = useSize();
   const isErrorModalColor = useIsErrorModalColor();
@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
       {...isContact}
       {...isMenuMobile}
       {...isSelect}
-      {...selects}
+      {...select}
       {...color}
       {...size}
       {...isErrorModalColor}

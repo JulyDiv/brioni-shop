@@ -62,24 +62,24 @@ const AppWrapper = ({
     };
   }, [orders]);
 
-  // useEffect(() => {
-  //   const selects = localStorage.selects
-  //     ? JSON.parse(localStorage.selects)
-  //     : [];
-  //   if (selects !== null) {
-  //     setSelects(selects);
-  //   }
-  // }, [setSelects]);
-  // useEffect(() => {
-  //   window.addEventListener("beforeunload", () => {
-  //     localStorage.selects = JSON.stringify(selects);
-  //   });
-  //   return () => {
-  //     window.removeEventListener("beforeunload", () => {
-  //       localStorage.selects = JSON.stringify(selects);
-  //     });
-  //   };
-  // }, [selects]);
+  useEffect(() => {
+    const selects = localStorage.selects
+      ? JSON.parse(localStorage.selects)
+      : [];
+    if (selects !== null) {
+      setSelects(selects);
+    }
+  }, [setSelects]);
+  useEffect(() => {
+    window.addEventListener("beforeunload", () => {
+      localStorage.selects = JSON.stringify(selects);
+    });
+    return () => {
+      window.removeEventListener("beforeunload", () => {
+        localStorage.selects = JSON.stringify(selects);
+      });
+    };
+  }, [selects]);
 
   // const order = !stateOrder
   //   ? {
@@ -166,31 +166,47 @@ const AppWrapper = ({
   //   isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
   // };
 
-  const select = !stateSelect
-    ? {
-        ...selects,
-        count: count.count,
-      }
-    : {};
+  // const select = !stateSelect
+  //   ? {
+  //       ...selects,
+  //       count: count.count,
+  //     }
+  //   : {};
 
-  const addSelect = () => {
-    const list = new Map(selects);
-    if (list.get(jacket.id)) {
-      list.set(jacket.id, {
-        ...jacket,
-        count: count.count,
-      });
-    } else {
-      list.set(jacket.id, select);
+  const select = {
+    ...jacket,
+    count: count.count,
+  };
+
+  // const deleteSelect = (id) => {
+  //   let newSelect = [...selects.values()].filter((item) => item.id != id);
+  //   setSelects(newSelect);
+  // };
+
+  // const addSelect = (id) => {
+  //   const list = new Map(selects);
+  //   if (list.get(jacket.id)) {
+  //     list.set(jacket.id, {
+  //       ...jacket,
+  //       count: count.count,
+  //     });
+  //   } else {
+  //     list.set(jacket.id, select);
+  //   }
+  //   setSelects(list);
+  //   isOpenSelect ? setIsOpenSelect(false) : setIsOpenSelect(true);
+  // };
+
+  const addSelect = (id) => {
+    let newSelect = false;
+    selects.forEach((el) => {
+      if (el.id === id) {
+        newSelect = true;
+      }
+    });
+    if (!newSelect) {
+      setSelects([...selects, select]);
     }
-    setSelects(list);
-    //setIsOpenSelect(true);
-    isOpenSelect ? setIsOpenSelect(false) : setIsOpenSelect(true);
-    //selects ? deleteOrder(id) : "";
-    //setLabelSelect(true);
-    // setActiveSelect(true);
-    // activeSelect ? setActiveSelect(false) : setActiveSelect(true);
-    //activeSelect ? "" : "";
   };
 
   // const deleteOrder = (id) => {
@@ -203,10 +219,20 @@ const AppWrapper = ({
     setOrders(newOrder);
   };
 
+  // const deleteSelect = (index) => {
+  //   let newSelect = selects.filter((item, i) => index !== i);
+  //   setSelects(newSelect);
+  // };
+
   const deleteSelect = (id) => {
-    let newSelect = [...selects.values()].filter((item) => item.id != id);
+    let newSelect = selects.filter((item) => item.id != id);
     setSelects(newSelect);
   };
+
+  // const deleteSelect = (id) => {
+  //   let newSelect = [...selects.values()].filter((item) => item.id != id);
+  //   setSelects(newSelect);
+  // };
 
   const totalPrice = (order) => order.price * order.count;
 
@@ -227,10 +253,15 @@ const AppWrapper = ({
     0
   );
 
-  const totalCounterSelect = [...selects.values()].reduce(
+  const totalCounterSelect = selects.reduce(
     (result, select) => select.count + result,
     0
   );
+
+  // const totalCounterSelect = [...selects.values()].reduce(
+  //   (result, select) => select.count + result,
+  //   0
+  // );
 
   const contextValue = {
     jacket,

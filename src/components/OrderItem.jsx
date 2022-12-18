@@ -6,13 +6,12 @@ import { Count } from "../modules/Count/Count";
 
 export const OrderItem = ({ order, index }) => {
 
-  const { totalPrice, deleteOrder, setIsOpenCard, colors, sizes, color, orders, isOpenCard } = useContext(AppContext);
+  const { totalPrice, deleteOrder } = useContext(AppContext);
 
   return (
     <>
       <div
         className="bag-info"
-        //onClick={() => setIsOpenCard({ ...order }, order.id)}
       >
         <img src={order.img} alt="Jacket" className="bag-info__image" />
         <div className="bag-info__text">

@@ -19,7 +19,7 @@ export const SelectModal = ({ jacket, title, button, addSelect }) => {
         </div>
         <button
           className="button-dark card-modal__button"
-          onClick={addSelect()}
+          onClick={addSelect(jacket.id)}
         >
           {button}
         </button>

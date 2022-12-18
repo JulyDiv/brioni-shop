@@ -5,14 +5,17 @@ import { AppContext } from "../context/AppContext";
 
 export const SelectItem = ({ select }) => {
   const { deleteSelect, setIsSelect } = useContext(AppContext);
+
   const router = useRouter();
+
   const onClick = () => {
     router.push(`/catalog/${select.id}`);
     setIsSelect(false);
   };
+
   return (
     <>
-      <div key={select.id} className="select-jacket">
+      <div className="select-jacket">
         <img
           src={select.img}
           alt="Photo: Jacket"
@@ -24,6 +27,7 @@ export const SelectItem = ({ select }) => {
           <button
             className="select-jacket__icon"
             onClick={() => deleteSelect(select.id)}
+            //onClick={() => deleteSelect(index)}
           ></button>
         </div>
         <span className="select-jacket__price">€ {select.price}</span>

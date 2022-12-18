@@ -46,7 +46,38 @@ export const ModalSelect = () => {
             />
           </button>
         </div>
-        {[...selects.values()].length ? (
+        {selects.length ? (
+          <>
+            <div className="select-wrapper">
+              {selects.map((select, id) => (
+                <SelectItem key={id} select={select} />
+              ))}
+            </div>
+            <div className="select-total">
+              <button
+                className="button-dark select-total__button"
+                onClick={() => onClick()}
+              >
+                Сontinue shopping
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className="select-block">
+            <img
+              className="select-block__image"
+              src="/img/select-icon.svg"
+              alt="select"
+            />
+            <button
+              className="button-dark select-block__button"
+              onClick={() => onClick()}
+            >
+              Start Shopping
+            </button>
+          </div>
+        )}
+        {/* {[...selects.values()].length ? (
           <>
             <div className="select-wrapper">
               {[...selects.values()].map((select, id) => (
@@ -76,7 +107,7 @@ export const ModalSelect = () => {
               Start Shopping
             </button>
           </div>
-        )}
+        )} */}
       </div>
     </>
   );

@@ -10,6 +10,7 @@ import { CardModal } from "../modules/CardModal/CardModal";
 import { AppContext } from "../context/AppContext";
 import { Count } from "../modules/Count/Count";
 import { ErrorModal } from "../modules/ErrorModal/ErrorModal";
+import { set } from "react-hook-form";
 
 export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
@@ -22,16 +23,18 @@ export const CardItem = ({ jacket }) => {
     isOpenCard,
     addSelect,
     isOpenSelect,
-    isErrorModalSize
+    isErrorModalSize,
+    deleteSelect
   } = useContext(AppContext);
 
-  const onClick = () => {
+  const onClick = (id) => {
     setActiveSelect(true);
     //activeSelect ? setActiveSelect(false) : setActiveSelect(true);
-    addSelect();
-    // if (activeSelect === true) {
-    //   deleteSelect();
-    // }
+    addSelect(id);
+    if (activeSelect === true) {
+      deleteSelect(id);
+      setActiveSelect(false);
+    }
   };
 
   return (
@@ -62,6 +65,7 @@ export const CardItem = ({ jacket }) => {
                       ? "card-info__icon card-info__icon--active"
                       : "card-info__icon"
                   }
+                  //onClick={() => onClick(jacket.id)}
                   onClick={() => onClick(jacket.id)}
                 ></button>
               </div>
@@ -83,7 +87,9 @@ export const CardItem = ({ jacket }) => {
                 <span className="card-info__choose">Choose your size</span>
                 <div className="card-info__size-block">
                   <SizeItem jacket={jacket} />
-                  {isErrorModalSize && <ErrorModal description="Choose a size" />}
+                  {isErrorModalSize && (
+                    <ErrorModal description="Choose a size" />
+                  )}
                 </div>
               </div>
               <Count />

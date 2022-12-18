@@ -36,18 +36,18 @@ export default function Catalog({ jacket }) {
           </div>
           <div className="catalog-assortment">
             {jacket.length <= 6
-              ? jacket.map((jacket) => (
-                    <CatalogItem
-                      key={jacket.id}
-                      jacket={jacket}
-                    />
+              ? jacket.map((jacket, id) => (
+                  <CatalogItem
+                    //key={jacket.id}
+                    key={id}
+                    jacket={jacket}
+                  />
                 ))
-              : jacket.slice(0, 6).map((jacket) => (
-                    <CatalogItem
-                      key={jacket.id}
-                      jacket={jacket}
-                    />
-                ))}
+              : jacket
+                  .slice(0, 6)
+                  .map((jacket, id) => (
+                    <CatalogItem key={id} jacket={jacket} />
+                  ))}
             {!showMoreBtn && (
               <button
                 className="button-dark catalog-assortment__button"
@@ -57,12 +57,9 @@ export default function Catalog({ jacket }) {
               </button>
             )}
             {showMoreBtn &&
-              jacket.slice(6).map((jacket) => (
-                  <CatalogItem
-                    key={jacket.id}
-                    jacket={jacket}
-                  />
-              ))}
+              jacket
+                .slice(6)
+                .map((jacket, id) => <CatalogItem key={id} jacket={jacket} />)}
           </div>
         </div>
       </section>
