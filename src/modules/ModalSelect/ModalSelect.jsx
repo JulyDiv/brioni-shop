@@ -6,9 +6,8 @@ import { AppContext } from "../../context/AppContext";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 
 export const ModalSelect = () => {
-  const { selects, setIsSelect, isSelect, totalCounterSelect, select } =
+  const { selects, setIsSelect, isSelect, totalCounterSelect} =
     useContext(AppContext);
-  //console.log(selects);
 
   const router = useRouter();
 
@@ -25,7 +24,6 @@ export const ModalSelect = () => {
     setIsSelect(false);
   };
 
-  //console.log("selects", selects);
   return (
     <>
       <ModalOverlay setIsSelect={setIsSelect} isSelect={isSelect} />
@@ -77,37 +75,6 @@ export const ModalSelect = () => {
             </button>
           </div>
         )}
-        {/* {[...selects.values()].length ? (
-          <>
-            <div className="select-wrapper">
-              {[...selects.values()].map((select, id) => (
-                <SelectItem key={id} select={select} />
-              ))}
-            </div>
-            <div className="select-total">
-              <button
-                className="button-dark select-total__button"
-                onClick={() => onClick()}
-              >
-                Сontinue shopping
-              </button>
-            </div>
-          </>
-        ) : (
-          <div className="select-block">
-            <img
-              className="select-block__image"
-              src="/img/select-icon.svg"
-              alt="select"
-            />
-            <button
-              className="button-dark select-block__button"
-              onClick={() => onClick()}
-            >
-              Start Shopping
-            </button>
-          </div>
-        )} */}
       </div>
     </>
   );

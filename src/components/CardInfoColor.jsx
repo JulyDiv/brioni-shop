@@ -15,11 +15,6 @@ export const CardInfoColor = ({ jacket }) => {
       {jacket.color.map((item, id) => (
         <div key={id} className="card-info__color-name">
           <label
-            // className={
-            //   activeColor === item
-            //     ? "card-info__item card-info__item--active"
-            //     : "card-info__item"
-            // }
             onClick={() => onClick(item)}
           >
             <input
@@ -32,7 +27,6 @@ export const CardInfoColor = ({ jacket }) => {
             <img
               src={item.colorImg}
               alt="color"
-              //className="card-info__item-image"
               className={
                 activeColor === item
                   ? "card-info__item-image card-info__item-image--active"

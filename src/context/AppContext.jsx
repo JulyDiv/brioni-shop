@@ -35,10 +35,8 @@ const AppWrapper = ({
   isErrorModalSize,
   setIsErrorModalSize,
 }) => {
-  //const [color, setColor] = useState([]);
-  //const [size, setSize] = useState([]);
-  const [stateOrder, setStateOrder] = useState({});
-  const [stateSelect, setStateSelect] = useState({});
+  //const [stateOrder, setStateOrder] = useState({});
+  //const [stateSelect, setStateSelect] = useState({});
   const [isOpenSelect, setIsOpenSelect] = useState(false);
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
@@ -97,44 +95,6 @@ const AppWrapper = ({
     color: color,
   };
 
-  // const checkedSize = (id) => {
-  //   const newSize = jacket.size.filter((item) => {
-  //     if (item.id === id) {
-  //       item.status = !item.status;
-  //     }
-  //     return item;
-  //   });
-  //   setSize(newSize);
-  // };
-
-  // const sizes = size
-  //   .filter((item) => item.status)
-  //   .map((item) => item.sizeName)
-  //   .join(", ");
-
-  // const checkedColor = (id) => {
-  //   const newColor = jacket.color.filter((item) => {
-  //     if (item.id === id) {
-  //       item.status = !item.status;
-  //     }
-  //     return item;
-  //   });
-  //   setColor(newColor);
-  // };
-
-  // const colors = color
-  //   .filter((item) => item.status)
-  //   .map((item) => item.colorName)
-  //   .join(", ");
-
-  //console.log(color);
-  //console.log(colors);
-
-  useEffect(() => {
-    //color ? setIsErrorModalColor(false) : ""
-    //size ? setIsErrorModalSize(false) : ""
-  }, []);
-
   const addOrder = () => {
     color ? setIsErrorModalColor(false) : setIsErrorModalColor(true);
     size ? setIsErrorModalSize(false) : setIsErrorModalSize(true);
@@ -145,9 +105,6 @@ const AppWrapper = ({
     } else {
       setOrders([...orders, order]);
     }
-    // if (color && size) {
-    //   setOrders([...orders, order]);
-    // }
   };
 
   // const addOrder = () => {
@@ -166,36 +123,10 @@ const AppWrapper = ({
   //   isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
   // };
 
-  // const select = !stateSelect
-  //   ? {
-  //       ...selects,
-  //       count: count.count,
-  //     }
-  //   : {};
-
   const select = {
     ...jacket,
     count: count.count,
   };
-
-  // const deleteSelect = (id) => {
-  //   let newSelect = [...selects.values()].filter((item) => item.id != id);
-  //   setSelects(newSelect);
-  // };
-
-  // const addSelect = (id) => {
-  //   const list = new Map(selects);
-  //   if (list.get(jacket.id)) {
-  //     list.set(jacket.id, {
-  //       ...jacket,
-  //       count: count.count,
-  //     });
-  //   } else {
-  //     list.set(jacket.id, select);
-  //   }
-  //   setSelects(list);
-  //   isOpenSelect ? setIsOpenSelect(false) : setIsOpenSelect(true);
-  // };
 
   const addSelect = (id) => {
     let newSelect = false;
@@ -209,44 +140,19 @@ const AppWrapper = ({
     }
   };
 
-  // const deleteOrder = (id) => {
-  //   let newOrder = [...orders.values()].filter((item) => item.id != id);
-  //   setOrders(newOrder);
-  // };
-
   const deleteOrder = (index) => {
     let newOrder = orders.filter((item, i) => index !== i);
     setOrders(newOrder);
   };
-
-  // const deleteSelect = (index) => {
-  //   let newSelect = selects.filter((item, i) => index !== i);
-  //   setSelects(newSelect);
-  // };
 
   const deleteSelect = (id) => {
     let newSelect = selects.filter((item) => item.id != id);
     setSelects(newSelect);
   };
 
-  // const deleteSelect = (id) => {
-  //   let newSelect = [...selects.values()].filter((item) => item.id != id);
-  //   setSelects(newSelect);
-  // };
-
   const totalPrice = (order) => order.price * order.count;
 
-  // const total = [...orders.values()].reduce(
-  //   (result, order) => totalPrice(order) + result,
-  //   0
-  // );
-
   const total = orders.reduce((result, order) => totalPrice(order) + result, 0);
-
-  // const totalCounter = [...orders.values()].reduce(
-  //   (result, order) => order.count + result,
-  //   0
-  // );
 
   const totalCounter = orders.reduce(
     (result, order) => order.count + result,
@@ -257,11 +163,6 @@ const AppWrapper = ({
     (result, select) => select.count + result,
     0
   );
-
-  // const totalCounterSelect = [...selects.values()].reduce(
-  //   (result, select) => select.count + result,
-  //   0
-  // );
 
   const contextValue = {
     jacket,
@@ -277,14 +178,10 @@ const AppWrapper = ({
     isOpenCard,
     setIsOpenCard,
     count,
-    //sizes,
     size,
     changeSize,
-    //checkedSize,
     color,
     changeColor,
-    //colors,
-    //checkedColor,
     totalCounter,
     totalCounterSelect,
     totalPrice,

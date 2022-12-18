@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { MenuAssortmentButton } from "../../components/MenuAssortmentButton";
 import { MenuCostume } from "./MenuCostume";
 

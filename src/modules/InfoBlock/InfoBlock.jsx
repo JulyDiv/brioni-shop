@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useRef, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { useState, useRef, useMemo, useEffect } from "react";
 
 export const InfoBlock = ({ title, description, link, imgLeft }) => {
   const targetRef = useRef(null);

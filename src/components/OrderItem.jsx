@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
-import { Count } from "../modules/Count/Count";
 
 export const OrderItem = ({ order, index }) => {
 

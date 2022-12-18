@@ -26,7 +26,6 @@ export const ChoiceItem = ({ choice, setActiveChoice, changeChoice, jacket }) =>
             type="radio"
             value={item}
             name="choice"
-            //status={choice === item}
             onChange={changeChoice}
           />
         </label>

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);

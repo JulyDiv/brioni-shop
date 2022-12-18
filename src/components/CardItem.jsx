@@ -6,11 +6,9 @@ import { ChoiceItem } from "./ChoiceItem";
 import { CardMobile } from "../modules/CardMobile/CardMobile";
 import { useChoice } from "../hooks/useChoice";
 import { CardInfoColor } from "./CardInfoColor";
-import { CardModal } from "../modules/CardModal/CardModal";
 import { AppContext } from "../context/AppContext";
 import { Count } from "../modules/Count/Count";
 import { ErrorModal } from "../modules/ErrorModal/ErrorModal";
-import { set } from "react-hook-form";
 
 export const CardItem = ({ jacket }) => {
   const [showMoreBtn, setShowMoreBtn] = useState(false);
@@ -20,16 +18,14 @@ export const CardItem = ({ jacket }) => {
 
   const {
     addOrder,
-    isOpenCard,
     addSelect,
-    isOpenSelect,
     isErrorModalSize,
-    deleteSelect
+    deleteSelect,
+    select
   } = useContext(AppContext);
 
   const onClick = (id) => {
     setActiveSelect(true);
-    //activeSelect ? setActiveSelect(false) : setActiveSelect(true);
     addSelect(id);
     if (activeSelect === true) {
       deleteSelect(id);
@@ -65,7 +61,6 @@ export const CardItem = ({ jacket }) => {
                       ? "card-info__icon card-info__icon--active"
                       : "card-info__icon"
                   }
-                  //onClick={() => onClick(jacket.id)}
                   onClick={() => onClick(jacket.id)}
                 ></button>
               </div>
@@ -128,12 +123,6 @@ export const CardItem = ({ jacket }) => {
           </div>
         </div>
       </section>
-      {/* {isOpenCard && (
-        <CardModal jacket={jacket} title="Add to Cart" button="Add" />
-      )} */}
-      {isOpenSelect && (
-        <CardModal jacket={jacket} title="Add to Select" button="Select" />
-      )}
     </>
   );
 };

@@ -1,8 +1,6 @@
-import React, { useState, useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import React, { useState } from "react";
 
-export const CharacterDropdownList = ({ item, color, id, size, status, checkedColor }) => {
-  //const { checkedColor } = useContext(AppContext);
+export const CharacterDropdownList = ({ item, id }) => {
 
   const [activeCheckbox, setActiveCheckbox] = useState(false);
 
@@ -10,6 +8,7 @@ export const CharacterDropdownList = ({ item, color, id, size, status, checkedCo
     setActiveCheckbox(true);
     activeCheckbox ? setActiveCheckbox(false) : setActiveCheckbox(true);
   }
+
   return (
     <>
       <div key={id} className="character-dropdown__option-item">
@@ -31,20 +30,6 @@ export const CharacterDropdownList = ({ item, color, id, size, status, checkedCo
         ) : (
           ""
         )}
-        {/* {color ? (
-          <label htmlFor="character" className="character-dropdown__label">
-            {color.colorName}
-          </label>
-        ) : (
-          ""
-        )}
-        {size ? (
-          <label htmlFor="character" className="character-dropdown__label">
-            {size}
-          </label>
-        ) : (
-          ""
-        )} */}
       </div>
     </>
   );

@@ -8,7 +8,6 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        {/* <div className="line footer__line"></div> */}
         <div className="footer-wrapper">
           <h4 className="footer__title">
             Subscribe to <strong>Brioni</strong> news
@@ -78,7 +77,6 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        {/* <div className="line footer__line"></div> */}
         <span className="footer__span">2022 © Brioni</span>
       </div>
     </footer>

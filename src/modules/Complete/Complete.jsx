@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import dbSwiperCard from "../../DBSwiperCard";
 import { SwiperCard } from "../SwiperCard/SwiperCard";
 
@@ -8,7 +7,6 @@ export const Complete = ({ jacket }) => {
   return (
     <section className="complete">
       <div className="container">
-        {/* <div className="line complete__line"></div> */}
         <div className="complete-wrapper">
           <h1 className="complete__title">Complete your look</h1>
           <SwiperCard swiperCard={swiperCard} jacket={jacket} />

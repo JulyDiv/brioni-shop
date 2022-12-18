@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import dbCharacter from "../../DBCharacter";
 import { CharacterDropdown } from "../CharacterDropdown/CharacterDropdown";
 

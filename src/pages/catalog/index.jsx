@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { CatalogItem } from "../../components/CatalogItem";
-import { AppContext } from "../../context/AppContext";
 import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 import { Character } from "../../modules/Character/Character";
 import { CharacterMobileCatalog } from "../../modules/CharacterMobile/CharacterMobileCatalog";
@@ -18,8 +17,6 @@ export const getServerSideProps = async () => {
 export default function Catalog({ jacket }) {
 
   const [showMoreBtn, setShowMoreBtn] = useState(false);
-
-  //const {  } = useContext(AppContext);
 
   return (
     <>

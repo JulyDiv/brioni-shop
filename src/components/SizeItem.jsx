@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
-import { ErrorModal } from "../modules/ErrorModal/ErrorModal";
 
 export const SizeItem = ({ jacket }) => {
-  const { changeSize, activeSize, setActiveSize, isErrorModal } = useContext(AppContext);
+  const { changeSize, activeSize, setActiveSize } = useContext(AppContext);
 
   const onClick = (item) => {
     setActiveSize(item);

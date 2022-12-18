@@ -1,13 +1,10 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 export const Count = () => {
-  const { count } = useContext(AppContext);
-  //const card = useContext(AppContext);
 
-  //console.log("count", card.count);
-  //console.log("count", count.count);
+  const { count } = useContext(AppContext);
+
   return (
     <div className="count">
       <button
@@ -23,7 +20,6 @@ export const Count = () => {
         min="0"
         value={count.count < 1 ? 1 : count.count}
         disabled
-        //onChange={count.onChange}
       />
       <button
         className="count__button"

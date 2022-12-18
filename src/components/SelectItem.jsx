@@ -27,7 +27,6 @@ export const SelectItem = ({ select }) => {
           <button
             className="select-jacket__icon"
             onClick={() => deleteSelect(select.id)}
-            //onClick={() => deleteSelect(index)}
           ></button>
         </div>
         <span className="select-jacket__price">€ {select.price}</span>

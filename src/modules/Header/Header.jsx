@@ -1,18 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useContext, useEffect } from "react";
 import Link from "next/link";
-//import { useRouter } from "next/router";
 import { AppContext } from "../../context/AppContext";
 import { ModalContact } from "../ModalContact/ModalContact";
 import { ModalThank } from "../ModalThank/ModalThank";
 import { ModalSearch } from "../ModalSearch/ModalSearch";
 import { MenuMobile } from "../MenuMobile/MenuMobile";
 import { MenuButton } from "../../components/MenuButton";
-//import { ModalSelect } from "../ModalSelect/ModalSelect";
 
 export const Header = ({}) => {
   const [isSearch, setIsSearch] = useState(false);
-  //const router = useRouter();
+
   const {
     totalCounter,
     setLabelOrder,

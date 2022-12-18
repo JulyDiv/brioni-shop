@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { ErrorModal } from "../modules/ErrorModal/ErrorModal";
 
 export const ModalContactForm = ({ closeModal, onClick, activeCheckbox }) => {
+
   const [valueName, setValueName] = useState("");
   const [valueLastname, setValueLastname] = useState("");
   const [valueCountry, setValueCountry] = useState("");

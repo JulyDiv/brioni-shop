@@ -3,40 +3,6 @@ import React from "react";
 import Swiper, { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { useEffect } from "react";
 
-//   useEffect(() => {
-// export const swiper = new Swiper(".swiper2", {
-//   modules: [Navigation, Pagination, Scrollbar, Autoplay],
-//   speed: 500,
-//   wrapperClass: "swiper-wrapper swiper2-wrapper2",
-//   navigation: {
-//     nextEl: ".swiper2-button2-next2",
-//     prevEl: ".swiper2-button2-prev2",
-//   },
-//   pagination: {
-//     el: ".swiper2-pagination2",
-//     clickable: true,
-//   },
-// });
-
-//   }, []);
-
-// export const swiper = new Swiper(".swiper2", {
-//   modules: [Navigation, Pagination, Scrollbar, Autoplay],
-//   speed: 500,
-//   wrapperClass: "swiper-wrapper swiper2-wrapper2",
-//   navigation: {
-//     nextEl: ".swiper2-button2-next2",
-//     prevEl: ".swiper2-button2-prev2",
-//   },
-//   autoplay: {
-//     delay: 2500,
-//   },
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-// });
-
 export const SwiperHome = () => {
   useEffect(() => {
     const swiper = new Swiper(".swiper2", {

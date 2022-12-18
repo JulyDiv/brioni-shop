@@ -1,6 +1,5 @@
 *
     box-sizing: border-box
-    //transition: all 0.2s
 
 @font-face
     font-family: "GTEestiProDisplay-Thin"
@@ -16,24 +15,15 @@ html
     padding: 0
 
 body
-    //position: fixed
     margin: 0
     padding: 0
     width: 100%
     font-family: $font-thin
     font-style: normal
     overflow: auto
-    //overflow-y: scroll
-// body.no-scroll
-//    height: 100%
-//    width: 100%
-//    position: fixed
-//    overflow: hidden
-
 
 img
     max-width: 100%
-    // width: 100%
     height: auto
 
 h1, h2, h3, h4, h5, p
@@ -57,10 +47,13 @@ button
     border: none
     background-color: transparent
 
+button:focus
+    border: none
+    outline: none
+
 input, textarea
     appearance: none !important
     padding: 0
-    //border-radius: 0 !important
     border-radius: 0
     border: none
     background-color: transparent
@@ -77,9 +70,6 @@ fieldset
     padding: 0 !important
     margin: 0
     border: none
-
-// ::-webkit-scrollbar
-//   width: 0
 
 .container
     width: 1200px
@@ -105,7 +95,6 @@ fieldset
         color: $text-color3
 
 .button-dark
-    //padding: 16px 0
     padding-top: 1px
     background-color: #000
     text-transform: uppercase

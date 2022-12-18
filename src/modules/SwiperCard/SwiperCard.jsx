@@ -2,11 +2,10 @@
 import React from "react";
 import { Navigation, Scrollbar, A11y, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-//import { AppContext } from "../../context/AppContext";
 import { SwiperCardSlide } from "./SwiperCardSlide";
 
 export const SwiperCard = ({ swiperCard, jacket }) => {
-  //console.log(swiperCard);
+
   return (
     <Swiper
       modules={[Navigation, Scrollbar, A11y, Keyboard]}
