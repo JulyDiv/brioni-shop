@@ -16,13 +16,8 @@ export const CardItem = ({ jacket }) => {
 
   const choice = useChoice(jacket);
 
-  const {
-    addOrder,
-    addSelect,
-    isErrorModalSize,
-    deleteSelect,
-    select
-  } = useContext(AppContext);
+  const { addOrder, addSelect, isErrorModalSize, deleteSelect } =
+    useContext(AppContext);
 
   const onClick = (id) => {
     setActiveSelect(true);

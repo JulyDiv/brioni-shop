@@ -35,8 +35,6 @@ const AppWrapper = ({
   isErrorModalSize,
   setIsErrorModalSize,
 }) => {
-  //const [stateOrder, setStateOrder] = useState({});
-  //const [stateSelect, setStateSelect] = useState({});
   const [isOpenSelect, setIsOpenSelect] = useState(false);
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
@@ -79,15 +77,6 @@ const AppWrapper = ({
     };
   }, [selects]);
 
-  // const order = !stateOrder
-  //   ? {
-  //       ...orders,
-  //       count: count.count,
-  //       size: size,
-  //       color: color,
-  //     }
-  //   : {};
-
   const order = {
     ...jacket,
     count: count.count,
@@ -106,22 +95,6 @@ const AppWrapper = ({
       setOrders([...orders, order]);
     }
   };
-
-  // const addOrder = () => {
-  //   const list = new Map(orders);
-  //   if (list.get(jacket.id)) {
-  //     list.set(jacket.id, {
-  //       ...jacket,
-  //       count: count.count,
-  //       size: size,
-  //       color: color,
-  //     });
-  //   } else {
-  //     list.set(jacket.id, order);
-  //   }
-  //   setOrders(list);
-  //   isOpenCard ? setIsOpenCard(false) : setIsOpenCard(true);
-  // };
 
   const select = {
     ...jacket,
