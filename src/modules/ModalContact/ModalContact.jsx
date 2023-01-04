@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import { ModalContactFormSingIn } from "../../components/ModalContactFormSingIn";
 import { ModalContactForm } from "../../components/ModalContactForm";
+import { useForm } from "react-hook-form";
 
 export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
   const [activeCheckbox, setActiveCheckbox] = useState(false);
@@ -54,6 +55,15 @@ export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
             onClick={onClick}
             closeModal={closeModal}
           />
+          {/* <ModalContactFormSingIn
+            valueEmail={valueEmail}
+            valuePhone={valuePhone}
+          />
+          <ModalContactForm
+            activeCheckbox={activeCheckbox}
+            onClick={onClick}
+            closeModal={closeModal}
+          /> */}
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { InputContactForm } from "./InputContactForm";
 
 export const ModalContactFormSingIn = ({ valueEmail, valuePhone }) => {
   const {
@@ -28,43 +29,26 @@ export const ModalContactFormSingIn = ({ valueEmail, valuePhone }) => {
           </button>
           <fieldset className="contact-fieldset">
             <div className="contact-input__block">
-              <input
-                {...register("email", {
-                  pattern: {
-                    //value: /[A-Za-z]+/i,
-                    value:
-                      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                    message: "Some parts are missing '@'",
-                  },
-                })}
-                style={{ border: errors.email && "1px solid #421717" }}
-                type="email"
-                className="contact-input contact-input__input"
+              <InputContactForm
+                register={register}
                 placeholder="Enter e-mail"
+                item={"email"}
+                messageErr="Some parts are missing '@'"
+                value={
+                  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                }
+                errors={errors.email}
               />
-              {errors?.email?.message && (
-                <span className="contact-input__message">
-                  {errors?.email?.message}
-                </span>
-              )}
             </div>
             <div className="contact-input__block">
-              <input
-                {...register("phone", {
-                  pattern: {
-                    value: /^[1-9]+[0-9]*$/,
-                    message: "Invalid characters",
-                  },
-                })}
-                style={{ border: errors.phone && "1px solid #421717" }}
-                className="contact-input contact-input__input"
+              <InputContactForm
+                register={register}
                 placeholder="Phone number"
+                item={"phone"}
+                messageErr="Invalid characters"
+                value={/^[1-9]+[0-9]*$/}
+                errors={errors.phone}
               />
-              {errors?.phone?.message && (
-                <span className="contact-input__message">
-                  {errors?.phone?.message}
-                </span>
-              )}
             </div>
           </fieldset>
         </div>

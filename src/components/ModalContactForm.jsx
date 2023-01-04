@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { InputContactForm } from "./InputContactForm";
 
 export const ModalContactForm = ({ closeModal, onClick, activeCheckbox }) => {
-
   const [valueName, setValueName] = useState("");
   const [valueLastname, setValueLastname] = useState("");
   const [valueCountry, setValueCountry] = useState("");
@@ -54,180 +54,92 @@ export const ModalContactForm = ({ closeModal, onClick, activeCheckbox }) => {
         <h3 className="contact-sign__title">Shipping address</h3>
         <fieldset className="contact-fieldset">
           <div className="contact-input__block">
-            <input
-              {...register("name", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.name && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="First name"
+            <InputContactForm
+              register={register}
+              placeholder="First name*"
+              item={"name"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/[A-Za-z]+/i}
+              errors={errors.name}
             />
-            {errors?.name?.message && (
-              <span className="contact-input__message">
-                {errors?.name?.message}
-              </span>
-            )}
           </div>
           <div className="contact-input__block">
-            <input
-              {...register("lastname", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.lastname && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="Last name"
+            <InputContactForm
+              register={register}
+              placeholder="Last name*"
+              item={"lastname"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/[A-Za-z]+/i}
+              errors={errors.lastname}
             />
-            {errors?.lastname?.message && (
-              <span className="contact-input__message">
-                {errors?.lastname?.message}
-              </span>
-            )}
           </div>
           <div className="contact-input__block">
-            <input
-              {...register("country", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.country && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="Country"
+            <InputContactForm
+              register={register}
+              placeholder="Country*"
+              item={"country"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/[A-Za-z]+/i}
+              errors={errors.country}
             />
-            {errors?.country?.message && (
-              <span className="contact-input__message">
-                {errors?.country?.message}
-              </span>
-            )}
           </div>
           <div className="contact-input__block">
-            <input
-              {...register("code", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.code && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="Postal code"
+            <InputContactForm
+              register={register}
+              placeholder="Postal code*"
+              item={"code"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/[A-Za-z]+/i}
+              errors={errors.code}
             />
-            {errors?.code?.message && (
-              <span className="contact-input__message">
-                {errors?.code?.message}
-              </span>
-            )}
           </div>
           <div className="contact-input__block">
-            <input
-              {...register("region", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.region && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="Region"
+            <InputContactForm
+              register={register}
+              placeholder="Region*"
+              item={"region"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/[A-Za-z]+/i}
+              errors={errors.region}
             />
-            {errors?.region?.message && (
-              <span className="contact-input__message">
-                {errors?.region?.message}
-              </span>
-            )}
           </div>
           <div className="contact-input__block">
-            <input
-              {...register("city", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.city && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="City"
+            <InputContactForm
+              register={register}
+              placeholder="City*"
+              item={"city"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/[A-Za-z]+/i}
+              errors={errors.city}
             />
-            {errors?.city?.message && (
-              <span className="contact-input__message">
-                {errors?.city?.message}
-              </span>
-            )}
           </div>
           <div className="contact-input__block">
-            <input
-              {...register("streetAddress", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.streetAddress && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="Street address"
+            <InputContactForm
+              register={register}
+              placeholder="Street address*"
+              item={"streetAddress"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/[A-Za-z]+/i}
+              errors={errors.streetAddress}
             />
-            {errors?.streetAddress?.message && (
-              <span className="contact-input__message">
-                {errors?.streetAddress?.message}
-              </span>
-            )}
           </div>
           <div className="contact-input__block">
-            <input
-              {...register("appartment", {
-                required: {
-                  value: true,
-                  message: "This is a required",
-                },
-                pattern: {
-                  value: /[A-Za-z]+/i,
-                  message: "Invalid characters",
-                },
-              })}
-              style={{ border: errors.appartment && "1px solid #421717" }}
-              className="contact-input contact-input__input"
-              placeholder="Appartment"
+            <InputContactForm
+              register={register}
+              placeholder="Appartment*"
+              item={"appartment"}
+              message="This is a required"
+              messageErr="Invalid characters"
+              value={/^[1-9]+[0-9]*$/}
+              errors={errors.appartment}
             />
-            {errors?.appartment?.message && (
-              <span className="contact-input__message">
-                {errors?.appartment?.message}
-              </span>
-            )}
           </div>
         </fieldset>
         <textarea
