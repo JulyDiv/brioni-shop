@@ -83,7 +83,12 @@ export const Header = ({}) => {
               ></button>
 
               <button
-                className="icon-link icon__select icon__select--mobile_hidden"
+                //className="icon-link icon__select icon__select--mobile_hidden"
+                className={
+                  totalCounterSelect > 0
+                    ? "icon-link icon__select_active icon__select--mobile_hidden"
+                    : "icon-link icon__select icon__select--mobile_hidden"
+                }
                 onClick={() => onClick()}
               >
                 {totalCounterSelect === 0 ? (
@@ -96,7 +101,11 @@ export const Header = ({}) => {
               <button className="icon-link icon__user icon__user--mobile_hidden"></button>
 
               <button
-                className="icon-link icon__bag icon__bag--mobile_visible"
+                className={
+                  totalCounter > 0
+                    ? "icon-link icon__bag_active icon__bag--mobile_visible"
+                    : "icon-link icon__bag icon__bag--mobile_visible"
+                }
                 onClick={() => setIsOrder(true)}
               >
                 {totalCounter === 0 ? (

@@ -1829,6 +1829,11 @@ fieldset {
   position: relative;
   background-image: url("../../../public/img/select-icon.svg");
 }
+.icon__select_active {
+  position: relative;
+  background-image: url("../../../public/img/select-icon-hover.svg");
+  border-bottom: 1px solid white;
+}
 .icon__select:hover {
   background-image: url("../../../public/img/select-icon-hover.svg");
 }
@@ -1841,6 +1846,11 @@ fieldset {
 .icon__bag {
   position: relative;
   background-image: url("../../../public/img/bag-icon.svg");
+}
+.icon__bag_active {
+  position: relative;
+  background-image: url("../../../public/img/bag-icon-hover.svg");
+  border-bottom: 1px solid white;
 }
 .icon__bag:hover {
   background-image: url("../../../public/img/bag-icon-hover.svg");

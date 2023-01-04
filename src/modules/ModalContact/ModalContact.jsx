@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import { ModalContactFormSingIn } from "../../components/ModalContactFormSingIn";
 import { ModalContactForm } from "../../components/ModalContactForm";
-import { useForm } from "react-hook-form";
 
 export const ModalContact = ({ setIsContact, setIsThank, isContact }) => {
   const [activeCheckbox, setActiveCheckbox] = useState(false);
