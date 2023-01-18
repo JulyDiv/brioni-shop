@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
-export const Preloader = () => {
-  const [isLoading, setIsLoading] = useState(true);
+export const Preloader = ({ isLoading, setIsLoading }) => {
+  //const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 4000);
-  }, []);
+  }, [setIsLoading]);
 
   return (
     <>

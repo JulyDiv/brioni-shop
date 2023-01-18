@@ -38,6 +38,7 @@ const AppWrapper = ({
   const [isOpenSelect, setIsOpenSelect] = useState(false);
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const count = useCount();
 
@@ -76,6 +77,14 @@ const AppWrapper = ({
       });
     };
   }, [selects]);
+
+  useEffect(() => {
+    window.sessionStorage.getItem("isLoading");
+  }, [])
+
+  useEffect(() => {
+    window.sessionStorage.setItem("isLoading", "false")
+  }, [])
 
   const order = {
     ...jacket,
@@ -181,6 +190,8 @@ const AppWrapper = ({
     setActiveSize,
     isErrorModalColor,
     isErrorModalSize,
+    isLoading,
+    setIsLoading
   };
 
   return (
