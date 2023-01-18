@@ -39,6 +39,7 @@ const AppWrapper = ({
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   const count = useCount();
 
@@ -191,7 +192,9 @@ const AppWrapper = ({
     isErrorModalColor,
     isErrorModalSize,
     isLoading,
-    setIsLoading
+    setIsLoading,
+    search,
+    setSearch
   };
 
   return (

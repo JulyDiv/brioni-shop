@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { CatalogItem } from "../../components/CatalogItem";
 import { BreadCrumb } from "../../modules/BreadCrumb/BreadCrumb";
 import { Character } from "../../modules/Character/Character";
 import { CharacterMobileCatalog } from "../../modules/CharacterMobile/CharacterMobileCatalog";
+import { AppContext } from "../../context/AppContext";
 
 export const getServerSideProps = async () => {
   const res = await fetch(
@@ -17,6 +18,12 @@ export const getServerSideProps = async () => {
 export default function Catalog({ jacket }) {
 
   const [showMoreBtn, setShowMoreBtn] = useState(false);
+
+  const { search } = useContext(AppContext);
+
+  const filter = jacket.filter((item) => {
+    return item.name.toLowerCase().includes(search.toLowerCase());
+  })
 
   return (
     <>
@@ -33,14 +40,13 @@ export default function Catalog({ jacket }) {
           </div>
           <div className="catalog-assortment">
             {jacket.length <= 6
-              ? jacket.map((jacket, id) => (
+              ? filter.map((jacket, id) => (
                   <CatalogItem
-                    //key={jacket.id}
                     key={id}
                     jacket={jacket}
                   />
                 ))
-              : jacket
+              : filter
                   .slice(0, 6)
                   .map((jacket, id) => (
                     <CatalogItem key={id} jacket={jacket} />
@@ -54,7 +60,7 @@ export default function Catalog({ jacket }) {
               </button>
             )}
             {showMoreBtn &&
-              jacket
+              filter
                 .slice(6)
                 .map((jacket, id) => <CatalogItem key={id} jacket={jacket} />)}
           </div>
