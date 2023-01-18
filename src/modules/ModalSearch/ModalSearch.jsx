@@ -1,19 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import { useRouter } from "next/router";
 
 
 export const ModalSearch = ({ setIsSearch }) => {
 
   const { setSearch } = useContext(AppContext);
-  //console.log(search);
+
+  const router = useRouter();
 
   return (
     <div className="search search--mobile">
       <div className="search-wrapper">
         <form action="#" className="search-form">
           <button
-            type="submit"
+            onClick={() => router.push("/catalog")}
+            //type="submit"
             className="search-form__button search-form__button-search"
           ></button>
           <input
