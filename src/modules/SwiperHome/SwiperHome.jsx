@@ -26,16 +26,32 @@ export const SwiperHome = () => {
     <div className="swiper swiper2">
       <div className="swiper-wrapper swiper2-wrapper2">
         <div className="swiper-slide">
-          <img src="/img/home-slider-1.png" alt="slide" />
+          <img
+            src="/img/home-slider-1.png"
+            alt="slide"
+            className="swiper-slide__image"
+          />
         </div>
         <div className="swiper-slide">
-          <img src="/img/home-slider-2.png" alt="slide" />
+          <img
+            src="/img/home-slider-2.png"
+            alt="slide"
+            className="swiper-slide__image"
+          />
         </div>
         <div className="swiper-slide">
-          <img src="/img/home-slider-3.png" alt="slide" />
+          <img
+            src="/img/home-slider-3.png"
+            alt="slide"
+            className="swiper-slide__image"
+          />
         </div>
         <div className="swiper-slide">
-          <img src="/img/home-slider-4.png" alt="slide" />
+          <img
+            src="/img/home-slider-4.png"
+            alt="slide"
+            className="swiper-slide__image"
+          />
         </div>
       </div>
 

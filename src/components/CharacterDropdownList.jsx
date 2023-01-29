@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 export const CharacterDropdownList = ({ item, id }) => {
 
   const [activeCheckbox, setActiveCheckbox] = useState(false);
+
+  const { jacket } = useContext(AppContext);
 
   const onClick = () => {
     setActiveCheckbox(true);

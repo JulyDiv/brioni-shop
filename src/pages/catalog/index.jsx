@@ -25,6 +25,8 @@ export default function Catalog({ jacket }) {
     return item.name.toLowerCase().includes(search.toLowerCase());
   })
 
+  //console.log(jacket);
+
   return (
     <>
       <section className="catalog">

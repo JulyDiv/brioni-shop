@@ -1759,7 +1759,6 @@ fieldset {
   justify-content: space-between;
   align-items: center;
   width: 276px;
-  animation: 1s neon-2 alternate-reverse infinite;
 }
 .navbar-block__link {
   color: #BCBCBC;
@@ -3638,6 +3637,13 @@ fieldset {
   .ambassador-info__link {
     font-size: 10px;
   }
+}
+.swiper-slide__image {
+  width: 100% !important;
+}
+
+.swiper2 {
+  width: 100%;
 }
 .swiper2-wrapper2 {
   padding-bottom: 0;

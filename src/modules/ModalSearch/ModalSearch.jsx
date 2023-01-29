@@ -16,7 +16,6 @@ export const ModalSearch = ({ setIsSearch }) => {
         <form action="#" className="search-form">
           <button
             onClick={() => router.push("/catalog")}
-            //type="submit"
             className="search-form__button search-form__button-search"
           ></button>
           <input
