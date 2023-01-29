@@ -4,7 +4,7 @@
 https://www.figma.com/file/FnREKYFK6299uo1skZRUXz/Untitled
 
 #### Ссылка на деплой:
-https://helpful-begonia-10bb6c.netlify.app
+https://brioni-shop.vercel.app/
 
 <img width="1600" alt="MainBrioni" src="https://user-images.githubusercontent.com/99066910/190965836-ec85980e-6718-4ec2-9670-60d79dc521a9.png">
 
@@ -15,13 +15,12 @@ https://helpful-begonia-10bb6c.netlify.app
 #### Стек технологий:
 
 :star2: HTML5 - верстка (адаптивная и кроссбраузерная) - PixelPerfect <br>
-:star2: CSS3 с использованием SASS - стилизация элементов - работаю по методологии БЭМ, использую Flexbox <br>
+:star2: CSS3 с использованием SASS - стилизация элементов - работаю по методологии БЭМ, использую Flexbox, Grid <br>
 :star2: CSS3 - Анимация модальных окон <br>
 :star2: React/Next.js <br>
 
 ##### Связаться со мной: 
 ##### [https://t.me/julia_gerber] - Telegram
-##### [https://vk.com/id526712821] - VK
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
