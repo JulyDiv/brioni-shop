@@ -6,10 +6,16 @@ import { CharacterMobileCatalog } from "../../modules/CharacterMobile/CharacterM
 import { AppContext } from "../../context/AppContext";
 
 export const getServerSideProps = async () => {
+
   const res = await fetch(
     `https://encouraging-exuberant-park.glitch.me/catalog`
   );
   const data = await res.json();
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { jacket: data },
   };
@@ -24,8 +30,6 @@ export default function Catalog({ jacket }) {
   const filter = jacket.filter((item) => {
     return item.name.toLowerCase().includes(search.toLowerCase());
   })
-
-  //console.log(jacket);
 
   return (
     <>
