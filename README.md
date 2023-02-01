@@ -12,6 +12,14 @@ https://brioni-shop.vercel.app/
 
 <img width="1600" alt="Card" src="https://user-images.githubusercontent.com/99066910/190966026-96a085bd-8171-412b-82fb-2c32c7a8d519.png">
 
+Товар добавляется в корзину  (учитывается количество и общая сумма)
+
+![Снимок11](https://user-images.githubusercontent.com/99066910/215976465-2940f420-7b93-46b5-baf0-c05bdb4371c5.PNG)
+
+Можно добавлять в избранне
+
+![Снимок12](https://user-images.githubusercontent.com/99066910/215976672-57b308e0-5846-4477-9a06-3f08f7299ad7.PNG)
+
 #### Стек технологий:
 
 :star2: HTML5 - верстка (адаптивная и кроссбраузерная) - PixelPerfect <br>
