@@ -1,7 +1,9 @@
 ### Brioni (интернет-магазин)
 
 #### Ссылка на макет Figma:
-https://www.figma.com/file/FnREKYFK6299uo1skZRUXz/Untitled
+[https://www.figma.com/file/FnREKYFK6299uo1skZRUXz/Untitled](https://www.figma.com/file/4AgO8UsxIna6nz1jbYwvIc/Brioni-Shop?node-id=0%3A1&t=VT073GYCKIWD0SwL-0)
+
+В по ходу работы были внесены  изменения в макете + добавлены элементы для отработки скиллов, которые в макете отсутствуют
 
 #### Ссылка на деплой:
 https://brioni-shop.vercel.app/
